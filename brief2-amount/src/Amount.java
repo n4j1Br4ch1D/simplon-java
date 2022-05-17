@@ -21,9 +21,15 @@ public class Amount {
 			System.out.println("\nChoose between monthly or weekly payment method:");
 			System.out.println("1-weekly.");
 			System.out.println("2-monthly.");
+			System.out.println("0-exist.");
+
 			System.out.print("Enter type  the operation: ");
 			operationType = reader.next().charAt(0);
-
+			if (operationType == '0') {
+				System.out.print("Exit!");
+   	    	    reader.close(); //close
+                break;
+			}
 			if (operationType == '1') {
 
 				do {
@@ -83,6 +89,9 @@ public class Amount {
 			}
 
 		} while (true);
+		
+   	 reader.close();
+
 
 	}
 

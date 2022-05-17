@@ -18,7 +18,7 @@ public class Amount {
 		System.out.println("Hi there, " + name + "!");
 
 		do {
-			System.out.println("Choose between monthly or weekly payment method:");
+			System.out.println("\nChoose between monthly or weekly payment method:");
 			System.out.println("1-weekly.");
 			System.out.println("2-monthly.");
 			System.out.print("Enter type  the operation: ");
@@ -26,20 +26,24 @@ public class Amount {
 
 			if (operationType == '1') {
 
-				System.out.print("Enter the number of hours worked per week: ");
-				hoursPerWeek = reader.nextDouble();
+				do {
+					System.out.print("Enter the number of hours worked per week: ");
+					hoursPerWeek = reader.nextDouble();
+					if(hoursPerWeek > maxHoursPerWeek) {
+						System.out.print("The total number of hours must not exceed 50 hours per week!\r\n");
+					}
+				}while(hoursPerWeek > maxHoursPerWeek);
+			
+                
+				do {
 				System.out.print("Enter Rate Per Hour: ");
 				weeklyHourRate = reader.nextDouble();
 				if (weeklyHourRate < 25) {
 					// The rate per hour must not be less than 25 DH per hour
 					System.out.print("The rate per hour must not be less than 25 DH per hour!\r\n");
-					return;
 				}
-				if (hoursPerWeek > maxHoursPerWeek) {
-					System.out.print("The total number of hours must not exceed 50 hours per week!\r\n");
-					return;
-				}
-
+			   }while(weeklyHourRate < 25);
+				
 				result = hoursPerWeek * weeklyHourRate;
 				if (minHoursPerWeek < hoursPerWeek && hoursPerWeek <= maxHoursPerWeek) {
 					overTime = hoursPerWeek - minHoursPerWeek;
@@ -49,19 +53,23 @@ public class Amount {
 
 			} else if (operationType == '2') {
 
+		  do{
 				System.out.print("Enter the number of hours worked per month: ");
 				hoursPerMonth = reader.nextDouble();
+				if (hoursPerMonth > maxHoursPerMonth) {
+					System.out.print("The total number of hours must not exceed 50 hours per month!\r\n");
+				}
+			}while(hoursPerMonth > maxHoursPerMonth);
+			
+		    do {
 				System.out.print("Enter Rate Per Hour: ");
 				monthlyHourRate = reader.nextDouble();
 				if (monthlyHourRate < 20) {
-					// The rate per hour must not be less than 25 DH per hour
+					// The rate per hour must not be less than 20 DH per hour
 					System.out.print("The rate per hour must not be less than 20 DH per hour!\r\n");
-					return;
 				}
-				if (hoursPerMonth > maxHoursPerMonth) {
-					System.out.print("The total number of hours must not exceed 50 hours per month!\r\n");
-					return;
-				}
+			  }while(monthlyHourRate < 20);
+				
 				result = hoursPerMonth * monthlyHourRate;
 				if (minHoursPerMonth < hoursPerMonth && hoursPerMonth <= maxHoursPerMonth) {
 					overTime = hoursPerMonth - minHoursPerMonth;

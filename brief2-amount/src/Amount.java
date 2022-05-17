@@ -30,7 +30,7 @@ public class Amount {
 					System.out.print("Enter the number of hours worked per week: ");
 					hoursPerWeek = reader.nextDouble();
 					if(hoursPerWeek > maxHoursPerWeek) {
-						System.out.print("The total number of hours must not exceed 50 hours per week!\r\n");
+						System.out.print("The total number of hours must not exceed "+maxHoursPerWeek+" hours per week!\r\n");
 					}
 				}while(hoursPerWeek > maxHoursPerWeek);
 			
@@ -57,7 +57,7 @@ public class Amount {
 				System.out.print("Enter the number of hours worked per month: ");
 				hoursPerMonth = reader.nextDouble();
 				if (hoursPerMonth > maxHoursPerMonth) {
-					System.out.print("The total number of hours must not exceed 50 hours per month!\r\n");
+					System.out.print("The total number of hours must not exceed "+maxHoursPerMonth+" hours per month!\r\n");
 				}
 			}while(hoursPerMonth > maxHoursPerMonth);
 			

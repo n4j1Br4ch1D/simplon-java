@@ -18,6 +18,8 @@ public class SquareRoot {
 				+ "            |_|                                           \r\n"
 				+ "");
 		
+		
+		
 	     Scanner reader = new Scanner(System.in); //the  new keyword is used to create an instance of the class.
   	     double input, squareRoot;
            

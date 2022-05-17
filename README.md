@@ -1,2 +1,2 @@
 # simplon-java
-Simplon Talents4Startups  JAVA Formation
+Simplon Talents4Startups JAVA Formation

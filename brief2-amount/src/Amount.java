@@ -55,7 +55,7 @@ public class Amount {
 			}
 
 			do {
-				System.out.print("Enter Pay Rate Per Hour: ");
+				System.out.printf("Enter %s Pay Rate Per Hour: ", paymentType);
 				hourPayRate = reader.nextDouble();
 				if (hourPayRate < minHourPayRate)
 					System.out.printf("The %s pay rate per hour must not be less than %s DH per hour!\r\n", paymentType,

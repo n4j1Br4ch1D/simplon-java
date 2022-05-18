@@ -19,10 +19,7 @@ public class Amount {
 
 		do {
 			System.out.println("\n\nChoose between monthly or weekly payment method:");
-			System.out.println("1-Weekly.");
-			System.out.println("2-Monthly.");
-			System.out.println("0-Exit.");
-
+			System.out.println("1-Weekly.\n2-Monthly.\n0-Exit.");
 			System.out.print("Enter type of the operation: ");
 			operationType = reader.next().charAt(0);
 

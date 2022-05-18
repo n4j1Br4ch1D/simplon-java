@@ -3,95 +3,72 @@ import java.util.Scanner;
 public class Amount {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("****** AmountCalculator ******");
-		String name;
-		double result, overTime, hoursPerWeek, hoursPerMonth, weeklyHourRate, monthlyHourRate, minHoursPerWeek = 40,
-				minHoursPerMonth = 180, maxHoursPerWeek = 50, maxHoursPerMonth = 200;
-		char operationType;
 
-		Scanner reader = new Scanner(System.in); // the new keyword is used to create an instance of the class.
-		// A message that prompts the employee to enter their name
+		String name, paymentType;
+		double salary, 
+        hours, normalHours, maxHours, 
+        overTime, overTimePayPercent50,
+        hourPayRate, minHourPayRate;
+		char operationType;
+		Scanner reader = new Scanner(System.in); 
+
+		System.out.println("****** SalaryCalculator ******");
 		System.out.println("Enter your Name: ");
-		name = reader.next();
-		// A welcome message on behalf of the user
+		name = reader.nextLine();
 		System.out.println("Hi there, " + name + "!");
 
 		do {
 			System.out.println("\nChoose between monthly or weekly payment method:");
-			System.out.println("1-weekly.");
-			System.out.println("2-monthly.");
-			System.out.println("0-exist.");
+			System.out.println("1-Weekly.");
+			System.out.println("2-Monthly.");
+			System.out.println("0-Exit.");
 
-			System.out.print("Enter type  the operation: ");
+			System.out.print("Enter type of the operation: ");
 			operationType = reader.next().charAt(0);
+
 			if (operationType == '0') {
-				System.out.print("Exit!");
-				reader.close(); // close
+				System.out.println("Exit!");
+				reader.close();
 				break;
 			}
-			if (operationType == '1') {
-
-				do {
-					System.out.print("Enter the number of hours worked per week: ");
-					hoursPerWeek = reader.nextDouble();
-					if (hoursPerWeek > maxHoursPerWeek) {
-						System.out.print("The total number of hours must not exceed " + maxHoursPerWeek
-								+ " hours per week!\r\n");
-					}
-				} while (hoursPerWeek > maxHoursPerWeek);
-
-				do {
-					System.out.print("Enter Rate Per Hour: ");
-					weeklyHourRate = reader.nextDouble();
-					if (weeklyHourRate < 25) {
-						// The rate per hour must not be less than 25 DH per hour
-						System.out.print("The rate per hour must not be less than 25 DH per hour!\r\n");
-					}
-				} while (weeklyHourRate < 25);
-
-				result = hoursPerWeek * weeklyHourRate;
-				if (minHoursPerWeek < hoursPerWeek && hoursPerWeek <= maxHoursPerWeek) {
-					overTime = hoursPerWeek - minHoursPerWeek;
-					result = (minHoursPerWeek * weeklyHourRate) + overTime * (weeklyHourRate + weeklyHourRate / 2);
-				}
-				System.out.println("Your Weekly Salary is " + result + " DH");
-
-			} else if (operationType == '2') {
-
-				do {
-					System.out.print("Enter the number of hours worked per month: ");
-					hoursPerMonth = reader.nextDouble();
-					if (hoursPerMonth > maxHoursPerMonth) {
-						System.out.print("The total number of hours must not exceed " + maxHoursPerMonth
-								+ " hours per month!\r\n");
-					}
-				} while (hoursPerMonth > maxHoursPerMonth);
-
-				do {
-					System.out.print("Enter Rate Per Hour: ");
-					monthlyHourRate = reader.nextDouble();
-					if (monthlyHourRate < 20) {
-						// The rate per hour must not be less than 20 DH per hour
-						System.out.print("The rate per hour must not be less than 20 DH per hour!\r\n");
-					}
-				} while (monthlyHourRate < 20);
-
-				result = hoursPerMonth * monthlyHourRate;
-				if (minHoursPerMonth < hoursPerMonth && hoursPerMonth <= maxHoursPerMonth) {
-					overTime = hoursPerMonth - minHoursPerMonth;
-					result = (minHoursPerMonth * monthlyHourRate) + overTime * (monthlyHourRate + monthlyHourRate / 2);
-				}
-				System.out.println("Your  Monthly  Salary is " + result + " DH");
-
-			} else {
+            else if (operationType == '1') {
+                paymentType = "Weekly"; minHourPayRate = 25; normalHours = 40; maxHours= 50;
+            } 
+            else if(operationType == '2'){
+                paymentType = "Monthly"; minHourPayRate = 20; normalHours = 180; maxHours= 200;
+            }
+            else {
 				System.out.println("Error opertaion doesnt exist!");
-
+                continue;
 			}
 
-		} while (true);
+            while(true){
+		        System.out.printf("Enter the number of %s hours worked: ", paymentType);
+				hours = reader.nextDouble();
+                if (hours <= maxHours)
+                    break;
+                System.out.printf("The total number of %s hours must not exceed %s hours per week!\r\n", paymentType, maxHours);
+            }
 
-		reader.close();
+			do {
+			    System.out.print("Enter Pay Rate Per Hour: ");
+				hourPayRate = reader.nextDouble();
+				if (hourPayRate < minHourPayRate)
+					System.out.printf("The %s pay rate per hour must not be less than %s DH per hour!\r\n", paymentType, minHourPayRate);
+			} while (hourPayRate < minHourPayRate);
+
+			salary = hours * hourPayRate;
+			if (normalHours < hours && hours <= maxHours) {
+				overTime = hours - normalHours;
+			    overTimePayPercent50 = overTime*hourPayRate/2;
+                System.out.printf("%s dh (normalPay) + %s dh (the 50%% for your %s overtime hours).", salary, overTimePayPercent50 ,overTime);
+				salary += overTime*hourPayRate/2;				
+		    }
+			System.out.printf("Your Total %s Salary is %s DH.", paymentType, salary);
+
+      } while (true);
+
+	  reader.close();
 
 	}
 

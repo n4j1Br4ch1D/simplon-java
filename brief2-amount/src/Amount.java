@@ -60,7 +60,7 @@ public class Amount {
 			} while (hourPayRate < minHourPayRate);
 
 			salary = hours * hourPayRate;
-			if (normalHours < hours && hours <= maxHours) {
+			if (normalHours < hours) {
 				overTime = hours - normalHours;
 				overTimePayPercent50 = overTime * hourPayRate / 2;
 				System.out.printf("%s dh (normalPay) + %s dh (the 50%% for your %s overtime hours).", salary,

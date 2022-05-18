@@ -18,7 +18,7 @@ public class Amount {
 		System.out.println("Hi there, " + name + "!");
 
 		do {
-			System.out.println("\nChoose between monthly or weekly payment method:");
+			System.out.println("\n\nChoose between monthly or weekly payment method:");
 			System.out.println("1-Weekly.");
 			System.out.println("2-Monthly.");
 			System.out.println("0-Exit.");
@@ -70,7 +70,7 @@ public class Amount {
 						overTimePayPercent50, overTime);
 				salary += overTime * hourPayRate / 2;
 			}
-			System.out.printf("Your Total %s Salary is %s DH.", paymentType, salary);
+			System.out.printf("\nYour Total %s Salary is %s DH.", paymentType, salary);
 
 		} while (true);
 

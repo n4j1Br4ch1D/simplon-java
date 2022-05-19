@@ -44,6 +44,7 @@ class EmployeeFixed extends Employee {
 
 	public void info() {
 		// TODO Auto-generated method stub
+		System.out.print(123);
 		
 	}
 }

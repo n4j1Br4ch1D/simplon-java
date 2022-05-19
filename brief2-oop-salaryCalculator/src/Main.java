@@ -19,7 +19,7 @@ public class Main {
     }
     
 	private static EmployeeFixed CEO = new EmployeeFixed("Najib", "Rachid", "7-07-1996");
-//	private static EmployeeFixed COO = new EmployeeFixed("Omar", "Dbaa", "7-08-1996");
+	private static EmployeeFixed COO = new EmployeeFixed("Omar", "Dbaa", "7-08-1996");
 
 	public static void main(String[] args) {
 
@@ -52,7 +52,7 @@ public class Main {
 			} else if (operationType == '4') {
 				CEO.info();				
 		    } else if (operationType == '5') {
-				//COO.info();				    
+				COO.info();				    
 		    }  else {
 				System.out.println("Error opertaion doesnt exist!");
 				continue;

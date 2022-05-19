@@ -1,16 +1,32 @@
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
 
+	
+    public static DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+    public static Date dateParser(String dateStr) {
+        try {
+            return dateFormatter.parse(dateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+		return null;
+    }
+    
+	private static EmployeeFixed CEO = new EmployeeFixed("Najib", "Rachid", "7-07-1996");
+//	private static EmployeeFixed COO = new EmployeeFixed("Omar", "Dbaa", "7-08-1996");
+
 	public static void main(String[] args) {
 
 		char operationType;
 		Scanner reader = new Scanner(System.in);
-        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+        
+     
 
 		System.out.format("+-----------------+-----------------+%n");
 		System.out.format("|           SalaryCalcultor         |%n");
@@ -34,27 +50,9 @@ public class Main {
 			} else if (operationType == '3') {
 				
 			} else if (operationType == '4') {
-
-				
-				
-		        Date CeoBirthDateFormated = null;
-
-			        String dateInString = "7-07-1996";
-
-
-
-//			            Date CeoBirthDateFormated = dateFormatter.parse(dateInString);
-			            System.out.println(CeoBirthDateFormated);
-						
-
-//					EmployeeFixed CEO = new EmployeeFixed("Najib", "Rachid", CeoBirthDateFormated);
-
-
-
-				//najibObj.setSalary(salary);
-				    
+				CEO.info();				
 		    } else if (operationType == '5') {
-		           
+				//COO.info();				    
 		    }  else {
 				System.out.println("Error opertaion doesnt exist!");
 				continue;
@@ -89,61 +87,6 @@ public class Main {
 
 		reader.close();
 	}
-
-	class Employee {
-
-		final static String DEPARTMENT = "Cosmetics";
-		public String firstName;
-		static public String employeeLastName;
-		static public Date employeeBirthDate;
-		static private double employeeSalary;
-		static private int employeeSales;
-		static private double employeeCommission;
-		static private double employeeHoursWorked;
-		static private int employeeSalePrice;
-
-		public Employee(String firstName, String lastName, Date birthDate ) { //double salary, int sales, double commission, double hoursWorked, int salePrice
-			this.firstName = firstName;
-			employeeLastName = lastName;
-			employeeBirthDate = birthDate;
-//			employeeSalary = salary;
-//			employeeSales = sales;
-//			employeeCommission = commission;
-//			employeeHoursWorked = hoursWorked;
-//			employeeSalePrice = salePrice;
-		}
-
-		public static double getSalary() {
-			return employeeSalary;
-		}
-
-		public void setSalary(double salary) {
-			employeeSalary = salary;
-		}
-
-	}
-
-	class EmployeeFixed extends Employee {
-
-		   public EmployeeFixed(String firstName,String lastName, Date birthDate) {
-				super(firstName, lastName, birthDate);
-			}
-	}
-
-	class EmployeeCommission extends Employee {
-
-		   public EmployeeCommission(String firstName,String lastName, Date birthDate) {
-				super(firstName, lastName, birthDate);
-			}
-
-	}
-
-class EmployeeHourly extends Employee {
-
-   public EmployeeHourly(String firstName,String lastName, Date birthDate) {
-		super(firstName, lastName, birthDate);
-	}
-}
 
 }
 

@@ -3,6 +3,24 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		char operationType;
+		Scanner reader = new Scanner(System.in);
+
+		System.out.format("+-----------------+-----------------+%n");
+		System.out.format("|           SalaryCalcultor         |%n");
+		System.out.format("|      NajibRachid &  OmarDbaa      |%n");
+		System.out.format("+-----------------+-----------------+%n");
+
+		do {
+			System.out.println("\n\nChoose Type of Employee:");
+			System.out.println("1-Employee Fixed.\n2-Employee Commission.\n3-Employee Hourly\n0-Exit.");
+			System.out.print("Enter type of the operation: ");
+			operationType = reader.next().charAt(0);
+            System.out.println("Enter EmployeeFullName: ");
+	    	//System.out.println("Hi there, " + name + "!");
+		
+		}while(true);
+
 	}
 
 	class Employee {

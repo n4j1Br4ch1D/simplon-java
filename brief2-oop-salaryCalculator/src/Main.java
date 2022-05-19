@@ -22,17 +22,23 @@ public class Main {
 				reader.close();
 				break;
 			} else if (operationType == '1') {
+				
 		
 			} else if (operationType == '2') {
 
+			} else if (operationType == '3') {
+           
 			} else {
 				System.out.println("Error opertaion doesnt exist!");
 				continue;
 			}
 		
-            System.out.println("Enter Employee FullName: ");
-	     	String fullname = reader.nextLine();
-		    System.out.println("Enter Employee BirthDate: ");
+            System.out.println("Enter Employee FullName(firstName lastName): ");
+	     	String fullname = reader.next();
+	     	 
+	
+	     	
+		    System.out.println("Enter Employee BirthDate(D/M/Y): ");
 		    int birthDate = reader.nextInt();
 			
 			//2

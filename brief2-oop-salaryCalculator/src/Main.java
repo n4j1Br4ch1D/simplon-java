@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Main {
 
@@ -16,8 +17,29 @@ public class Main {
 			System.out.println("1-Employee Fixed.\n2-Employee Commission.\n3-Employee Hourly\n0-Exit.");
 			System.out.print("Enter type of the operation: ");
 			operationType = reader.next().charAt(0);
-            System.out.println("Enter EmployeeFullName: ");
-	    	//System.out.println("Hi there, " + name + "!");
+
+		
+            System.out.println("Enter Employee FullName: ");
+	     	String fullname = reader.nextLine();
+		    System.out.println("Enter Employee BirthDate: ");
+		    int birthDate = reader.nextInt();
+			
+			//2
+	    	System.out.println("Enter Employee Salary: ");
+		    double salary = reader.nextDouble();
+
+			System.out.println("Enter Employee Sales Number: ");
+		    double sales = reader.nextDouble();
+			
+			System.out.println("Enter Employee Sales commission: ");
+		    double commission = reader.nextDouble();
+			
+		
+			// employeeHoursWorked = hoursWorked;
+			// employeeSalePrice = salePrice;
+
+		JavaDeveloper developerObj = new JavaDeveloper(name, age);
+		developerObj.setSalary(salary);
 		
 		}while(true);
 

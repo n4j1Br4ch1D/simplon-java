@@ -57,7 +57,7 @@ public class Main {
 		static private double employeeHoursWorked;
 		static private int employeeSalePrice;
 
-		public Employee(String firstName, String lastName) {
+		public Employee(String firstName, String lastName,  int birthDate,double salary, int sales, double commission, double hoursWorked, int salePrice ) {
 			this.firstName = firstName;
 			employeeLastName = lastName;
 			employeeBirthDate = birthDate;

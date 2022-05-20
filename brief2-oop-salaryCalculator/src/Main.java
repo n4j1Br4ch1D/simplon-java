@@ -1,6 +1,8 @@
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.text.spi.DateFormatProvider;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -27,7 +29,22 @@ public class Main {
 				reader.close();
 				break;
 			} else if (operationType == '1') {
-				
+
+
+			   System.out.println("Enter Employee FullName(firstName lastName): ");
+			   String fullname = reader.next();
+
+			   System.out.println("Enter Employee BirthDate(D/M/Y): ");
+			   int birthDate = reader.nextInt();
+
+
+			   System.out.println("Enter Employee Salary: ");
+			   double salary = reader.nextDouble();
+
+			   System.out.println("Employee FullName:"+fullname);
+			   System.out.println("Employee Birthday:"+birthDate);
+			   System.out.println("Employee salary:"+salary);
+			   System.out.println("Employee Category: Fixed Salary Employee");
 		
 			} else if (operationType == '2') {
 
@@ -146,5 +163,3 @@ class EmployeeHourly extends Employee {
 }
 
 }
-
-

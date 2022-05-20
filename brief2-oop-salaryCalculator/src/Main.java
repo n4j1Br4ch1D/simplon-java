@@ -28,11 +28,14 @@ public class Main {
 		System.out.format("+-----------------+-----------------+%n");
 		System.out.format("|           SalaryCalcultor         |%n");
 		System.out.format("|       NajibRachid & OmarDbaa      |%n");
-		System.out.format("|                V0.0.1             |%n");
+		System.out.format("|         Alpha Version 0.0.1       |%n");
 		System.out.format("+-----------------+-----------------+%n");
 
+        outerloop:
 		do {
-			System.out.println("\n\nChoose Type of Operation:");
+			System.out.println("=================================\n");
+
+			System.out.println("Choose Type of Operation:");
 			System.out.println("1-Employee Fixed.\n2-Employee Commission.\n3-Employee Hourly.\n4-CEO`s Salary.\n5-COO`s Salary.\n9-settings\n0-Exit!");
 			System.out.print("Enter type of the operation: ");
 			operationType = reader.next().charAt(0);
@@ -42,21 +45,17 @@ public class Main {
 				break;
 			}else if(operationType == '1' || operationType == '2' || operationType == '3'){ //Employee Type;
 				  Employee employee = new Employee(null, null, null);
-				  // employee.askEmloyeeFullName();
-				 // Employee.employeeBirthDate =  employee.askEmloyeeBirthDate();
+				  employee.askEmloyeeFullName();
+			  	  employee.employeeBirthDate =  employee.askEmloyeeBirthDate();
+                  employee.info();
 
 				 if (operationType == '1') {
-						System.out.println("Employee Fixed\n");
-
 				   	  EmployeeFixed employeeFix = new EmployeeFixed(null, null, null);
 					  
 						System.out.println("hhh"+employeeFix.calculateSalary());
 						employeeFix.info();
   
-			     } else if (operationType == '2') {
-						System.out.println("Employee Commission\n");
-						
-
+			     } else if (operationType == '2') {						
 				       EmployeeCommission employeeCom = new EmployeeCommission(null, null, null);
 				       EmployeeCommission.employeeSalesNumber = (int) employeeCom.askEmployeeSalesNumber();
 				   
@@ -81,47 +80,48 @@ public class Main {
 		    } else if (operationType == '5') {
 			    COO.info();	// tari9a m5talfa			    
 			} else if (operationType == '9') {
-				System.out.println("\n\n##### Settings #####\n");
-				System.out.println("Choose Type of Operation:");
-				System.out.printf("1-set Salary:........................%s\n", 9000);
-				System.out.printf("2-set Sale Price:...................%s\n", 100);
-				System.out.printf("3-Set Sale Commision Percentage:            %s%%\n", 10);
-				System.out.printf("3-set Hours Pay Rate:           %s\n", 100);
-				operationType = reader.next().charAt(0);
-				//
-				//currency;
-				//EmployeeMinHireAge
-				
-				//employeeSalesNumberSpecial
-				//employeeSaleCommisionPercentageSpecial 
 
-	
-				//employeeHoursWorkedSpecial
-				//employeeHoursPayRateSpecial
+				do{
 
-				System.out.println("9-Return.\n0-Exit!");
+					System.out.println("\n\n##### Settings #####\n");
+					System.out.println("Choose Type of Operation:");
+					//currency;
+//					System.out.printf("1-set Salary:........................%s\n", employee.getSalary());
+					//employeePaymentDayDuration
+					//EmployeeMinHireAge
+//					System.out.printf("2-set Sale Price:...................%s\n", EmployeeCommission.getSalePrice());
+//					System.out.printf("3-Set Sale Commision Percentage:..%s%%\n", EmployeeCommission.getCommisionPercentage());
+//					System.out.printf("4-set Hours Pay Rate:............%s\n", employeeHour.getHoursPayRate());
+					//employeeSalesNumberSpecial
+					//employeeSaleCommisionPercentageSpecial 
+					//employeeHoursWorkedSpecial
+					//employeeHoursPayRateSpecial
+					//ceo 
+					//coo
+					
+					System.out.println("9-Return.\n0-Exit!");
 
-				/* 
-   
-			
-	    	System.out.println("Enter Employee Salary: ");
-		    double salary = reader.nextDouble();
-		    employeeObj.setSalary(salary);
+					operationType = reader.next().charAt(0);
+					switch (operationType) {
+						case '0':
+						System.out.println("Exit!");
+						reader.close();
+						break outerloop;
+						case '9':
+						System.out.println("Return!");
+						break;
+						case '1':
+						  //employee.setSalary();
 
-			System.out.println("Enter Employee Sales price: ");
-		    double commission = reader.nextDouble();
+                         
+						default:
+							System.out.println("Error opertaion doesnt exist!");
+							continue;
+					}
 
-			System.out.println("Enter Employee Sales commission percentage: ");
-		    double commission = reader.nextDouble();
-
-
-			System.out.println("Enter Hours Pay Rate: ");
-		    double hoursPayRate = reader.nextDouble();
-			
+		        }while(true);
 
 
-
-				*/
 		    } else {
 				System.out.println("Error opertaion doesnt exist!");
 				continue;

@@ -5,7 +5,7 @@ public class Employee {
 	public String firstName;
 	public String employeeLastName;
 	static String employeeBirthDate; // will do Date later //min birthdate
-	static private int EmployeeAge; // will do Date later //min birthdate
+	static private int EmployeeAge; 
 	static private int EmployeeMinHireAge = 16;
 	protected static int employeePaymentDayDuration = 30; 
 	static protected double employeeDailySalary = 500;
@@ -39,8 +39,7 @@ public class Employee {
 
 	void askEmloyeeFullName() {
 	    System.out.println("Enter Employee FullName(firstName lastName): ");
-	    String hhh = "najib rachid";
-        String[] fullName = hhh.split("\\s+");  //reader.next()
+        String[] fullName = reader.nextLine().split("\\s+");
 		firstName = fullName[0];
 		employeeLastName =   fullName[1];
 	}
@@ -53,21 +52,22 @@ public class Employee {
 //		do {
 //			
 //		 	System.out.println("Enter Employee BirthDate(D/M/Y): ");
-//			
+//		    return reader.nextInt();
+//           DOF
 //		 	//EmployeeAge = Date.now() - employeeBirthDate.getYear();
-//		 	int EmployeeAge = 14;
 //			if (EmployeeAge < EmployeeMinHireAge)
 //				System.out.printf("We only Hire People With minimum age of %s ", EmployeeMinHireAge);
 //		} while (EmployeeAge < EmployeeMinHireAge);
 	
-		//int birthDate = reader.nextInt();
 	}
 
-	void info() {
-		System.out.println("Full Name: "+firstName+" "+employeeLastName+".");
-		System.out.println("Birth Date: "+DEPARTMENT+" Department.");
+	void info() {	
+		System.out.println("First Name: "+firstName+".");
+		System.out.println("Last Name: "+employeeLastName+".");
+		System.out.println("Birth Date: "+employeeBirthDate+".");
+		System.out.println("Age: "+EmployeeAge+".");
 		System.out.println("Department: "+DEPARTMENT+" .");
-	    System.out.println("Monthly Salary: "+calculateSalary()+".");
+	    System.out.println("Monthly Salary: "+calculateSalary()+"."); // weekly //monthly
 	}
 }
 
@@ -113,14 +113,14 @@ class EmployeeCommission extends Employee {
 class EmployeeHourly extends Employee {   
 
 	static double employeeHoursWorked;
-	static private double employeeHoursPayRate = 50;
+	static private double employeeHoursPayRate = 100;
 
 	public EmployeeHourly(String firstName,String lastName, String birthDate) {
 			super(firstName, lastName, birthDate);
 	}
 
 	double askEmployeeHoursWorked() {
-		System.out.println("Enter Employee Hours Worked Per Day: ");
+		System.out.println("Enter Employee Hours Worked: ");
 	     return reader.nextDouble();
    }
 
@@ -131,12 +131,6 @@ class EmployeeHourly extends Employee {
 //				overTimePayPercent50 = overTime * hourPayRate / 2;
 //				salary += overTime * hourPayRate / 2;
 		
-		return employeePaymentDayDuration * employeeHoursPayRate * employeeHoursWorked;
+		return employeeHoursPayRate * employeeHoursWorked;
 	}
 }
-
-//make it work;  
-
-//improve features.  settings. conditions.
-//check oop.
-//make all oop.

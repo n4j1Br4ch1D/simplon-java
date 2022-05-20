@@ -1,22 +1,75 @@
 # :moneybag: SalaryCalculator JAVA OOP
- :date:	 Date Started: **19-05-2022.**    |
- :computer:	Devleoped By: [NajibRachid](https://github.com/n4j1Br4ch1D) && [OmarDbaa](https://www.example.com)
- 
  CLI Application for Calculating payments & salary for different types of employees:
  1. FixedEmployee: receiving a fixed salary: (monthly salary = salary).
  2. EmployeCommission: receiving a base salary plus a percentage linked to his sales: (monthly salary = salary + sales * commission);
  3. HourlyEmployee: receiving pay according to the number of hours worked: (monthly salary = hourly rate * hours worked).
 
+ - :date:	 Date Started: **19-05-2022.** 
+ - :computer:	Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D) && [OmarDbaa](https://github.com/omardbaa).
+ - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalent101*.
+ - :green_circle:Version: **Alpha Version 0.0.1**.
+
 ---
 
-## Features: 
+## Snapshots
 
-- [X]
-- []
+## Features
 
-## OOP Basic Principles CheckList:
-- []
+- [X] Calculate Fixed Salary.
+- [X] Calculate Salary With Commision.
+- [X] Calculate Salary With Hourly Payment Rate. 
+- [X] Take Inputs From User.
+- [X] Take Fullname Instead of Fname & Lname.
+- [ ] Parse String To Date Object.
+- [ ] Add Min Age for Employment.
+- [ ] Make Special Employees SEO, COO.
+- [ ] Add Special Commission Calculation.
+- [ ] Add Special Hours Worked Calculation.
+- [ ] Add Setting To Set Sale Min Hire Age.
+- [ ] Add Setting To Set Currency.
+- [ ] Add Setting To Set Payment Day Duration.
+- [ ] Add Setting To Set Daily Salary.
+- [ ] Add Setting To Set Sale Price.
+- [ ] Add Setting To Set Sale CommisionPercentage.
+- [ ] Add Setting To Set Special Sales Number.
+- [ ] Add Setting To Set Hours Pay Rate.
+- [ ] Add Setting To Set Special Hours Worked.
+- [ ] Add Setting To Set CEO.
+- [ ] Add Setting To Set COO.
+- [ ] Get List Of Current Employees.
+
+## Bugs 
+
+- [ ] Date Parsing.
+- [ ] Operations Wrong Select.
+
+## OOP Basic Principles CheckList
+
+- [x] The Object class
+- [x] Class
+- [x] Object
+- [x] Public
+- [x] Protected
+- [x] Crivate
+- [x] Constructor
+- [x] Getter
+- [x] Setter
+- [x] Inheritance
+- [x] Polymorphism
+- [ ] Exception
+- [ ] Encapsulation
+- [x] Overide
+- [ ] Redefinition
+- [x] Final keyword
+- [x] Static keyword 
+
 
 ## Brief objectives checklist
-- []
-
+- [X] Install and configure the Git versioning environment.
+- [X] Improved program by adding other features.
+- [X] Integrations of the specificities discussed in the previous brief.
+- [X] Team of 2 learners Duration 2 days.
+- [X] The product code must follow the instructions explained in the context of the brief.
+- [ ] Oral presentation of the work.
+- [X] Github repository.
+- [X] Prepare For Next Session: Working with Databases.

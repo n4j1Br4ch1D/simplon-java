@@ -82,10 +82,14 @@ class EmployeeFixed extends Employee {
 
 class EmployeeCommission extends Employee {
 
-	static private int employeeSalesNumber;
+	static int employeeSalesNumber;
 	static private double employeeSalePrice = 100;
 	static private double employeeSaleCommisionPercentage = 50;
-	static private double employeeCommission = (employeeSalesNumber*employeeSalePrice)*employeeSaleCommisionPercentage/100;
+	
+	public static double employeeCommission() {
+		return (employeeSalesNumber*employeeSalePrice)*employeeSaleCommisionPercentage/100;
+
+	}
 
 	double askEmployeeSalesNumber() {
 			System.out.println("Enter Employee Sales Number: ");
@@ -101,7 +105,7 @@ class EmployeeCommission extends Employee {
 //		if(employeeSalesNumber > 100) {
 //			return employeeSaleCommisionPercentage = 80;
 //		}
-		return (employeeDailySalary*employeePaymentDayDuration) + employeeCommission;
+		return (employeeDailySalary*employeePaymentDayDuration) + employeeCommission();
 		//     500*30 + (5*100)*50/100
 	}
 

@@ -42,13 +42,13 @@ public class Main {
 				break;
 			}else if(operationType == '1' || operationType == '2' || operationType == '3'){ //Employee Type;
 				  Employee employee = new Employee(null, null, null);
-				  employee.askEmloyeeFullName();
+				  // employee.askEmloyeeFullName();
 				 // Employee.employeeBirthDate =  employee.askEmloyeeBirthDate();
 
 				 if (operationType == '1') {
 						System.out.println("Employee Fixed\n");
 
-					  EmployeeFixed employeeFix = new EmployeeFixed(null, null, null);
+				   	  EmployeeFixed employeeFix = new EmployeeFixed(null, null, null);
 					  
 						System.out.println("hhh"+employeeFix.calculateSalary());
 						employeeFix.info();
@@ -57,8 +57,9 @@ public class Main {
 						System.out.println("Employee Commission\n");
 						
 
-				   EmployeeCommission employeeCom = new EmployeeCommission(null, null, null);
-				   employeeCom.askEmployeeSalesNumber();
+				       EmployeeCommission employeeCom = new EmployeeCommission(null, null, null);
+				       EmployeeCommission.employeeSalesNumber = (int) employeeCom.askEmployeeSalesNumber();
+				   
 					System.out.println("hhh"+employeeCom.calculateSalary());
 
 				   employeeCom.info();

@@ -39,4 +39,10 @@
 
 
 ## Brief objectives checklist
-- [ ] Install and configure the Git versioning environment
+- [X] Install and configure the Git versioning environment.
+- [X] Improved program by adding other features.
+- [X] Integrations of the specificities discussed in the previous brief.
+- [X] Team of 2 learners Duration 2 days.
+- [X] The product code must follow the instructions explained in the context of the brief.
+- [ ] Oral presentation of the work.
+- [X] Github repository.

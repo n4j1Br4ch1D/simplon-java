@@ -68,6 +68,7 @@ public class Main {
                  } else {
 				  System.out.println("Employee Hourly\n");
   				   EmployeeHourly employeeHour = new EmployeeHourly(null, null, null);
+  				   employeeHour.employeeHoursWorked = employeeHour.askEmployeeHoursWorked();
 					System.out.println("hhh"+employeeHour.calculateSalary());
 
   				     employeeHour.info();

@@ -106,23 +106,22 @@ class EmployeeCommission extends Employee {
 //			return employeeSaleCommisionPercentage = 80;
 //		}
 		return (employeeDailySalary*employeePaymentDayDuration) + employeeCommission();
-		//     500*30 + (5*100)*50/100
 	}
 
 }
 
 class EmployeeHourly extends Employee {   
 
-	static private double employeeHoursWorked;
+	static double employeeHoursWorked;
 	static private double employeeHoursPayRate = 100;
 
 	public EmployeeHourly(String firstName,String lastName, String birthDate) {
 			super(firstName, lastName, birthDate);
 	}
 
-	private void askEmployeeHoursWorked() {
+	double askEmployeeHoursWorked() {
 		System.out.println("Enter Employee Hours Worked: ");
-	   // double sales = reader.nextDouble();
+	     return reader.nextDouble();
    }
 
 	public double calculateSalary() {
@@ -136,7 +135,8 @@ class EmployeeHourly extends Employee {
 	}
 }
 
-//make it work;
-//improve features.
+//make it work;  
+
+//improve features.  settings. conditions.
 //check oop.
 //make all oop.

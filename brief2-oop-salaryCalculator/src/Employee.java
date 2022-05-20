@@ -5,134 +5,131 @@ public class Employee {
 	public String firstName;
 	public String employeeLastName;
 	static String employeeBirthDate; // will do Date later //min birthdate
-	static private int EmployeeAge; // will do Date later //min birthdate
+	static private int EmployeeAge;
 	static private int EmployeeMinHireAge = 16;
-	static private int employeePaymentDayDuration = 30; 
-	static protected double employeeSalary = 500;
+	protected static int employeePaymentDayDuration = 30;
+	static protected double employeeDailySalary = 500;
 	Scanner reader = new Scanner(System.in);
 
-	public Employee(String firstName, String lastName, String dateInString ) {
+	public Employee(String firstName, String lastName, String dateInString) {
 		this.firstName = firstName;
 		employeeLastName = lastName;
 		employeeBirthDate = dateInString;
 	}
 
 	public void setPaymentDayDuration(double salary) {
-		employeeSalary = salary;
+		employeeDailySalary = salary;
 	}
 
 	public static double getPaymentDayDuration() {
-		return employeeSalary;
+		return employeeDailySalary;
 	}
 
 	public void setSalary(double salary) {
-		employeeSalary = salary;
+		employeeDailySalary = salary;
 	}
 
 	public static double getSalary() {
-		return employeeSalary;
-	}
-	
-	public double calculateSalary() {
-		return 343; //employeePaymentDayDuration*employeeSalary;
+		return employeeDailySalary;
 	}
 
-	void askEmloyeeFullName() {
-	    System.out.println("Enter Employee FullName(firstName lastName): ");
-	    String hhh = "najib rachid";
-        String[] fullName = hhh.split("\\s+");  //reader.next()
-		firstName = fullName[0];
-		employeeLastName =   fullName[1];
+	public double calculateSalary() {
+		return employeePaymentDayDuration * employeeDailySalary;
 	}
-	
+
+	void askEmployeeFullName() {
+		System.out.println("Enter Employee FullName(firstName lastName): ");
+		String[] fullName = reader.nextLine().split("\\s+");
+		firstName = fullName[0];
+		employeeLastName = fullName[1];
+	}
+
 	String askEmloyeeBirthDate() {
-		
-	 	System.out.println("Enter Employee BirthDate(D/M/Y): ");
-	    return reader.next();
-		
-//		do {
-//			
-//		 	System.out.println("Enter Employee BirthDate(D/M/Y): ");
-//			
-//		 	//EmployeeAge = Date.now() - employeeBirthDate.getYear();
-//		 	int EmployeeAge = 14;
-//			if (EmployeeAge < EmployeeMinHireAge)
-//				System.out.printf("We only Hire People With minimum age of %s ", EmployeeMinHireAge);
-//		} while (EmployeeAge < EmployeeMinHireAge);
-	
-		//int birthDate = reader.nextInt();
+
+		System.out.println("Enter Employee BirthDate(D/M/Y): ");
+		return reader.next();
+
+		// do {
+		//
+		// System.out.println("Enter Employee BirthDate(D/M/Y): ");
+		// return reader.nextInt();
+		// DOF
+		// //EmployeeAge = Date.now() - employeeBirthDate.getYear();
+		// if (EmployeeAge < EmployeeMinHireAge)
+		// System.out.printf("We only Hire People With minimum age of %s ",
+		// EmployeeMinHireAge);
+		// } while (EmployeeAge < EmployeeMinHireAge);
+
 	}
 
 	void info() {
-		System.out.println("Full Name: "+firstName+" "+employeeLastName+".");
-		System.out.println("Birth Date: "+DEPARTMENT+" Department.");
-		System.out.println("Department: "+DEPARTMENT+" .");
-	    System.out.println("Monthly Salary: "+calculateSalary()+".");
+		System.out.println("First Name: " + firstName + ".");
+		System.out.println("Last Name: " + employeeLastName + ".");
+		System.out.println("Birth Date: " + employeeBirthDate + ".");
+		System.out.println("Age: " + EmployeeAge + ".");
+		System.out.println("Department: " + DEPARTMENT + " .");
+		System.out.println("Monthly Salary: " + calculateSalary() + "."); // weekly //monthly
 	}
 }
 
-
 class EmployeeFixed extends Employee {
 
-	public EmployeeFixed(String firstName,String lastName, String dateInString) {
-			super(firstName, lastName, dateInString);
+	public EmployeeFixed(String firstName, String lastName, String dateInString) {
+		super(firstName, lastName, dateInString);
 	}
 
 }
 
 class EmployeeCommission extends Employee {
 
-	static private int employeeSalesNumber;
+	static int employeeSalesNumber;
 	static private double employeeSalePrice = 100;
 	static private double employeeSaleCommisionPercentage = 50;
-	static private double employeeCommission = (employeeSalesNumber*employeeSalePrice)*employeeSaleCommisionPercentage/100;
+
+	public static double employeeCommission() {
+		return (employeeSalesNumber * employeeSalePrice) * employeeSaleCommisionPercentage / 100;
+
+	}
 
 	double askEmployeeSalesNumber() {
-			System.out.println("Enter Employee Sales Number: ");
-		   return reader.nextDouble();
-	}
-								
-
-	public EmployeeCommission(String firstName,String lastName, String birthDate) {
-			super(firstName, lastName, birthDate);
+		System.out.println("Enter Employee Sales Number: ");
+		return reader.nextDouble();
 	}
 
-	public static double calculateSalary() {
-//		if(employeeSalesNumber > 100) {
-//			return employeeSaleCommisionPercentage = 80;
-//		}
-		//return employeeSalary + employeeCommission;
-		return 42; //employeeCommission;
+	public EmployeeCommission(String firstName, String lastName, String birthDate) {
+		super(firstName, lastName, birthDate);
+	}
+
+	public double calculateSalary() {
+		// if(employeeSalesNumber > 100) {
+		// return employeeSaleCommisionPercentage = 80;
+		// }
+		return (employeeDailySalary * employeePaymentDayDuration) + employeeCommission();
 	}
 
 }
 
-class EmployeeHourly extends Employee {   
+class EmployeeHourly extends Employee {
 
-	static private double employeeHoursWorked;
+	static double employeeHoursWorked;
 	static private double employeeHoursPayRate = 100;
 
-	public EmployeeHourly(String firstName,String lastName, String birthDate) {
-			super(firstName, lastName, birthDate);
+	public EmployeeHourly(String firstName, String lastName, String birthDate) {
+		super(firstName, lastName, birthDate);
 	}
 
-	private void askEmployeeHoursWorked() {
+	double askEmployeeHoursWorked() {
 		System.out.println("Enter Employee Hours Worked: ");
-	   // double sales = reader.nextDouble();
-   }
+		return reader.nextDouble();
+	}
 
-	public static double calculateSalary() {
+	public double calculateSalary() {
 
-//		salary = hours * hourPayRate;
-//				overTime = hours - normalHours;
-//				overTimePayPercent50 = overTime * hourPayRate / 2;
-//				salary += overTime * hourPayRate / 2;
-		
+		// salary = hours * hourPayRate;
+		// overTime = hours - normalHours;
+		// overTimePayPercent50 = overTime * hourPayRate / 2;
+		// salary += overTime * hourPayRate / 2;
+
 		return employeeHoursPayRate * employeeHoursWorked;
 	}
 }
-
-//make it work;
-//improve features.
-//check oop.
-//make all oop.

@@ -113,14 +113,14 @@ class EmployeeCommission extends Employee {
 class EmployeeHourly extends Employee {   
 
 	static double employeeHoursWorked;
-	static private double employeeHoursPayRate = 100;
+	static private double employeeHoursPayRate = 50;
 
 	public EmployeeHourly(String firstName,String lastName, String birthDate) {
 			super(firstName, lastName, birthDate);
 	}
 
 	double askEmployeeHoursWorked() {
-		System.out.println("Enter Employee Hours Worked: ");
+		System.out.println("Enter Employee Hours Worked Per Day: ");
 	     return reader.nextDouble();
    }
 
@@ -131,7 +131,7 @@ class EmployeeHourly extends Employee {
 //				overTimePayPercent50 = overTime * hourPayRate / 2;
 //				salary += overTime * hourPayRate / 2;
 		
-		return employeeHoursPayRate * employeeHoursWorked;
+		return employeePaymentDayDuration * employeeHoursPayRate * employeeHoursWorked;
 	}
 }
 

@@ -46,3 +46,4 @@
 - [X] The product code must follow the instructions explained in the context of the brief.
 - [ ] Oral presentation of the work.
 - [X] Github repository.
+- [X] Prepare For Next Session: Working with Databases.

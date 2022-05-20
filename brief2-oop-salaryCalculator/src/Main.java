@@ -51,20 +51,24 @@ public class Main {
 					  EmployeeFixed employeeFix = new EmployeeFixed(null, null, null);
 					  
 						System.out.println("hhh"+employeeFix.calculateSalary());
-
-
+						employeeFix.info();
+  
 			     } else if (operationType == '2') {
 						System.out.println("Employee Commission\n");
 						
 
 				   EmployeeCommission employeeCom = new EmployeeCommission(null, null, null);
 				   employeeCom.askEmployeeSalesNumber();
+					System.out.println("hhh"+employeeCom.calculateSalary());
+
 				   employeeCom.info();
 
 				   
                  } else {
 				  System.out.println("Employee Hourly\n");
   				   EmployeeHourly employeeHour = new EmployeeHourly(null, null, null);
+					System.out.println("hhh"+employeeHour.calculateSalary());
+
   				     employeeHour.info();
 
                  }

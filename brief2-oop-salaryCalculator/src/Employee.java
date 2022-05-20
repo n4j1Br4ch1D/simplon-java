@@ -7,8 +7,8 @@ public class Employee {
 	static String employeeBirthDate; // will do Date later //min birthdate
 	static private int EmployeeAge; // will do Date later //min birthdate
 	static private int EmployeeMinHireAge = 16;
-	static private int employeePaymentDayDuration = 30; 
-	static protected double employeeSalary = 500;
+	protected static int employeePaymentDayDuration = 30; 
+	static protected double employeeDailySalary = 500;
 	Scanner reader = new Scanner(System.in);
 
 	public Employee(String firstName, String lastName, String dateInString ) {
@@ -18,23 +18,23 @@ public class Employee {
 	}
 
 	public void setPaymentDayDuration(double salary) {
-		employeeSalary = salary;
+		employeeDailySalary = salary;
 	}
 
 	public static double getPaymentDayDuration() {
-		return employeeSalary;
+		return employeeDailySalary;
 	}
 
 	public void setSalary(double salary) {
-		employeeSalary = salary;
+		employeeDailySalary = salary;
 	}
 
 	public static double getSalary() {
-		return employeeSalary;
+		return employeeDailySalary;
 	}
 	
 	public double calculateSalary() {
-		return 343; //employeePaymentDayDuration*employeeSalary;
+		return employeePaymentDayDuration*employeeDailySalary;
 	}
 
 	void askEmloyeeFullName() {
@@ -97,12 +97,12 @@ class EmployeeCommission extends Employee {
 			super(firstName, lastName, birthDate);
 	}
 
-	public static double calculateSalary() {
+	public double calculateSalary() {
 //		if(employeeSalesNumber > 100) {
 //			return employeeSaleCommisionPercentage = 80;
 //		}
-		//return employeeSalary + employeeCommission;
-		return 42; //employeeCommission;
+		return (employeeDailySalary*employeePaymentDayDuration) + employeeCommission;
+		//     500*30 + (5*100)*50/100
 	}
 
 }
@@ -121,7 +121,7 @@ class EmployeeHourly extends Employee {
 	   // double sales = reader.nextDouble();
    }
 
-	public static double calculateSalary() {
+	public double calculateSalary() {
 
 //		salary = hours * hourPayRate;
 //				overTime = hours - normalHours;

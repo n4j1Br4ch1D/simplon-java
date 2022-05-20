@@ -79,8 +79,8 @@ public class Main {
 
 					System.out.println("\n\n##### Settings #####\n");
 					System.out.println("Choose Type of Operation:");
-					// currency;
-					System.out.printf("1-set Salary:........................%s\n", Employee.getSalary());
+					System.out.printf("1-set currency:........................%s\n", Employee.getSalary());
+					//System.out.printf("2-set Salary:........................%s\n", Employee.getCurrency());
 					// employeePaymentDayDuration
 					// EmployeeMinHireAge
 					// System.out.printf("2-set Sale Price:...................%s\n",

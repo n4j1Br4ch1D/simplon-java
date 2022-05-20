@@ -15,7 +15,33 @@
 
 ## Features
 
-- [X] Feature 1
+- [X] Calculate Fixed Salary.
+- [X] Calculate Salary With Commision.
+- [X] Calculate Salary With Hourly Payment Rate. 
+- [X] Take Inputs From User.
+- [X] Take Fullname Instead of Fname & Lname.
+- [ ] Parse String To Date Object.
+- [ ] Add Min Age for Employment.
+- [ ] Make Special Employees SEO, COO.
+- [ ] Add Special Commission Calculation.
+- [ ] Add Special Hours Worked Calculation.
+- [ ] Add Setting To Set Sale Min Hire Age.
+- [ ] Add Setting To Set Currency.
+- [ ] Add Setting To Set Payment Day Duration.
+- [ ] Add Setting To Set Daily Salary.
+- [ ] Add Setting To Set Sale Price.
+- [ ] Add Setting To Set Sale CommisionPercentage.
+- [ ] Add Setting To Set Special Sales Number.
+- [ ] Add Setting To Set Hours Pay Rate.
+- [ ] Add Setting To Set Special Hours Worked.
+- [ ] Add Setting To Set CEO.
+- [ ] Add Setting To Set COO.
+- [ ] Get List Of Current Employees.
+
+## Bugs 
+
+- [ ] Date Parsing.
+- [ ] Operations Wrong Select.
 
 ## OOP Basic Principles CheckList
 

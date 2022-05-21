@@ -63,7 +63,7 @@
 
 - [X] FullName Split.
 - [ ] Date Parsing.
-- [ ] Operations Wrong Select.## Bugs 
+- [ ] Operations Wrong Select.
 
 ## Brief objectives checklist
 

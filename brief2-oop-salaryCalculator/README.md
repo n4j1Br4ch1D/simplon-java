@@ -18,6 +18,7 @@
 - [X] Calculate Fixed Salary.
 - [X] Calculate Salary With Commision.
 - [X] Calculate Salary With Hourly Payment Rate. 
+- [X] Easy CLI Access.
 - [X] Take Inputs From User.
 - [X] Take Fullname Instead of Fname & Lname.
 - [ ] Parse String To Date Object.
@@ -28,7 +29,7 @@
 - [ ] Add Setting To Set Sale Min Hire Age.
 - [ ] Add Setting To Set Currency.
 - [ ] Add Setting To Set Payment Day Duration.
-- [ ] Add Setting To Set Daily Salary.
+- [X] Add Setting To Set Daily Salary.
 - [ ] Add Setting To Set Sale Price.
 - [ ] Add Setting To Set Sale CommisionPercentage.
 - [ ] Add Setting To Set Special Sales Number.
@@ -37,11 +38,6 @@
 - [ ] Add Setting To Set CEO.
 - [ ] Add Setting To Set COO.
 - [ ] Get List Of Current Employees.
-
-## Bugs 
-
-- [ ] Date Parsing.
-- [ ] Operations Wrong Select.
 
 ## OOP Basic Principles CheckList
 
@@ -63,8 +59,14 @@
 - [x] Final keyword
 - [x] Static keyword 
 
+## Bugs 
+
+- [X] FullName Split.
+- [ ] Date Parsing.
+- [ ] Operations Wrong Select.## Bugs 
 
 ## Brief objectives checklist
+
 - [X] Install and configure the Git versioning environment.
 - [X] Improved program by adding other features.
 - [X] Integrations of the specificities discussed in the previous brief.

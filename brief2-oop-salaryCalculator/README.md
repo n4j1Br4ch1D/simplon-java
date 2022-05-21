@@ -1,4 +1,4 @@
-# :moneybag: SalaryCalculator JAVA OOP
+# :moneybag: EasySalaryCalculator JAVA OOP
  CLI Application for Calculating payments & salary for different types of employees:
  1. FixedEmployee: receiving a fixed salary: (monthly salary = salary).
  2. EmployeCommission: receiving a base salary plus a percentage linked to his sales: (monthly salary = salary + sales * commission);

@@ -40,6 +40,7 @@
 - [ ] Add Setting To Set CEO.
 - [ ] Add Setting To Set COO.
 - [ ] Get List Of Current Employees.
+- [X] Add Days Humanizer.
 
 ## OOP Basic Principles CheckList
 

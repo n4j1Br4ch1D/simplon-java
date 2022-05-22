@@ -85,6 +85,21 @@ public class Employee {
     System.out.println("Birth Date: " + employeeBirthDate + ".");
     System.out.println("Age: " + EmployeeAge + ".");
     System.out.println("Department: " + DEPARTMENT + ".");
-    System.out.println("Monthly Salary: " + calculateSalary() + " " + getCurrency() + ".");
+    System.out.println(daysHumanizer(employeePaymentDayDuration) + " Salary: " + calculateSalary() + " " + getCurrency() + ".");
+  }
+  
+  String daysHumanizer(int daysNum){
+    switch (daysNum) {
+      case 1:
+        return "Daily";
+      case 7:
+        return "Weekly";
+      case 30:
+        return "Monthly";
+      case 365:
+        return "Yearly";
+      default:
+        return daysNum+"";
+    }
   }
 }

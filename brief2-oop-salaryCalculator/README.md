@@ -4,10 +4,11 @@
  2. EmployeCommission: receiving a base salary plus a percentage linked to his sales: (monthly salary = salary + sales * commission);
  3. HourlyEmployee: receiving pay according to the number of hours worked: (monthly salary = hourly rate * hours worked).
 
- - :date:	 Date Started: **19-05-2022.** 
+ - :date: Date Started: **19-05-2022.** 
  - :computer:	Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D) && [OmarDbaa](https://github.com/omardbaa).
  - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalent101*.
- - :green_circle:Version: **Alpha Version 0.0.1**.
+ - :pushpin: Version: **Alpha Version 0.0.1**.
+ - :green_circle: Check it Online: [NajibRachid](https://github.com/n4j1Br4ch1D).
 
 ---
 

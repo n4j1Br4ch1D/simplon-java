@@ -77,3 +77,4 @@
 - [ ] Oral presentation of the work.
 - [X] Github repository.
 - [X] Prepare For Next Session: Working with Databases.
+- [X] Pitch training, entrepreneurship mindset & soft/skills.

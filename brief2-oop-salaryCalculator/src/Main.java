@@ -28,15 +28,14 @@ public class Main {
 		Scanner reader = new Scanner(System.in);
 
 		System.out.format("+-----------------+-----------------+%n");
-		System.out.format("|           SalaryCalcultor         |%n");
+		System.out.format("|        EasySalaryCalculator       |%n");
 		System.out.format("|       NajibRachid & OmarDbaa      |%n");
 		System.out.format("|         Alpha Version 0.0.1       |%n");
 		System.out.format("+-----------------+-----------------+%n");
 
 		outerloop: do {
-			System.out.println("=================================\n");
 
-			System.out.println("Choose Type of Operation:");
+			System.out.println("\n\nChoose Type of Operation:");
 			System.out.println(
 					"1-Employee Fixed.\n2-Employee Commission.\n3-Employee Hourly.\n4-CEO`s Salary.\n5-COO`s Salary.\n9-settings\n0-Exit!");
 			System.out.print("Enter type of the operation: ");

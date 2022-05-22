@@ -63,11 +63,11 @@ public class Employee {
   }
 
   void info() {
-    System.out.println("First Name: " + firstName + ".");
+    System.out.println("\nFirst Name: " + firstName + ".");
     System.out.println("Last Name: " + employeeLastName + ".");
     System.out.println("Birth Date: " + employeeBirthDate + ".");
     System.out.println("Age: " + EmployeeAge + ".");
-    System.out.println("Department: " + DEPARTMENT + " .");
-    System.out.println("Monthly Salary: " + calculateSalary() + "."); // weekly //monthly
+    System.out.println("Department: " + DEPARTMENT + ".");
+    System.out.println("Monthly Salary: " + calculateSalary() + ".");
   }
 }

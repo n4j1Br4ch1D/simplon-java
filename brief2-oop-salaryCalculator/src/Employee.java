@@ -2,34 +2,51 @@ import java.util.Scanner;
 
 public class Employee {
   final static String DEPARTMENT = "Softwares";
-  public String firstName;
+  public String employeeFirstName;
   public String employeeLastName;
-  static String employeeBirthDate; // will do Date later //min birthdate
+  String employeeBirthDate; // will do Date later //min birthdate
   static private int EmployeeAge;
   static private int EmployeeMinHireAge = 16;
+  static private String currency = "$";
   protected static int employeePaymentDayDuration = 30;
   static protected double employeeDailySalary = 500;
   Scanner reader = new Scanner(System.in);
 
-  public Employee(String firstName, String lastName, String dateInString) {
-    this.firstName = firstName;
+  public Employee(String firstName, String lastName, String employeeBirthDate) {
+    employeeFirstName = firstName;
     employeeLastName = lastName;
-    employeeBirthDate = dateInString;
+    this.employeeBirthDate = employeeBirthDate;
   }
 
-  public void setPaymentDayDuration(double salary) {
-    employeeDailySalary = salary;
+  public static void setMinHireAge(int minHireAge) {
+    EmployeeMinHireAge = minHireAge;
+  }
+
+  public static double getMinHireAge() {
+    return EmployeeMinHireAge;
+  }
+
+  public static void setCurrency(String currencyCode) {
+    currency = currencyCode;
+  }
+
+  public static String getCurrency() {
+    return currency;
+  }
+
+  public static void setPaymentDayDuration(int paymentDayDuration) {
+    employeePaymentDayDuration = paymentDayDuration;
   }
 
   public static double getPaymentDayDuration() {
-    return employeeDailySalary;
+    return employeePaymentDayDuration;
   }
 
-  public void setSalary(double salary) {
+  public static void setDailySalary(double salary) {
     employeeDailySalary = salary;
   }
 
-  public static double getSalary() {
+  public static double getDailySalary() {
     return employeeDailySalary;
   }
 
@@ -40,7 +57,7 @@ public class Employee {
   void askEmployeeFullName() {
     System.out.println("Enter Employee FullName(firstName lastName): ");
     String[] fullName = reader.nextLine().split("\\s+");
-    firstName = fullName[0];
+    employeeFirstName = fullName[0];
     employeeLastName = fullName[1];
   }
 
@@ -63,11 +80,11 @@ public class Employee {
   }
 
   void info() {
-    System.out.println("\nFirst Name: " + firstName + ".");
+    System.out.println("\nFirst Name: " + employeeFirstName + ".");
     System.out.println("Last Name: " + employeeLastName + ".");
     System.out.println("Birth Date: " + employeeBirthDate + ".");
     System.out.println("Age: " + EmployeeAge + ".");
     System.out.println("Department: " + DEPARTMENT + ".");
-    System.out.println("Monthly Salary: " + calculateSalary() + ".");
+    System.out.println("Monthly Salary: " + calculateSalary() + " " + getCurrency() + ".");
   }
 }

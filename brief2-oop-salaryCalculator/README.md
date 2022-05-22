@@ -26,15 +26,17 @@
 - [ ] Make Special Employees SEO, COO.
 - [ ] Add Special Commission Calculation.
 - [ ] Add Special Hours Worked Calculation.
-- [ ] Add Setting To Set Sale Min Hire Age.
-- [ ] Add Setting To Set Currency.
-- [ ] Add Setting To Set Payment Day Duration.
+- [X] Add Setting To Set Sale Min Hire Age.
+- [X] Add Setting To Set Currency.
+- [X] Add Setting To Set Payment Day Duration.
 - [X] Add Setting To Set Daily Salary.
-- [ ] Add Setting To Set Sale Price.
-- [ ] Add Setting To Set Sale CommisionPercentage.
-- [ ] Add Setting To Set Special Sales Number.
-- [ ] Add Setting To Set Hours Pay Rate.
-- [ ] Add Setting To Set Special Hours Worked.
+- [X] Add Setting To Set Sale Price.
+- [X] Add Setting To Set Sale CommisionPercentage.
+- [X] Add Setting To Set Special Sales Number.
+- [X] Add Setting To Set Special Sales Commision Percentage.
+- [X] Add Setting To Set Hours Pay Rate.
+- [X] Add Setting To Set Special Hours Worked.
+- [X] Add Setting To Set Special Hours Pay Rate.
 - [ ] Add Setting To Set CEO.
 - [ ] Add Setting To Set COO.
 - [ ] Get List Of Current Employees.

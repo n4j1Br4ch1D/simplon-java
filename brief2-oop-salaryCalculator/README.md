@@ -7,7 +7,7 @@
  - :date: Date Started: **19-05-2022.** 
  - :computer:	Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D) && [OmarDbaa](https://github.com/omardbaa).
  - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalent101*.
- - :pushpin: Version: **Alpha Version 0.0.1**.
+ - :pushpin: Version: **Alpha Version 0.0.2**.
  - :green_circle: Check it Online: [https://replit.com/@n4j1Br4ch1D/simplon-java?v=1](https://replit.com/@n4j1Br4ch1D/simplon-java?v=1).
 
 ---

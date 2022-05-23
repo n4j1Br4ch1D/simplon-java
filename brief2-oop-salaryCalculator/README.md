@@ -69,7 +69,7 @@
 - [ ] Date Parsing.
 - [X] Operations Wrong Select.
 
-## Brief objectives checklist
+## Brief Objectives Checklist
 
 - [X] Install and configure the Git versioning environment.
 - [X] Improved program by adding other features.

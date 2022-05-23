@@ -13,7 +13,11 @@
 ---
 
 ## Snapshots
-
+<div style="display:flex">
+<img src="/brief2-oop-salaryCalculator/assets/1.PNG" height="200" width="300"/>
+<img src="/brief2-oop-salaryCalculator/assets/2.PNG" height="200" width="300"/>
+<img src="/brief2-oop-salaryCalculator/assets/3.PNG" height="200" width="300"/>
+</div>
 ## Features
 
 - [X] Calculate Fixed Salary.

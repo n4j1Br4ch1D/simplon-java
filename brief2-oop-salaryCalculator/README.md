@@ -18,6 +18,7 @@
 <img src="/brief2-oop-salaryCalculator/assets/2.PNG" height="200" width="300"/>
 <img src="/brief2-oop-salaryCalculator/assets/3.PNG" height="200" width="300"/>
 </div>
+
 ## Features
 
 - [X] Calculate Fixed Salary.
@@ -80,7 +81,7 @@
 - [X] Integrations of the specificities discussed in the previous brief.
 - [X] Team of 2 learners Duration 2 days.
 - [X] The product code must follow the instructions explained in the context of the brief.
-- [ ] Oral presentation of the work.
+- [X] Oral presentation of the work.
 - [X] Github repository.
 - [X] Prepare For Next Session: Working with Databases.
 - [X] Pitch training, entrepreneurship mindset & soft/skills.

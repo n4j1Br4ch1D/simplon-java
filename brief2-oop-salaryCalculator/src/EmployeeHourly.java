@@ -39,12 +39,9 @@ class EmployeeHourly extends Employee {
   }	
   
   public double calculateSalary() {
-
-		// salary = hours * hourPayRate;
-		// overTime = hours - normalHours;
-		// overTimePayPercent50 = overTime * hourPayRate / 2;
-		// salary += overTime * hourPayRate / 2;
-
+    if(employeeHoursWorked>=employeeSpecialHoursWorked){
+        return employeePaymentDayDuration * employeeSpecialHoursPayRate * employeeHoursWorked;
+    }
 		return employeePaymentDayDuration * employeeHoursPayRate * employeeHoursWorked;
 	}
 }

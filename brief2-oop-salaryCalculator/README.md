@@ -26,7 +26,7 @@
 - [ ] Add Min Age for Employment.
 - [X] Make Special Employees SEO, COO.
 - [ ] Add Special Commission Calculation.
-- [ ] Add Special Hours Worked Calculation.
+- [X] Add Special Hours Worked Calculation.
 - [X] Add Setting To Set Sale Min Hire Age.
 - [X] Add Setting To Set Currency.
 - [X] Add Setting To Set Payment Day Duration.

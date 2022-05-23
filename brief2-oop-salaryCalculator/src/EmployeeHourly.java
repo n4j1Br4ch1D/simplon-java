@@ -10,7 +10,7 @@ class EmployeeHourly extends Employee {
 	}
 
 	double askEmployeeHoursWorked() {
-		System.out.println("Enter Employee Hours Worked: ");
+    System.out.println("Enter Employee Hours Worked Per Day: ");
 		return reader.nextDouble();
 	}
 
@@ -45,6 +45,6 @@ class EmployeeHourly extends Employee {
 		// overTimePayPercent50 = overTime * hourPayRate / 2;
 		// salary += overTime * hourPayRate / 2;
 
-		return employeeHoursPayRate * employeeHoursWorked;
+		return employeePaymentDayDuration * employeeHoursPayRate * employeeHoursWorked;
 	}
 }

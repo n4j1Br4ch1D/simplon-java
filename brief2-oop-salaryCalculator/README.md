@@ -24,7 +24,7 @@
 - [X] Take Fullname Instead of Fname & Lname.
 - [ ] Parse String To Date Object.
 - [ ] Add Min Age for Employment.
-- [ ] Make Special Employees SEO, COO.
+- [X] Make Special Employees SEO, COO.
 - [ ] Add Special Commission Calculation.
 - [ ] Add Special Hours Worked Calculation.
 - [X] Add Setting To Set Sale Min Hire Age.

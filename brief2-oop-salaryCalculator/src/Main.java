@@ -19,8 +19,8 @@ public class Main {
   }
 
   protected static Employee employee = new Employee(null, null, null);
-  private static EmployeeFixed CEO = new EmployeeFixed("Najib", "Rachid", "7-07-1996"); // special
-  private static EmployeeFixed COO = new EmployeeFixed("Omar", "Dbaa", "7-08-1996"); // special
+  private static Employee CEO = new Employee();
+  private static EmployeeFixed COO = new EmployeeFixed("Omar", "Dbaa", "7-08-1996");
 
   public static void main(String[] args) {
 
@@ -64,9 +64,15 @@ public class Main {
           employeeHour.info();
         }
       } else if (operationType == '4') {
+        CEO.employeeFirstName = "Najib";
+        CEO.employeeLastName = "Rachid";
+        CEO.employeeBirthDate = "01/01/1996";
+        CEO.setDailySalary(15000);
         CEO.info();
       } else if (operationType == '5') {
-        COO.info(); // tari9a m5talfa
+        COO.setCurrency("€");
+        COO.setDailySalary(10000);
+        COO.info();
       } else if (operationType == '6') {
 
         do {

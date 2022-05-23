@@ -12,6 +12,9 @@ public class Employee {
   static protected double employeeDailySalary = 500;
   Scanner reader = new Scanner(System.in);
 
+  public Employee() {
+  }
+  
   public Employee(String firstName, String lastName, String employeeBirthDate) {
     employeeFirstName = firstName;
     employeeLastName = lastName;

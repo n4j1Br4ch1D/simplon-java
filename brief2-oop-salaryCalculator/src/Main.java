@@ -30,7 +30,7 @@ public class Main {
     System.out.format("+-----------------+-----------------+%n");
     System.out.format("|        EasySalaryCalculator       |%n");
     System.out.format("|       NajibRachid & OmarDbaa      |%n");
-    System.out.format("|         Alpha Version 0.0.1       |%n");
+    System.out.format("|         Alpha Version 0.0.2       |%n");
     System.out.format("+-----------------+-----------------+%n");
 
     outerloop: do {

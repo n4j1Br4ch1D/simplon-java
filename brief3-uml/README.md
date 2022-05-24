@@ -8,8 +8,10 @@ This is the design and modeling of a web application for the management of the d
 
 ---
 
-## Specifications
+## Project Scope Statement
 
+
+[DAWA ONLINE Project Scope Statement(Cahier des charges).](https://docs.google.com/document/d/178EekYXop8qBlup-9tgHHsHsoBnMRFVh21kGySCk4hU/edit?usp=sharing)
 
 ## Use case diagram
 

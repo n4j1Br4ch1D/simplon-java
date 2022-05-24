@@ -28,7 +28,21 @@ This is the design and modeling of a web application for the management of the d
 
 - PowerDesigner.
 - MarkDown.
+- Google Docs.
 
+## Working Methodology
+  
+1. Brainstorming & Understanding client requirments.
+2. Imagine & Design a basic UI/UX sketch on a whiteboard & papers.
+3. BenchMarking & take Inspiratin from oher projects.
+4. Coming up with unique features & values-added.
+5. Put Down Initial Specifications(Project name /Description /Features /Actors).
+6. Design UML Use Case Diagram.
+7. Design UML Class Diagram.
+8. Verify & Modify.
+9. Rewrite Specifications & add Suggested Technologies, Estimated Budget & Duration.
+10. Write Official email to the project manager.
+  
 ## Concepts Checklist
 
 - [X] PowerDesigner.

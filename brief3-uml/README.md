@@ -1,4 +1,4 @@
-# DAWA Pharmacy
+# ⚕ :stethoscope:	DAWA Pharmacy
 This is the design and modeling of a web application for the management of the drugs sale and parapharmacy products.
 
  - :date: Date Started: **23-05-2022.** 

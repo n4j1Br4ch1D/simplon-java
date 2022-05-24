@@ -1,5 +1,5 @@
-# ⚕ :stethoscope:	DAWA Pharmacy
-This is the design and modeling of a web application for the management of the drugs sale and parapharmacy products.
+# ⚕ :stethoscope:	DAWA Online
+This is the design and modeling of a web application for the management of the drugs sale and pharmacy/parapharmacy products.
 
  - :date: Date Started: **23-05-2022.** 
  - :computer: Developed By: [LatifaAmouguay](https://github.com/LATIFADEV) && [NajibRachid](https://github.com/n4j1Br4ch1D).

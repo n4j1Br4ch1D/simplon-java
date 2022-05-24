@@ -13,7 +13,7 @@ This is the design and modeling of a web application for the management of the d
 
 ## Use case diagram
 
-[cas_dutilisation_pharmacist.boo](/brief3-uml/cas_dutilisation_pharmacist.boo)
+[cas_dutilisation_pharmacist.boo](/brief3-uml/cas_dutilisation_pharmacist.moo)
 
 ## Class diagram
 

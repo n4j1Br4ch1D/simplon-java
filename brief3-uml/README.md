@@ -26,7 +26,7 @@ This is the design and modeling of a web application for the management of the d
 <img src="/brief3-uml/client.png" height="200" width="300"/>
 </div>
 
-[cas_dutilisation_pharmacist.moo](/brief3-uml/cas_dutilisation_pharmacist.moo)
+[cas_dutilisation_pharmacist.oom](/brief3-uml/cas_dutilisation_pharmacist.oom)
 
 ## Class diagram
 

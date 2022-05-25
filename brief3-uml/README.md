@@ -82,6 +82,12 @@ This is the design and modeling of a web application for the management of the d
      - *Italic Name*
 - [X] Merise vs UML.
 
+| UML                      | MERISE                   |
+|--------------------------|--------------------------|
+| A language               | modelization of database |
+| object-oriented modeling | relational databases     |
+
+
 ## Brief Objectives Checklist
 
 - [X] Team of 2 learners.

@@ -3,7 +3,7 @@ This is the design and modeling of a web application for the management of the d
 
  - :date: Date Started: **23-05-2022.** 
  - :computer: Developed By: [LatifaAmouguay](https://github.com/LATIFADEV) && [NajibRachid](https://github.com/n4j1Br4ch1D).
- - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalent101*.
+ - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalents101*.
  - :pushpin: Version: **Alpha Version 0.0.1**.
 
 ---

@@ -36,7 +36,7 @@ This is the design and modeling of a web application for the management of the d
 <img src="/brief3-uml/client.png" height="200" width="300"/>
 </div>
 
-[cas_dutilisation_pharmacist.oom](/brief3-uml/Diagramme_de_classes.moo)
+[Diagramme_de_classes.moo](/brief3-uml/Diagramme_de_classes.moo)
 
 ## Official email to the project manager  
 

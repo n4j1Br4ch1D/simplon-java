@@ -91,7 +91,7 @@ This is the design and modeling of a web application for the management of the d
 ## Brief Objectives Checklist
 
 - [X] Team of 2 learners.
-- [ ] Duration 2 days.
+- [X] Duration 2 days.
 - [X] The product code must respect the instructions explained in the context of the brief.
 - [ ] Oral presentation of the work.
 - [X] A GitHub link to the project folder

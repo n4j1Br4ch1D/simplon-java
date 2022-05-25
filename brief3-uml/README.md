@@ -48,21 +48,21 @@ This is the design and modeling of a web application for the management of the d
 ## Concepts Checklist
 
 - [X] PowerDesigner.
-- [ ] UML modeling.
-- [ ] Use case diagram.
-- [ ] Class diagram.
-- [ ] Actor.
+- [X] UML modeling.
+- [X] Use case diagram.
+- [X] Class diagram.
+- [X] Actor.
 - [ ] Composition.
 - [ ] Aggregation.
 - [ ] Inheritance. 
 - [ ] Association.
 - [ ] Multiplicity.
-- [ ] Merise vs UML.
+- [X] Merise vs UML.
 
 ## Brief Objectives Checklist
 
 - [X] Team of 2 learners.
 - [ ] Duration 2 days.
-- [ ] The product code must respect the instructions explained in the context of the brief.
+- [X] The product code must respect the instructions explained in the context of the brief.
 - [ ] Oral presentation of the work.
 - [X] A GitHub link to the project folder

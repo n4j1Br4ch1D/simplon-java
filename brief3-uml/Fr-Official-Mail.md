@@ -4,19 +4,19 @@ To: manager@dawaco.com
 
 From: latifa.dev@gmail.com
 
-Sub: DAWA Pharmacy modelisation is complete
+Sub: Modélisation de la pharmacie DAWA terminée
 
-Dear Sir/Manager,
+Cher Monsieur/Gérant,
 
-I am writing to you because I would like to inform you that the first modelisation of the project DAWA Pharmacy is complete. Thus, I'm requesting a second meeting at a time that's more suitable for you. In the meeting we will discuss the project  further details, take your feedback and hopefully your approval.
+Je vous écris car je souhaite vous informer que la première modélisation du projet DAWA Pharmacie est terminée. Alors, je demande un deuxième rendez-vous à un moment qui vous convient mieux. Lors de la réunion, nous discuterons du projet plus en détail, prendrons vos commentaires et, espérons-le, votre approbation.
 
-For reference, I have attached a Folder containing all resources of the project.
+Pour référence, j'ai joint un dossier avec toutes les ressources du projet.
 
-Kind regards,
+Cordialement,
 
 Latifa Amouguay&nbsp;&nbsp;&nbsp;            
-Software Engineer,&nbsp;&nbsp;&nbsp;  
-123 Your Street.&nbsp;&nbsp;&nbsp;  
+Ingénieur logiciel,&nbsp;&nbsp;&nbsp;    
+123 Votre rue.&nbsp;&nbsp;&nbsp;    
 Agadir, Technopark.&nbsp;&nbsp;&nbsp;  
 (123) 456-7890.&nbsp;&nbsp;&nbsp;  
 latifa.dev@gmail.com &nbsp;&nbsp;&nbsp;  

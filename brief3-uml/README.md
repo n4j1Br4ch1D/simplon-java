@@ -10,6 +10,11 @@ This is the design and modeling of a web application for the management of the d
 
 ## Project Scope Statement
 
+<div style="display:flex">
+<img src="/brief3-uml/1.PNG" height="200" width="300"/>
+<img src="/brief3-uml/2.PNG" height="200" width="300"/>
+<img src="/brief3-uml/3.PNG" height="200" width="300"/>
+</div>
 
 [DAWA ONLINE Project Scope Statement(Cahier des charges).](https://docs.google.com/document/d/178EekYXop8qBlup-9tgHHsHsoBnMRFVh21kGySCk4hU/edit?usp=sharing)
 

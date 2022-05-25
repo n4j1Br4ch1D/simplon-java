@@ -78,6 +78,8 @@ This is the design and modeling of a web application for the management of the d
      - (+) Public.
      - (#) Protected.
      - (~) Package/Default.
+- [X] Abstract Class
+     - *Italic Name*
 - [X] Merise vs UML.
 
 ## Brief Objectives Checklist

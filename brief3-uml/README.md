@@ -15,7 +15,7 @@ This is the design and modeling of a web application for the management of the d
 
 ## Use case diagram
 
-[cas_dutilisation_pharmacist.boo](/brief3-uml/cas_dutilisation_pharmacist.moo)
+[cas_dutilisation_pharmacist.moo](/brief3-uml/cas_dutilisation_pharmacist.moo)
 
 ## Class diagram
 
@@ -52,11 +52,21 @@ This is the design and modeling of a web application for the management of the d
 - [X] Use case diagram.
 - [X] Class diagram.
 - [X] Actor.
-- [ ] Composition.
-- [ ] Aggregation.
-- [ ] Inheritance. 
-- [ ] Association.
-- [ ] Multiplicity.
+- [X] Inheritance. 
+- [X] Association(Basic Relationship).
+- [X] Aggregation(Whole & It's Parts: a part can exist outside the whole).
+- [X] Composition(Whole & It's Parts: a part can't exist outside the whole).
+- [X] Multiplicity.
+     - (0..1) Zero To One "Optional".
+     - (n) Specific Number.
+     - (0..*) Zero To Many.
+     - (1..*) One To Many.
+     - (m..n) Specific Number Range.
+- [X] Visibility
+     - (-) Private.
+     - (+) Public.
+     - (#) Protected.
+     - (~) Package/Default.
 - [X] Merise vs UML.
 
 ## Brief Objectives Checklist

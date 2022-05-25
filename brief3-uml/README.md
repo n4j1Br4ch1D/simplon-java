@@ -15,6 +15,12 @@ This is the design and modeling of a web application for the management of the d
 
 ## Use case diagram
 
+<div style="display:flex">
+<img src="/brief3-uml/admin.png" height="200" width="300"/>
+<img src="/brief3-uml/manager%26pharmacist.png" height="200" width="300"/>
+<img src="/brief3-uml/client.png" height="200" width="300"/>
+</div>
+
 [cas_dutilisation_pharmacist.moo](/brief3-uml/cas_dutilisation_pharmacist.moo)
 
 ## Class diagram

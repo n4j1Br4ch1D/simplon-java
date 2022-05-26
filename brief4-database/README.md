@@ -8,6 +8,9 @@ Model and implement the database of a web application to exhibit local products 
 
 ---
 
+## Trello Workspace Link
+[Agile Sprint Board](https://trello.com/b/5H1idTXv/agile-sprint-board)
+
 ## Project Scope Statement
 
 <div style="display:flex">
@@ -98,4 +101,3 @@ Model and implement the database of a web application to exhibit local products 
 - [ ] The product code must respect the instructions explained in the context of the brief.
 - [ ] Oral presentation of the work.
 - [X] A GitHub link to the project folder
-

@@ -38,6 +38,9 @@ Model and implement the database of a web application to exhibit local products 
 [Diagramme_de_classes.moo](/brief4-database/Diagramme_de_classes.moo)
 
 
+## Database Snapshots
+
+
 ## Database Migration 
 
   ```sql
@@ -73,7 +76,7 @@ Model and implement the database of a web application to exhibit local products 
     
  ```
  
- ## Database CRUDs Snapshots
+ ## Database CRUDs & Operation
 
   ```sql
   

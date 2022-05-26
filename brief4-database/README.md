@@ -146,6 +146,7 @@ Model and implement the database of a web application to exhibit local products 
 - Google Docs.
 - PostgreSQL.
 - Trello.
+- Discord.
 
 ## The 5Ws of the project
 

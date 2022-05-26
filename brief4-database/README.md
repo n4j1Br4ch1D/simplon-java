@@ -81,11 +81,14 @@ Model and implement the database of a web application to exhibit local products 
 - [X] primary keys.
 - [X] foreign keys.
 - [X] SQL queries.
-- [ ] Agile method.
-- [ ] Scrum.
-- [ ] sprint.
-- [ ] Sprint backlog.
-- [ ] User Story Mapping.
+- [X] Agile method.
+     - Deadline 2 days.
+     - Team: Divide Tasks  Members Strenghts & Weakneses.
+     - Validation: Versioning start with Important Features first
+- [X] Scrum.
+- [X] sprint.
+- [X] Sprint backlog(To do list).
+- [X] User Story Mapping.
 
 
 ## Brief Objectives Checklist

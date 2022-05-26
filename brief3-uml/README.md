@@ -3,7 +3,7 @@ This is the design and modeling of a web application for the management of the d
 
  - :date: Date Started: **23-05-2022.** 
  - :computer: Developed By: [LatifaAmouguay](https://github.com/LATIFADEV) && [NajibRachid](https://github.com/n4j1Br4ch1D).
- - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalent101*.
+ - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalents101*.
  - :pushpin: Version: **Alpha Version 0.0.1**.
 
 ---
@@ -26,10 +26,17 @@ This is the design and modeling of a web application for the management of the d
 <img src="/brief3-uml/client.png" height="200" width="300"/>
 </div>
 
-[cas_dutilisation_pharmacist.moo](/brief3-uml/cas_dutilisation_pharmacist.moo)
+[cas_dutilisation_pharmacist.oom](/brief3-uml/cas_dutilisation_pharmacist.oom)
 
 ## Class diagram
 
+<div style="display:flex">
+<img src="/brief3-uml/admin.png" height="200" width="300"/>
+<img src="/brief3-uml/manager%26pharmacist.png" height="200" width="300"/>
+<img src="/brief3-uml/client.png" height="200" width="300"/>
+</div>
+
+[Diagramme_de_classes.moo](/brief3-uml/Diagramme_de_classes.moo)
 
 ## Official email to the project manager  
 
@@ -78,12 +85,20 @@ This is the design and modeling of a web application for the management of the d
      - (+) Public.
      - (#) Protected.
      - (~) Package/Default.
+- [X] Abstract Class
+     - *Italic Name*
 - [X] Merise vs UML.
+
+| UML                      | MERISE                   |
+|--------------------------|--------------------------|
+| A language               | modelization of database |
+| object-oriented modeling | relational databases     |
+
 
 ## Brief Objectives Checklist
 
 - [X] Team of 2 learners.
-- [ ] Duration 2 days.
+- [X] Duration 2 days.
 - [X] The product code must respect the instructions explained in the context of the brief.
 - [ ] Oral presentation of the work.
 - [X] A GitHub link to the project folder

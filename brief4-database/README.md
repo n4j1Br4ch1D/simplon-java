@@ -1,4 +1,4 @@
-# ⚕ :stethoscope: Ahanou
+# :garli Ahanou
 Model and implement the database of a web application to exhibit local products in the region
 
  - :date: Date Started: **26-05-2022.** 

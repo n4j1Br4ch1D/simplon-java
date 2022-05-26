@@ -37,11 +37,101 @@ Model and implement the database of a web application to exhibit local products 
 
 [Diagramme_de_classes.moo](/brief4-database/Diagramme_de_classes.moo)
 
-## Database Snapshots
 
 ## Database Migration 
 
+  ```sql
+  
+  /*Create database:*/
+  CREATE DATABASE "Ahanou";
+  
+  /*Create Table Users:*/
+  
+  /*Alter Table Users Add Role Column:*/
+  
+  /*Create Table Categories:*/
+ 
+  /*Create Table Products:*/
+  
+  /*Create Table Votes:*/ 
+    
+ ```
+
 ## Database Seeder
+
+  ```sql
+  
+  /*Seed Table Users:*/
+  
+  /*Update Make Some Users Admins*
+  
+  /*Seed Table Categories:*/
+ 
+  /*Seed Table Products:*/
+  
+  /*Seed Table Votes:*/ 
+    
+ ```
+ 
+ ## Database CRUDs Snapshots
+
+  ```sql
+  
+  /************** Users(Authentication & Autherization) **************/
+  
+  /*Register:*/
+  
+  /*Login:*/
+  
+  /*Alter Table Users Add Role Column:*/
+  
+  /*List users:*/
+  
+  /*List clients:*/
+  
+  /*Add user:*/
+  
+  /*View user:/*
+  
+  /*Approve user:*/
+
+  /*Edit user:*/
+  
+  /*Delete user:*/
+
+  /*Check Role if Admin*/
+  
+  /*Check Role if Client & Approved*/
+
+  /************** Products **************/
+
+  /*List products order by most voted:*/
+  
+  /*View Produt with votes:*/ 
+  
+  /*Edit Produt:*/ 
+  
+  /*Add Produt:*/ 
+ 
+  /*Vote Produt(retract/modify if vote exist):*/ 
+  
+  /*Delete Produt:*/ 
+  
+  /************** Categories **************/
+
+  /*List categories*/
+  
+  /*View category:*/ 
+  
+  /*Edit category:*/ 
+  
+  /*Add category:*/ 
+   
+  /*Delete category:*/ 
+ 
+  /*Get most voted category:*/ 
+  
+```
 
 ## Tools
 

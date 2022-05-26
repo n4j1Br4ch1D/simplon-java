@@ -39,7 +39,7 @@ Model and implement the database of a web application to exhibit local products 
 
 [Diagramme_de_classes.moo](/brief3-uml/Diagramme_de_classes.moo)
 
-## Database SnapShot
+## Database Snapshots
 
 ## Database Migration 
 
@@ -71,7 +71,10 @@ Model and implement the database of a web application to exhibit local products 
 7. Design UML Class Diagram.
 8. Verify & Modify.
 9. Rewrite Specifications & add Suggested Technologies, Estimated Budget & Duration.
-10. Write Official email to the project manager.
+10. Design Database.
+11. Install & Config PostgreSQL.
+12. Make Database Migrations.
+13. Make Database Seeders.
   
 ## Concepts Checklist
 

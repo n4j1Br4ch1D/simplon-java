@@ -56,21 +56,24 @@ Model and implement the database of a web application to exhibit local products 
 
 - **What?**   
  
-  project is to model and implement a PostgreSQL database of a Web application allowing to expose local products of the region.
+ a Web application allowing to expose local products of the region. for saling, also managing competion voting on best product of the year.
+ 
 - **Why?** 
 
-  this project to bring regional products closer to visitors,
+  This project to bring regional products closer to visitors also determning the best product of the year.
 
 - **Where?** 
 
-  regional product and international advertising
+   Products are Locale to Morocco but they are aimed to be advertised & voted internationaly/Globaly.
+  
 - **When?**  
 
-  over the year
+  The competition will be seasonal as some products are seasonal only. the website voting will start every year.on a website that 24/7.
 
 - **Who?**  
 
-  product owner
+ the Admins (Owners of 1 product or more) & the Clients who can contact the saler to purchase the item, plus voting.
+  
 
 ## Working Methodology
   

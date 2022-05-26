@@ -14,30 +14,28 @@ Model and implement the database of a web application to exhibit local products 
 ## Project Scope Statement
 
 <div style="display:flex">
-<img src="/brief3-uml/1.PNG" height="200" width="300"/>
-<img src="/brief3-uml/2.PNG" height="200" width="300"/>
-<img src="/brief3-uml/3.PNG" height="200" width="300"/>
+<img src="/brief4-database/1.PNG" height="200" width="300"/>
+<img src="/brief4-database/2.PNG" height="200" width="300"/>
+<img src="/brief4-database/3.PNG" height="200" width="300"/>
 </div>
 
-[DAWA ONLINE Project Scope Statement(Cahier des charges).](https://docs.google.com/document/d/178EekYXop8qBlup-9tgHHsHsoBnMRFVh21kGySCk4hU/edit?usp=sharing)
+[Ahanou Project Scope Statement(Cahier des charges).](https://docs.google.com/document/d/13BMaJ3Wtsd5IpteMFtCpJZ_XhhdpAdW5CRWlVEjHfho/edit?usp=sharing)
 
 ## Use case diagram
 
 <div style="display:flex">
-<img src="/brief3-uml/admin.png" height="200" width="300"/>
-<img src="/brief3-uml/manager%26pharmacist.png" height="200" width="300"/>
-<img src="/brief3-uml/client.png" height="200" width="300"/>
+<img src="/brief4-database/useCase.png" height="200" width="300"/>
 </div>
 
-[cas_dutilisation_pharmacist.oom](/brief3-uml/cas_dutilisation_pharmacist.oom)
+[cas_dutilisation_pharmacist.oom](/brief4-database/cas_dutilisation_pharmacist.oom)
 
 ## Class diagram
 
 <div style="display:flex">
-<img src="/brief3-uml/class_diagram.png" height="200" width="300"/>
+<img src="/brief4-database/class_diagram.png" height="200" width="300"/>
 </div>
 
-[Diagramme_de_classes.moo](/brief3-uml/Diagramme_de_classes.moo)
+[Diagramme_de_classes.moo](/brief4-database/Diagramme_de_classes.moo)
 
 ## Database Snapshots
 
@@ -52,11 +50,12 @@ Model and implement the database of a web application to exhibit local products 
 - Google Docs.
 - PostgreSQL.
 - Trello.
+
 ## The 5Ws of the project
 
 - **What?**   
  
- a Web application allowing to expose local products of the region. for saling, also managing competion voting on best product of the year.
+   A Web application allowing to expose local products of the region. for selling, also managing competition voting on best product of the year.
  
 - **Why?** 
 
@@ -72,7 +71,7 @@ Model and implement the database of a web application to exhibit local products 
 
 - **Who?**  
 
- the Admins (Owners of 1 product or more) & the Clients who can contact the saler to purchase the item, plus voting.
+  The Admins (Owners of 1 product or more) & the Clients who can contact the saler to purchase the item, plus voting.
   
 
 ## Working Methodology

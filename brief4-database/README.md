@@ -36,17 +36,26 @@ Model and implement the database of a web application to exhibit local products 
 
 [Diagramme_de_classes.moo](/brief3-uml/Diagramme_de_classes.moo)
 
-## Official email to the project manager  
+## Database SnapShot
 
-[**English Version: En-Official-Mail.md**](/brief3-uml/En-Official-Mail.md) 
+## Database Migration 
 
-[**Frensh Version: Fr-Official-Mail.md**](/brief3-uml/Fr-Official-Mail.md) 
+## Database Seeder
 
 ## Tools
 
 - PowerDesigner.
 - MarkDown.
 - Google Docs.
+- PostgreSQL.
+- Trello.
+## The 5Ws of the project
+
+- What?
+- Why?
+- Where?
+- When?
+- Who?
 
 ## Working Methodology
   
@@ -63,10 +72,20 @@ Model and implement the database of a web application to exhibit local products 
   
 ## Concepts Checklist
 
-- [X] PowerDesigner.
 - [X] UML modeling.
 - [X] Use case diagram.
-- [X] Class diagram.
+- [X] class diagram.
+- [X] DBMS.
+- [X] PostgreSQL.
+- [X] tables.
+- [X] primary keys.
+- [X] foreign keys.
+- [X] SQL queries.
+- [ ] Agile method.
+- [ ] Scrum.
+- [ ] sprint.
+- [ ] Sprint backlog.
+- [ ] User Story Mapping.
 
 
 ## Brief Objectives Checklist
@@ -76,3 +95,4 @@ Model and implement the database of a web application to exhibit local products 
 - [ ] The product code must respect the instructions explained in the context of the brief.
 - [ ] Oral presentation of the work.
 - [X] A GitHub link to the project folder
+

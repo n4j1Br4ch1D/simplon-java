@@ -31,9 +31,7 @@ This is the design and modeling of a web application for the management of the d
 ## Class diagram
 
 <div style="display:flex">
-<img src="/brief3-uml/admin.png" height="200" width="300"/>
-<img src="/brief3-uml/manager%26pharmacist.png" height="200" width="300"/>
-<img src="/brief3-uml/client.png" height="200" width="300"/>
+<img src="/brief3-uml/class_diagram.png" height="200" width="300"/>
 </div>
 
 [Diagramme_de_classes.moo](/brief3-uml/Diagramme_de_classes.moo)

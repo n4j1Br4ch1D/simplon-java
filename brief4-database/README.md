@@ -54,11 +54,23 @@ Model and implement the database of a web application to exhibit local products 
 - Trello.
 ## The 5Ws of the project
 
-- What?
-- Why?
-- Where?
-- When?
-- Who?
+- **What?**   
+ 
+  project is to model and implement a PostgreSQL database of a Web application allowing to expose local products of the region.
+- **Why?** 
+
+  this project to bring regional products closer to visitors,
+
+- **Where?** 
+
+  regional product and international advertising
+- **When?**  
+
+  over the year
+
+- **Who?**  
+
+  product owner
 
 ## Working Methodology
   

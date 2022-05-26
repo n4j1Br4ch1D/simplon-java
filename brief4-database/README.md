@@ -102,10 +102,13 @@ Model and implement the database of a web application to exhibit local products 
   /*Check Role if Admin*/
   
   /*Check Role if Client & Approved*/
+  
 
   /************** Products **************/
 
   /*List products order by most voted:*/
+  
+  /*List product client voted for:*/
   
   /*View Produt with votes:*/ 
   

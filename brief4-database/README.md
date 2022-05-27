@@ -27,7 +27,7 @@ Modéliser et implémenter la base de données d’une application Web permettan
 <img src="/brief4-database/useCase.png" height="200" width="300"/>
 </div>
 
-[cas_dutilisation_pharmacist.oom](/brief4-database/cas_dutilisation_pharmacist.oom)
+[DiagCasUtilisation_Breif4.boo](/brief4-database/DiagCasUtilisation_Breif4.boo)
 
 ## Class diagram
 

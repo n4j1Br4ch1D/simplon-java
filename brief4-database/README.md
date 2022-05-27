@@ -162,8 +162,15 @@ Modéliser et implémenter la base de données d’une application Web permettan
   ```sql
   
   /*Seed Table Users:*/
-  
-  /*Update Make Some Users Admins*
+   INSERT INTO public.users 
+     (email, password, first_name, last_name, approved)
+   VALUES
+     ('najib@anmoon.ma','password', 'najib', 'rachid', true),
+     ('mustapha@anmon.ma','password', 'mustapha', 'ihoum', true),
+     ('nawal@anmoon.ma','password', 'nawal', 'boulahsaire', false);
+
+  /*Update Make Some Users Admins:*/
+   UPDATE public.users SET role_type = 'admin' WHERE id = 1;
   
   /*Seed Table Categories:*/
  

@@ -35,7 +35,7 @@ Modéliser et implémenter la base de données d’une application Web permettan
 <img src="/brief4-database/class_diagram.png" height="200" width="300"/>
 </div>
 
-[diagram_class_ahanou.moo](/brief4-database/diagram_class_ahanou.moo)
+[diagram_class_ahanou.boo](/brief4-database/diagram_class_ahanou.boo)
 
 
 ## Database Snapshots

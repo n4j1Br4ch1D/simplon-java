@@ -216,12 +216,12 @@ VALUES
   /*Login:*/
    SELECT * FROM public.users where email='latifa@anmoon.ma' AND  password='123qwerty';  /*Wrong email or password!*/
    SELECT * FROM public.users where email='latifa@anmoon.ma' AND  password='qwerty123';  /*Correct email & password!*/
-  
-  /*Alter Table Users Add Role Column:*/
-  
+    
   /*List users:*/
-  
+   SELECT * FROM public.users;
+
   /*List clients:*/
+   SELECT * FROM public.users WHERE role_type='client';
   
   /*Add user:*/
   

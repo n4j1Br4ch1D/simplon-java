@@ -229,10 +229,11 @@ VALUES
     VALUES
  ('omar@anmoon.ma','password', 'omar', 'dbaa', true);
  
-  /*View user:/*
+  /*View user:*/
    SELECT * FROM public.users WHERE id=1;
   
   /*Approve user:*/
+  UPDATE public.users SET approved = true WHERE id = 3;
 
   /*Edit user:*/
   

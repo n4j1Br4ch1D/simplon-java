@@ -208,6 +208,10 @@ VALUES
   /************** Users(Authentication & Autherization) **************/
   
   /*Register:*/
+   INSERT INTO public.users 
+   (email, password, first_name, last_name)
+ VALUES
+   ('latifa@anmoon.ma','qwerty123', 'latifa', 'amougauay');
   
   /*Login:*/
   

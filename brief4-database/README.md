@@ -251,7 +251,21 @@ VALUES
 
   /************** Products **************/
 
-  /*List products order by most voted:*/
+  /*List products order by most voted (number of votes):*/
+  SELECT public.products.name,
+COUNT(public.votes.vote_percent) AS votes_number FROM public.products
+LEFT JOIN public.votes ON public.votes.product_id = public.products.id
+GROUP BY name;
+
+  /*List products order by most voted (percentage):*/
+  SELECT public.products.id, public.products.name, public.products.img, public.products.description,
+public.products.price, public.products.unit, public.products.category_id,
+SUM(public.votes.vote_percent) AS votes_percent_total,
+COUNT(public.votes.vote_percent) AS votes_number FROM public.products
+LEFT JOIN public.votes ON public.votes.product_id = public.products.id
+LEFT JOIN public.categories ON public.categories.id = public.products.category_id
+GROUP BY public.products.id, public.products.name, public.products.img, description,price,unit,category_id
+ORDER BY votes_percent_total DESC NULLS LAST;
   
   /*List product client voted for:*/
   

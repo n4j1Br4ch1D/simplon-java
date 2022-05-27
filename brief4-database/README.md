@@ -214,6 +214,8 @@ VALUES
    ('latifa@anmoon.ma','qwerty123', 'latifa', 'amougauay');
   
   /*Login:*/
+   SELECT * FROM public.users where email='latifa@anmoon.ma' AND  password='123qwerty';  /*Wrong email or password!*/
+   SELECT * FROM public.users where email='latifa@anmoon.ma' AND  password='qwerty123';  /*Correct email & password!*/
   
   /*Alter Table Users Add Role Column:*/
   

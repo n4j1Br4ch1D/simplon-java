@@ -242,7 +242,9 @@ VALUES
    DELETE FROM public.users WHERE id= 6;
 
   /*Check Role if Admin*/
-  
+   SELECT * FROM public.users WHERE id = 1 AND role_type='admin';  /*True!*/
+   SELECT * FROM public.users WHERE id = 2 AND role_type='admin';  /*False!*/
+
   /*Check Role if Client & Approved*/
   
 

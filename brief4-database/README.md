@@ -173,7 +173,13 @@ Modéliser et implémenter la base de données d’une application Web permettan
    UPDATE public.users SET role_type = 'admin' WHERE id = 1;
   
   /*Seed Table Categories:*/
- 
+  INSERT INTO 
+    public.categories (name, img)
+  VALUES
+    ('oils','oils.jpg'),
+    ('spices','spices.jpg'),
+    ('vegetables','vegetables.jpg');
+
   /*Seed Table Products:*/
   
   /*Seed Table Votes:*/ 

@@ -224,8 +224,13 @@ VALUES
    SELECT * FROM public.users WHERE role_type='client';
   
   /*Add user:*/
-  
+   INSERT INTO public.users 
+ (email, password, first_name, last_name, approved)
+    VALUES
+ ('omar@anmoon.ma','password', 'omar', 'dbaa', true);
+ 
   /*View user:/*
+   SELECT * FROM public.users WHERE id=1;
   
   /*Approve user:*/
 

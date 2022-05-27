@@ -182,6 +182,13 @@ Modéliser et implémenter la base de données d’une application Web permettan
     ('vegetables','vegetables.jpg');
 
   /*Seed Table Products:*/
+  INSERT INTO 
+    public.products (name, img , description, price, unit, category_id)
+VALUES
+    ('Saffron','saffron.jpg', 'Saffron is a spice derived from the flower of Crocus sativus, commonly known as the "saffron crocus".', 25, 'gram', 2),
+    ('Garlic','garlic.jpg', 'Garlic is a species of bulbous flowering plant in the genus Allium. Its close relatives include the onion...', 40, 'kilogram', 2),
+    ('Argan','argan.jpg', 'Argan oil is a plant oil produced from the kernels of the argan tree that is endemic to Morocco. In Morocco...', 400, 'liter', 1),
+    ('Ratte potato','ratte-potato.jpg', 'The Ratte potato is a small potato with a unique nutty flavor and smooth, buttery texture...', 15, 'kilogram', 3);
   
   /*Seed Table Votes:*/ 
     

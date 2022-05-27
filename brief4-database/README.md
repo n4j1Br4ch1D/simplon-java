@@ -103,23 +103,24 @@ Modéliser et implémenter la base de données d’une application Web permettan
   /*Create Table Products:*/
   CREATE TABLE IF NOT EXISTS public.products
   (
-    id serial NOT NULL,
-    name char(45) NOT NULL,
-    img char(255) NOT NULL,
-    description text,
-    price float NOT NULL,
-    category_id int,
-    created_at timestamp with time zone NOT NULL DEFAULT NOW(),
-    updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
-    CONSTRAINT "products_pkey" PRIMARY KEY (id, name),
-	   UNIQUE (id),
-    CONSTRAINT "category_fkey"
-      FOREIGN KEY(category_id) 
-      REFERENCES public.categories(id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID
- )
+  id serial NOT NULL,
+  name char(45) NOT NULL,
+  img char(255) NOT NULL,
+  description text,
+  price float NOT NULL,
+  unit  char(18) NOT NULL,
+  category_id int,
+  created_at timestamp with time zone NOT NULL DEFAULT NOW(),
+  updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
+  CONSTRAINT "products_pkey" PRIMARY KEY (id, name),
+     UNIQUE (id),
+  CONSTRAINT "category_fkey"
+    FOREIGN KEY(category_id) 
+    REFERENCES public.categories(id) MATCH SIMPLE
+      ON UPDATE NO ACTION
+      ON DELETE NO ACTION
+      NOT VALID
+ );
  
   /*Select Table Products:*/
   SELECT * from public.products;

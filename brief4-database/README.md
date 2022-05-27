@@ -191,6 +191,13 @@ VALUES
     ('Ratte potato','ratte-potato.jpg', 'The Ratte potato is a small potato with a unique nutty flavor and smooth, buttery texture...', 15, 'kilogram', 3);
   
   /*Seed Table Votes:*/ 
+    INSERT INTO 
+    public.votes (vote_percent, client_id, product_id)
+VALUES
+    (85, 3, 3),
+    (90, 3, 1),
+    (100, 2, 4),
+    (30, 2, 3);
     
  ```
  

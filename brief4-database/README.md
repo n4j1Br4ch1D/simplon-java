@@ -246,7 +246,8 @@ VALUES
    SELECT * FROM public.users WHERE id = 2 AND role_type='admin';  /*False!*/
 
   /*Check Role if Client & Approved*/
-  
+  SELECT * FROM public.users WHERE id =  2 AND role_type='client' AND approved= true;  /*True!*/
+  SELECT * FROM public.users WHERE id =  4 AND role_type='client' AND approved= true;  /*False!*/
 
   /************** Products **************/
 

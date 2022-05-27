@@ -1,6 +1,7 @@
-# :garlic: Ahanou
+# :garlic: Ahanou Online
 
-Modéliser et implémenter la base de données d’une application Web permettant d'exposer des produits locaux de la région
+Model and implement the database of a web application to exhibit local products in the region with voting system.
+
  - :date: Date Started: **26-05-2022.** 
  - :computer: Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D) && [MustaphaIhoum](https://github.com/ihoumm)  && [NawalBoulahsaire](https://github.com/BOULAHSAIRE).
  - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalents101*.
@@ -46,6 +47,18 @@ Modéliser et implémenter la base de données d’une application Web permettan
 
 ## Database Snapshots
 
+<div style="display:flex">
+<img src="/brief4-database/db_users.png" height="200" width="300"/>
+<img src="/brief4-database/db_products.png" height="200" width="300"/>
+<img src="/brief4-database/db_categories.png" height="200" width="300"/>
+<img src="/brief4-database/db_votes.png" height="200" width="300"/>
+</div>
+
+## Download Links
+
+[:arrow_down: ahanou_online_migration.sql](/brief4-database/ahanou_online_migration.sql)     
+[:arrow_down: ahanou_online_seeder.sql](/brief4-database/ahanou_online_seeder.sql)      
+[:arrow_down: ahanou_online_full.sql](/brief4-database/ahanou_online_full.sql)
 
 ## Database Migration 
 
@@ -201,7 +214,7 @@ VALUES
     
  ```
  
- ## Database CRUDs & Operation
+ ## Database CRUDs & Operations
 
   ```sql
   
@@ -293,6 +306,14 @@ ORDER BY votes_percent_total DESC NULLS LAST;
  
   /*Get most voted category:*/ 
   
+  /* Notes: To Do
+      add city
+      get yearly  
+      with category
+      count number of products.
+      join 3 tables.
+   */
+   
 ```
 
 ## Tools
@@ -367,7 +388,7 @@ ORDER BY votes_percent_total DESC NULLS LAST;
 ## Brief Objectives Checklist
 
 - [X] Team of 3 learners.
-- [ ] Duration 2 days.
-- [ ] The product code must respect the instructions explained in the context of the brief.
+- [X] Duration 2 days.
+- [X] The product code must respect the instructions explained in the context of the brief.
 - [ ] Oral presentation of the work.
 - [X] A GitHub link to the project folder

@@ -38,6 +38,12 @@ Modéliser et implémenter la base de données d’une application Web permettan
 [diagram_class_ahanou.boo](/brief4-database/diagram_class_ahanou.boo)
 
 
+## Database Model Sketch
+
+<div style="display:flex">
+<img src="/brief4-database/DBModelSketch.jpg" height="200" width="300"/>
+</div>
+
 ## Database Snapshots
 
 

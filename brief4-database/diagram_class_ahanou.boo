@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{8B6B49E0-D33F-44DB-A8CF-BE75D8200EB9}" Label="" LastModificationDate="1653646394" Name="Class Diagram_1" Objects="186" Symbols="19" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.6.5721"?>
+<?PowerDesigner AppLocale="UTF16" ID="{8B6B49E0-D33F-44DB-A8CF-BE75D8200EB9}" Label="" LastModificationDate="1653647849" Name="Class Diagram_1" Objects="187" Symbols="19" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="16.6.6.5721"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1720,8 +1720,8 @@ Shadow=0</a:DisplayPreferences>
 <o:GeneralizationSymbol Id="o17">
 <a:CreationDate>1653485112</a:CreationDate>
 <a:ModificationDate>1653643808</a:ModificationDate>
-<a:Rect>((-15404,14925), (-5190,26651))</a:Rect>
-<a:ListOfPoints>((-15004,15325),(-15004,25751),(-5590,25751))</a:ListOfPoints>
+<a:Rect>((-15507,14925), (-5190,26651))</a:Rect>
+<a:ListOfPoints>((-15107,15325),(-15107,25751),(-5590,25751))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>7</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1782,8 +1782,8 @@ SOURCE 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o28">
 <a:CreationDate>1653641396</a:CreationDate>
 <a:ModificationDate>1653643808</a:ModificationDate>
-<a:Rect>((-2549,-18500), (9564,-7888))</a:Rect>
-<a:ListOfPoints>((9164,-17550),(-1849,-17550),(-1849,-8288))</a:ListOfPoints>
+<a:Rect>((-2549,-18500), (9821,-7888))</a:Rect>
+<a:ListOfPoints>((9421,-17550),(-1849,-17550),(-1849,-8288))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>3336</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -1803,8 +1803,8 @@ SOURCE 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o31">
 <a:CreationDate>1653642039</a:CreationDate>
 <a:ModificationDate>1653643808</a:ModificationDate>
-<a:Rect>((-22388,54), (-18552,13896))</a:Rect>
-<a:ListOfPoints>((-20470,13496),(-20470,454))</a:ListOfPoints>
+<a:Rect>((-22310,54), (-18510,13896))</a:Rect>
+<a:ListOfPoints>((-20410,13496),(-20410,454))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -1870,7 +1870,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:CreationDate>1653477182</a:CreationDate>
 <a:ModificationDate>1653643808</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-23905,13496), (-11185,18194))</a:Rect>
+<a:Rect>((-23647,13496), (-11443,18194))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1964,7 +1964,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:CreationDate>1653572046</a:CreationDate>
 <a:ModificationDate>1653643808</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((9164,-22299), (22244,-12801))</a:Rect>
+<a:Rect>((9421,-22299), (21987,-12801))</a:Rect>
 <a:LineColor>16744576</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1998,7 +1998,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>User</a:Code>
 <a:CreationDate>1653477181</a:CreationDate>
 <a:Creator>Maryam Ziane</a:Creator>
-<a:ModificationDate>1653640912</a:ModificationDate>
+<a:ModificationDate>1653647849</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
@@ -2048,25 +2048,37 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 <o:Attribute Id="o45">
 <a:ObjectID>B5120983-C8FC-4ABA-854E-CD740B8A695E</a:ObjectID>
-<a:Name>Created_at timestamp</a:Name>
-<a:Code>createdAtTimestamp</a:Code>
+<a:Name>Created_at</a:Name>
+<a:Code>createdAt</a:Code>
 <a:CreationDate>1653575439</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577501</a:ModificationDate>
+<a:ModificationDate>1653647107</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:DataType>Date</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o46">
 <a:ObjectID>4C482F97-E405-408E-850B-726791BD1196</a:ObjectID>
-<a:Name>Updated_at timestamp</a:Name>
-<a:Code>updatedAtTimestamp</a:Code>
+<a:Name>Updated_at</a:Name>
+<a:Code>updatedAt</a:Code>
 <a:CreationDate>1653575745</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577501</a:ModificationDate>
+<a:ModificationDate>1653647107</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:DataType>Date</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o47">
+<a:ObjectID>0A920D05-DC08-4295-A89D-4D27551A0ED9</a:ObjectID>
+<a:Name>Approved</a:Name>
+<a:Code>approved</a:Code>
+<a:CreationDate>1653647810</a:CreationDate>
+<a:Creator>NAWAL</a:Creator>
+<a:ModificationDate>1653647879</a:ModificationDate>
+<a:Modifier>NAWAL</a:Modifier>
+<a:DataType>Boolean</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+<a:InitialValue>false</a:InitialValue>
 </o:Attribute>
 </c:Attributes>
 </o:Class>
@@ -2080,24 +2092,24 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>NAWAL</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o47">
+<o:Operation Id="o48">
 <a:ObjectID>61DC738E-DB56-4083-A871-9E7E03E83003</a:ObjectID>
-<a:Name>Inscrit()</a:Name>
-<a:Code>inscrit__</a:Code>
+<a:Name>Inscrit</a:Name>
+<a:Code>inscrit</a:Code>
 <a:CreationDate>1653477654</a:CreationDate>
 <a:Creator>Maryam Ziane</a:Creator>
-<a:ModificationDate>1653577473</a:ModificationDate>
+<a:ModificationDate>1653647252</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>void</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
-<o:Operation Id="o48">
+<o:Operation Id="o49">
 <a:ObjectID>D8646581-D856-43A5-8795-1A39039017F5</a:ObjectID>
-<a:Name>ChekApprovedClient()</a:Name>
-<a:Code>chekApprovedClient__</a:Code>
+<a:Name>ChekApprovedClient</a:Name>
+<a:Code>chekApprovedClient</a:Code>
 <a:CreationDate>1653640814</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653640854</a:ModificationDate>
+<a:ModificationDate>1653647252</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
@@ -2114,97 +2126,97 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>NAWAL</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o49">
-<a:ObjectID>FE9EA3BC-5502-4726-935C-3FCE51E8FC30</a:ObjectID>
-<a:Name>ListUser()</a:Name>
-<a:Code>listUser__</a:Code>
-<a:CreationDate>1653579349</a:CreationDate>
-<a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
-<a:Modifier>NAWAL</a:Modifier>
-<a:ReturnType>int</a:ReturnType>
-<a:TemplateBody>%DefaultBody%</a:TemplateBody>
-</o:Operation>
 <o:Operation Id="o50">
-<a:ObjectID>1F4CC01B-6506-4C0E-A338-072862A2D61D</a:ObjectID>
-<a:Name>ListCliente()</a:Name>
-<a:Code>listCliente__</a:Code>
+<a:ObjectID>FE9EA3BC-5502-4726-935C-3FCE51E8FC30</a:ObjectID>
+<a:Name>ListeUser</a:Name>
+<a:Code>listeUser</a:Code>
 <a:CreationDate>1653579349</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
+<a:ModificationDate>1653647082</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o51">
-<a:ObjectID>BEDB1335-7E08-4DCF-AF1A-3C270E518909</a:ObjectID>
-<a:Name>AddUser()</a:Name>
-<a:Code>addUser__</a:Code>
+<a:ObjectID>1F4CC01B-6506-4C0E-A338-072862A2D61D</a:ObjectID>
+<a:Name>ListCliente</a:Name>
+<a:Code>listCliente</a:Code>
 <a:CreationDate>1653579349</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
+<a:ModificationDate>1653647082</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o52">
-<a:ObjectID>3B317C68-BADE-4CE0-ACDF-3EFAD372AADE</a:ObjectID>
-<a:Name>ViewUser()</a:Name>
-<a:Code>viewUser__</a:Code>
+<a:ObjectID>BEDB1335-7E08-4DCF-AF1A-3C270E518909</a:ObjectID>
+<a:Name>addUser</a:Name>
+<a:Code>addUser</a:Code>
 <a:CreationDate>1653579349</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
+<a:ModificationDate>1653647082</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o53">
-<a:ObjectID>02E752CB-6884-4371-876A-8486DBE3A6A7</a:ObjectID>
-<a:Name>ApprovUser()</a:Name>
-<a:Code>approvUser__</a:Code>
+<a:ObjectID>3B317C68-BADE-4CE0-ACDF-3EFAD372AADE</a:ObjectID>
+<a:Name>ViewUser</a:Name>
+<a:Code>viewUser</a:Code>
 <a:CreationDate>1653579349</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
+<a:ModificationDate>1653647082</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o54">
-<a:ObjectID>CDAE29D3-26A9-4669-B3CF-AAEBB9EEFED1</a:ObjectID>
-<a:Name>EditUser()</a:Name>
-<a:Code>editUser__</a:Code>
+<a:ObjectID>02E752CB-6884-4371-876A-8486DBE3A6A7</a:ObjectID>
+<a:Name>ApprovUser</a:Name>
+<a:Code>approvUser</a:Code>
 <a:CreationDate>1653579349</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
+<a:ModificationDate>1653647082</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o55">
-<a:ObjectID>BDA7E207-4869-4DF5-8F5A-5C6B3A49FC95</a:ObjectID>
-<a:Name>DeletUser()</a:Name>
-<a:Code>deletUser__</a:Code>
+<a:ObjectID>CDAE29D3-26A9-4669-B3CF-AAEBB9EEFED1</a:ObjectID>
+<a:Name>EditUser</a:Name>
+<a:Code>editUser</a:Code>
 <a:CreationDate>1653579349</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
+<a:ModificationDate>1653647082</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o56">
-<a:ObjectID>65025B1D-A9BF-46E9-BB52-C5B7199EE4BD</a:ObjectID>
-<a:Name>ChekAdmin()</a:Name>
-<a:Code>chekAdmin__</a:Code>
+<a:ObjectID>BDA7E207-4869-4DF5-8F5A-5C6B3A49FC95</a:ObjectID>
+<a:Name>DeletUser</a:Name>
+<a:Code>deletUser</a:Code>
 <a:CreationDate>1653579349</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653579489</a:ModificationDate>
+<a:ModificationDate>1653647082</a:ModificationDate>
+<a:Modifier>NAWAL</a:Modifier>
+<a:ReturnType>int</a:ReturnType>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+</o:Operation>
+<o:Operation Id="o57">
+<a:ObjectID>65025B1D-A9BF-46E9-BB52-C5B7199EE4BD</a:ObjectID>
+<a:Name>chekAdmin</a:Name>
+<a:Code>chekAdmin</a:Code>
+<a:CreationDate>1653579349</a:CreationDate>
+<a:Creator>NAWAL</a:Creator>
+<a:ModificationDate>1653647082</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 </c:Operations>
 <c:Identifiers>
-<o:Identifier Id="o57">
+<o:Identifier Id="o58">
 <a:ObjectID>2E7B9731-B711-44D0-A3D2-48975C9FE5E7</a:ObjectID>
 <a:Name>Identifier_1</a:Name>
 <a:Code>Identifier_1</a:Code>
@@ -2213,7 +2225,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1653571906</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o58">
+<o:Identifier Id="o59">
 <a:ObjectID>E34ED932-9CD2-46C9-974E-7FE1FB77B981</a:ObjectID>
 <a:Name>Identifier_2</a:Name>
 <a:Code>Identifier_2</a:Code>
@@ -2234,7 +2246,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>NAWAL</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o59">
+<o:Attribute Id="o60">
 <a:ObjectID>2C14B964-7933-4F49-8F2A-80D6CCDA5BC3</a:ObjectID>
 <a:Name>Name</a:Name>
 <a:Code>name</a:Code>
@@ -2245,7 +2257,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o60">
+<o:Attribute Id="o61">
 <a:ObjectID>B26D2AD3-8A12-4635-BCA2-AFDC578E83A0</a:ObjectID>
 <a:Name>description</a:Name>
 <a:Code>description</a:Code>
@@ -2256,7 +2268,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>text</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o61">
+<o:Attribute Id="o62">
 <a:ObjectID>1A2654A2-203D-4EC9-AF8D-44DEB98D3034</a:ObjectID>
 <a:Name>Img</a:Name>
 <a:Code>img</a:Code>
@@ -2267,7 +2279,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o62">
+<o:Attribute Id="o63">
 <a:ObjectID>32AB0CA3-01E2-477E-B46B-9B9EEBA8BECD</a:ObjectID>
 <a:Name>Price</a:Name>
 <a:Code>price</a:Code>
@@ -2280,79 +2292,79 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 </c:Attributes>
 <c:Operations>
-<o:Operation Id="o63">
-<a:ObjectID>6063F3AE-5321-4CA2-8225-309B2D5A7264</a:ObjectID>
-<a:Name>ListMostVotedProducted()</a:Name>
-<a:Code>listMostVotedProducted__</a:Code>
-<a:CreationDate>1653576360</a:CreationDate>
-<a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653576824</a:ModificationDate>
-<a:Modifier>NAWAL</a:Modifier>
-<a:ReturnType>int</a:ReturnType>
-<a:TemplateBody>%DefaultBody%</a:TemplateBody>
-</o:Operation>
 <o:Operation Id="o64">
-<a:ObjectID>9896D213-55FD-4CEC-8E55-6A09599ED7A7</a:ObjectID>
-<a:Name>ListMyvotedprodut()</a:Name>
-<a:Code>listMyvotedprodut__</a:Code>
+<a:ObjectID>6063F3AE-5321-4CA2-8225-309B2D5A7264</a:ObjectID>
+<a:Name>ListMostVotedProducted</a:Name>
+<a:Code>listMostVotedProducted</a:Code>
 <a:CreationDate>1653576360</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653576824</a:ModificationDate>
+<a:ModificationDate>1653647158</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o65">
-<a:ObjectID>BE41CF82-E792-4506-B0F6-A00C5DE51C38</a:ObjectID>
-<a:Name>viewprodut()</a:Name>
-<a:Code>viewprodut__</a:Code>
+<a:ObjectID>9896D213-55FD-4CEC-8E55-6A09599ED7A7</a:ObjectID>
+<a:Name>ListMyvotedprodut</a:Name>
+<a:Code>listMyvotedprodut</a:Code>
 <a:CreationDate>1653576360</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653576824</a:ModificationDate>
+<a:ModificationDate>1653647158</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o66">
-<a:ObjectID>58030C65-E952-48CF-BE97-080B665928E1</a:ObjectID>
-<a:Name>Editproduc()</a:Name>
-<a:Code>editproduc__</a:Code>
+<a:ObjectID>BE41CF82-E792-4506-B0F6-A00C5DE51C38</a:ObjectID>
+<a:Name>viewprodut</a:Name>
+<a:Code>viewprodut</a:Code>
 <a:CreationDate>1653576360</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653576824</a:ModificationDate>
+<a:ModificationDate>1653647158</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o67">
-<a:ObjectID>95A9E9EE-199D-4401-874A-91FF762DE4A2</a:ObjectID>
-<a:Name>Addprodut()</a:Name>
-<a:Code>addprodut__</a:Code>
+<a:ObjectID>58030C65-E952-48CF-BE97-080B665928E1</a:ObjectID>
+<a:Name>Editproduc</a:Name>
+<a:Code>editproduc</a:Code>
 <a:CreationDate>1653576360</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653576824</a:ModificationDate>
+<a:ModificationDate>1653647158</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o68">
-<a:ObjectID>F3E1D66B-41AE-4AD3-8F54-2960EE54B426</a:ObjectID>
-<a:Name>Voteprodut()</a:Name>
-<a:Code>voteprodut__</a:Code>
+<a:ObjectID>95A9E9EE-199D-4401-874A-91FF762DE4A2</a:ObjectID>
+<a:Name>Addprodut</a:Name>
+<a:Code>addprodut</a:Code>
 <a:CreationDate>1653576360</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653576824</a:ModificationDate>
+<a:ModificationDate>1653647158</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
 <o:Operation Id="o69">
-<a:ObjectID>D44D3883-88DB-4C72-8290-08813D2839C2</a:ObjectID>
-<a:Name>Deleteprodut()</a:Name>
-<a:Code>deleteprodut__</a:Code>
+<a:ObjectID>F3E1D66B-41AE-4AD3-8F54-2960EE54B426</a:ObjectID>
+<a:Name>Voteprodut</a:Name>
+<a:Code>voteprodut</a:Code>
 <a:CreationDate>1653576360</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653576824</a:ModificationDate>
+<a:ModificationDate>1653647158</a:ModificationDate>
+<a:Modifier>NAWAL</a:Modifier>
+<a:ReturnType>int</a:ReturnType>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+</o:Operation>
+<o:Operation Id="o70">
+<a:ObjectID>D44D3883-88DB-4C72-8290-08813D2839C2</a:ObjectID>
+<a:Name>Deleteprodut</a:Name>
+<a:Code>deleteprodut</a:Code>
+<a:CreationDate>1653576360</a:CreationDate>
+<a:Creator>NAWAL</a:Creator>
+<a:ModificationDate>1653647158</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
@@ -2369,7 +2381,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>NAWAL</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o70">
+<o:Attribute Id="o71">
 <a:ObjectID>865D4B7E-9FFC-4EF2-8843-289CB9C02860</a:ObjectID>
 <a:Name>Vote_Percent</a:Name>
 <a:Code>votePercent</a:Code>
@@ -2395,7 +2407,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:Classifier.Abstract>1</a:Classifier.Abstract>
 <c:Attributes>
-<o:Attribute Id="o71">
+<o:Attribute Id="o72">
 <a:ObjectID>8CD55B0D-6B38-4282-9EE7-3812E25C7F4B</a:ObjectID>
 <a:Name>Name</a:Name>
 <a:Code>name</a:Code>
@@ -2407,7 +2419,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Static>1</a:Static>
 <a:Frozen>F</a:Frozen>
 </o:Attribute>
-<o:Attribute Id="o72">
+<o:Attribute Id="o73">
 <a:ObjectID>60A5A1ED-9212-4DCF-873B-FE8F9183843D</a:ObjectID>
 <a:Name>Img</a:Name>
 <a:Code>img</a:Code>
@@ -2421,68 +2433,68 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 </c:Attributes>
 <c:Operations>
-<o:Operation Id="o73">
+<o:Operation Id="o74">
 <a:ObjectID>0C5FCB96-6C99-4186-AEDF-D80AB56338AC</a:ObjectID>
-<a:Name>Listcategory()</a:Name>
-<a:Code>listcategory__</a:Code>
+<a:Name>Listcategory</a:Name>
+<a:Code>listcategory</a:Code>
 <a:CreationDate>1653572075</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577245</a:ModificationDate>
-<a:Modifier>NAWAL</a:Modifier>
-<a:ReturnType>int</a:ReturnType>
-<a:Operation.Abstract>1</a:Operation.Abstract>
-</o:Operation>
-<o:Operation Id="o74">
-<a:ObjectID>CF55A933-2D77-480E-A330-2DF02A69E2E7</a:ObjectID>
-<a:Name>Viewcategory()</a:Name>
-<a:Code>viewcategory__</a:Code>
-<a:CreationDate>1653577021</a:CreationDate>
-<a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577245</a:ModificationDate>
+<a:ModificationDate>1653647228</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 </o:Operation>
 <o:Operation Id="o75">
-<a:ObjectID>6248CAEC-571A-4583-8AA6-26ED5585F07E</a:ObjectID>
-<a:Name>Editcategory()</a:Name>
-<a:Code>editcategory__</a:Code>
+<a:ObjectID>CF55A933-2D77-480E-A330-2DF02A69E2E7</a:ObjectID>
+<a:Name>Viewcategory</a:Name>
+<a:Code>viewcategory</a:Code>
 <a:CreationDate>1653577021</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577245</a:ModificationDate>
+<a:ModificationDate>1653647228</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 </o:Operation>
 <o:Operation Id="o76">
-<a:ObjectID>48593F73-161A-4A5D-A753-BB8FB3A08553</a:ObjectID>
-<a:Name>Addcategory()</a:Name>
-<a:Code>addcategory__</a:Code>
+<a:ObjectID>6248CAEC-571A-4583-8AA6-26ED5585F07E</a:ObjectID>
+<a:Name>Editcategory</a:Name>
+<a:Code>editcategory</a:Code>
 <a:CreationDate>1653577021</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577245</a:ModificationDate>
+<a:ModificationDate>1653647228</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 </o:Operation>
 <o:Operation Id="o77">
-<a:ObjectID>DA94CF0B-6F22-490D-A519-A3F1D1CB0CDB</a:ObjectID>
-<a:Name>Deletecategory()</a:Name>
-<a:Code>deletecategory__</a:Code>
+<a:ObjectID>48593F73-161A-4A5D-A753-BB8FB3A08553</a:ObjectID>
+<a:Name>Addcategory</a:Name>
+<a:Code>addcategory</a:Code>
 <a:CreationDate>1653577021</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577245</a:ModificationDate>
+<a:ModificationDate>1653647228</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 </o:Operation>
 <o:Operation Id="o78">
-<a:ObjectID>97AE7638-AADC-45FC-8851-8716EA5AE95E</a:ObjectID>
-<a:Name>GetMostVotedCategory()</a:Name>
-<a:Code>getMostVotedCategory__</a:Code>
+<a:ObjectID>DA94CF0B-6F22-490D-A519-A3F1D1CB0CDB</a:ObjectID>
+<a:Name>Deletecategory</a:Name>
+<a:Code>deletecategory</a:Code>
 <a:CreationDate>1653577021</a:CreationDate>
 <a:Creator>NAWAL</a:Creator>
-<a:ModificationDate>1653577245</a:ModificationDate>
+<a:ModificationDate>1653647228</a:ModificationDate>
+<a:Modifier>NAWAL</a:Modifier>
+<a:ReturnType>int</a:ReturnType>
+<a:Operation.Abstract>1</a:Operation.Abstract>
+</o:Operation>
+<o:Operation Id="o79">
+<a:ObjectID>97AE7638-AADC-45FC-8851-8716EA5AE95E</a:ObjectID>
+<a:Name>GetMostVotedCategory</a:Name>
+<a:Code>getMostVotedCategory</a:Code>
+<a:CreationDate>1653577021</a:CreationDate>
+<a:Creator>NAWAL</a:Creator>
+<a:ModificationDate>1653647228</a:ModificationDate>
 <a:Modifier>NAWAL</a:Modifier>
 <a:ReturnType>int</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
@@ -2616,7 +2628,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Generalization>
 </c:Generalizations>
 <c:TargetModels>
-<o:TargetModel Id="o79">
+<o:TargetModel Id="o80">
 <a:ObjectID>7B149F96-A979-4D7A-AE3C-8EEA1A81D4B3</a:ObjectID>
 <a:Name>Java</a:Name>
 <a:Code>Java</a:Code>
@@ -2632,7 +2644,7 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Shortcut Ref="o3"/>
 </c:SessionShortcuts>
 </o:TargetModel>
-<o:TargetModel Id="o80">
+<o:TargetModel Id="o81">
 <a:ObjectID>E5F503DA-B111-41FC-98E0-C5E7DF26BDB8</a:ObjectID>
 <a:Name>WSDL for Java</a:Name>
 <a:Code>WSDLJava</a:Code>

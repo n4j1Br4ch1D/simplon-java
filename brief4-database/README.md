@@ -239,6 +239,7 @@ VALUES
    UPDATE public.users SET email ='najibadmin@anmoon.ma', updated_at=now()  WHERE id = 1;
 
   /*Delete user:*/
+   DELETE FROM public.users WHERE id= 6;
 
   /*Check Role if Admin*/
   

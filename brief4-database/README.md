@@ -1,6 +1,6 @@
 # :garlic: Ahanou
-Model and implement the database of a web application to exhibit local products in the region
 
+Modéliser et implémenter la base de données d’une application Web permettant d'exposer des produits locaux de la région
  - :date: Date Started: **26-05-2022.** 
  - :computer: Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D) && [MustaphaIhoum](https://github.com/ihoumm)  && [NawalBoulahsaire](https://github.com/BOULAHSAIRE).
  - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalents101*.

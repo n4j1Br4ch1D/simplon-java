@@ -51,26 +51,26 @@ Modéliser et implémenter la base de données d’une application Web permettan
 
   ```sql
   
-  /*Create database:*/
+  /*Create database Ahanou:*/
   CREATE DATABASE "Ahanou";
   
-  /*Drope Table users:*/ 
+  /*Drope Table Users:*/ 
   DROP TABLE public.users;
 
   /*Create Table Users:*/
   CREATE TABLE IF NOT EXISTS public.users
   (
-    id serial NOT NULL,
-    email char(45) NOT NULL,
-    password char(45) NOT NULL,
-    first_name char(25) NOT NULL,
-    last_name char(25) NOT NULL,
-    approved boolean NOT NULL DEFAULT false,
-    created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL,
-    CONSTRAINT "Users_pkey" PRIMARY KEY (id, email),
-   	UNIQUE (id)
-  )
+   id serial NOT NULL,
+   email char(45) NOT NULL,
+   password char(45) NOT NULL,
+   first_name char(25) NOT NULL,
+   last_name char(25) NOT NULL,
+   approved boolean NOT NULL DEFAULT false,
+   created_at timestamp with time zone NOT NULL DEFAULT NOW(),
+   updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
+   CONSTRAINT "Users_pkey" PRIMARY KEY (id, email),
+   UNIQUE (id)
+ )
 
   /*Alter Table Users Add Role Column:*/
   ALTER TABLE public.users ADD "role_type" char(6);
@@ -88,8 +88,8 @@ Modéliser et implémenter la base de données d’une application Web permettan
     id serial NOT NULL,
     name char(45) NOT NULL,
     img char(255),
-    created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL,
+    created_at timestamp with time zone NOT NULL DEFAULT NOW(),
+    updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
     CONSTRAINT "categories_pkey" PRIMARY KEY (id, name),
     UNIQUE (id)
   )
@@ -109,8 +109,8 @@ Modéliser et implémenter la base de données d’une application Web permettan
     description text,
     price float NOT NULL,
     category_id int,
-    created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL,
+    created_at timestamp with time zone NOT NULL DEFAULT NOW(),
+    updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
     CONSTRAINT "products_pkey" PRIMARY KEY (id, name),
 	   UNIQUE (id),
     CONSTRAINT "category_fkey"
@@ -134,8 +134,8 @@ Modéliser et implémenter la base de données d’une application Web permettan
     vote_percent int NOT NULL,
     client_id int NOT NULL,
 	product_id int NOT NULL,
-    created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL,
+    created_at timestamp with time zone NOT NULL DEFAULT NOW(),
+    updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
     CONSTRAINT "votes_pkey" PRIMARY KEY (id),
 	UNIQUE (id),
     CONSTRAINT "client_fkey"

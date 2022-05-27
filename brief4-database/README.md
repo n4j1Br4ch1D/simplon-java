@@ -236,7 +236,8 @@ VALUES
   UPDATE public.users SET approved = true WHERE id = 3;
 
   /*Edit user:*/
-  
+   UPDATE public.users SET email ='najibadmin@anmoon.ma', updated_at=now()  WHERE id = 1;
+
   /*Delete user:*/
 
   /*Check Role if Admin*/

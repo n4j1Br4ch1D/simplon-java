@@ -264,6 +264,9 @@ VALUES
   SELECT * FROM public.users WHERE id =  4 AND role_type='client' AND approved= true;  /*False!*/
 
   /************** Products **************/
+  
+  /* Count Number Of Products: */
+  SELECT COUNT(id) FROM public.products;
 
   /*List products order by most voted (number of votes):*/
   SELECT public.products.name,
@@ -310,7 +313,6 @@ ORDER BY votes_percent_total DESC NULLS LAST;
   /* Notes: To Do
       get yearly  
       with category
-      count number of products.
       join 3 tables.
    */
    

@@ -122,6 +122,7 @@ Model and implement the database of a web application to exhibit local products 
   description text,
   price float NOT NULL,
   unit  char(18) NOT NULL,
+  city char(25) NOT NULL,
   category_id int,
   created_at timestamp with time zone NOT NULL DEFAULT NOW(),
   updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
@@ -195,13 +196,13 @@ Model and implement the database of a web application to exhibit local products 
     ('vegetables','vegetables.jpg');
 
   /*Seed Table Products:*/
-  INSERT INTO 
-    public.products (name, img , description, price, unit, category_id)
+INSERT INTO 
+  public.products (name, img , description, price, unit, city, category_id)
 VALUES
-    ('Saffron','saffron.jpg', 'Saffron is a spice derived from the flower of Crocus sativus, commonly known as the "saffron crocus".', 25, 'gram', 2),
-    ('Garlic','garlic.jpg', 'Garlic is a species of bulbous flowering plant in the genus Allium. Its close relatives include the onion...', 40, 'kilogram', 2),
-    ('Argan','argan.jpg', 'Argan oil is a plant oil produced from the kernels of the argan tree that is endemic to Morocco. In Morocco...', 400, 'liter', 1),
-    ('Ratte potato','ratte-potato.jpg', 'The Ratte potato is a small potato with a unique nutty flavor and smooth, buttery texture...', 15, 'kilogram', 3);
+  ('Saffron','saffron.jpg', 'Saffron is a spice derived from the flower of Crocus sativus, commonly known as the "saffron crocus".', 25, 'gram', 'Taliouine', 2),
+  ('Garlic','garlic.jpg', 'Garlic is a species of bulbous flowering plant in the genus Allium. Its close relatives include the onion...', 40, 'kilogram', 'Asakui', 2),
+  ('Argan','argan.jpg', 'Argan oil is a plant oil produced from the kernels of the argan tree that is endemic to Morocco. In Morocco...', 400, 'liter', 'Taroudant', 1),
+  ('Ratte potato','ratte-potato.jpg', 'The Ratte potato is a small potato with a unique nutty flavor and smooth, buttery texture...', 15, 'kilogram', 'Tiznit', 3);
   
   /*Seed Table Votes:*/ 
     INSERT INTO 
@@ -307,7 +308,6 @@ ORDER BY votes_percent_total DESC NULLS LAST;
   /*Get most voted category:*/ 
   
   /* Notes: To Do
-      add city
       get yearly  
       with category
       count number of products.

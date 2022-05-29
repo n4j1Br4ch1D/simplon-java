@@ -286,15 +286,21 @@ ORDER BY votes_percent_total DESC NULLS LAST;
   
   /*List product client voted for:*/
   
-  /*View Produt with votes:*/ 
-  
-  /*Edit Produt:*/ 
-  
-  /*Add Produt:*/ 
- 
+  /*View Product with votes:*/ 
+
+  /*Add Product:*/ 
+ INSERT INTO public.products 
+(name, img, description, price, unit, city, category_id)
+  VALUES
+('Orange','orange.jpg', ' a fruit of various citrus species in the family Rutaceae; it primarily refers to Citrus × sinensis, which is also called sweet orange,', 3, 'kilogram', 'Houara', null);
+
+/*Edit Product:*/ 
+ UPDATE public.products SET price = 6, updated_at=now()  WHERE name = 'Orange';
+
+/*Delete Product:*/ 
+DELETE FROM public.products WHERE id= 5;
+
   /*Vote Produt(retract/modify if vote exist):*/ 
-  
-  /*Delete Produt:*/ 
   
   /************** Categories **************/
   

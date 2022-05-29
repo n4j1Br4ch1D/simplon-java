@@ -297,19 +297,29 @@ ORDER BY votes_percent_total DESC NULLS LAST;
   /*Delete Produt:*/ 
   
   /************** Categories **************/
-
+  
   /*List categories*/
-  
-  /*View category:*/ 
-  
-  /*Edit category:*/ 
-  
-  /*Add category:*/ 
-   
-  /*Delete category:*/ 
- 
-  /*Get most voted category:*/ 
-  
+  SELECT * FROM public.categories;
+
+/*List categories with products*/
+
+
+/*View category:*/ 
+SELECT * FROM public.categories WHERE id=1;
+
+/*Add category:*/ 
+ INSERT INTO public.categories 
+(name, img) VALUES
+('fruits','fruits.png');
+
+/*Edit category:*/ 
+ UPDATE public.categories SET img ='fruits.jpg', updated_at=now()  WHERE name = 'fruits';
+
+/*Delete category:*/ 
+DELETE FROM public.categories WHERE id= 4;
+
+/*Get most voted category:*/ 
+
   /* Notes: To Do
       get yearly  
       with category

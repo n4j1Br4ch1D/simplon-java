@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS public.users
  created_at timestamp with time zone NOT NULL DEFAULT NOW(),
  updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
  CONSTRAINT "Users_pkey" PRIMARY KEY (id, email),
- UNIQUE (id)
+ UNIQUE (id),
+ UNIQUE (email) 
 );
 
 /*Alter Table Users Add Role Column:*/
@@ -26,7 +27,8 @@ CREATE TABLE IF NOT EXISTS public.categories
   created_at timestamp with time zone NOT NULL DEFAULT NOW(),
   updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
   CONSTRAINT "categories_pkey" PRIMARY KEY (id, name),
-  UNIQUE (id)
+  UNIQUE (id),
+  UNIQUE (name) 
 );
 
 /*Create Table Products:*/
@@ -44,6 +46,7 @@ created_at timestamp with time zone NOT NULL DEFAULT NOW(),
 updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
 CONSTRAINT "products_pkey" PRIMARY KEY (id, name),
    UNIQUE (id),
+   UNIQUE (name),
 CONSTRAINT "category_fkey"
   FOREIGN KEY(category_id) 
   REFERENCES public.categories(id) MATCH SIMPLE

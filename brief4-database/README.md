@@ -339,6 +339,14 @@ DELETE FROM public.categories WHERE id= 4;
 
 /*Get most voted category:*/ 
 
+SELECT  public.categories.name,
+SUM(public.votes.vote_percent) AS votes_percent_total
+from categories
+LEFT JOIN public.products ON public.categories.id = public.products.category_id
+LEFT JOIN public.votes ON public.votes.product_id = public.products.id
+GROUP BY public.categories.name
+ORDER BY votes_percent_total DESC NULLS LAST
+Limit 1;
    
 ```
 

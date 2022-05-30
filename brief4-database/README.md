@@ -285,7 +285,10 @@ GROUP BY public.products.id, public.products.name, public.products.img, descript
 ORDER BY votes_percent_total DESC NULLS LAST;
   
   /*List product client voted for:*/
-  
+  SELECT *, public.votes.vote_percent FROM public.products
+LEFT JOIN public.votes ON public.votes.product_id = public.products.id
+WHERE client_id = 2;
+
   /*View Product with votes:*/ 
 
   /*Add Product:*/ 

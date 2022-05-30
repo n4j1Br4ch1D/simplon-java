@@ -284,6 +284,11 @@ LEFT JOIN public.categories ON public.categories.id = public.products.category_i
 GROUP BY public.products.id, public.products.name, public.products.img, description,price,unit,category_id
 ORDER BY votes_percent_total DESC NULLS LAST;
   
+  /*List products by date*/
+  SELECT * FROM public.products WHERE created_at 
+BETWEEN to_date('2022-01-01','YYYY-MM-DD') 
+AND to_date('2022-12-02','YYYY-MM-DD');
+
   /*List product client voted for:*/
   SELECT *, public.votes.vote_percent FROM public.products
 LEFT JOIN public.votes ON public.votes.product_id = public.products.id

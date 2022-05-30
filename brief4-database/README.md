@@ -304,7 +304,8 @@ WHERE client_id = 2;
 DELETE FROM public.products WHERE id= 5;
 
   /*Vote Produt(retract/modify if vote exist):*/ 
-  
+UPDATE public.votes SET client_id = 2, vote_percent=50, updated_at=now() WHERE product_id = 1;
+
   /************** Categories **************/
   
   /*List categories*/

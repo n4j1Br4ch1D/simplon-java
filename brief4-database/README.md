@@ -339,11 +339,6 @@ DELETE FROM public.categories WHERE id= 4;
 
 /*Get most voted category:*/ 
 
-  /* Notes: To Do
-      get yearly  
-      with category
-      join 3 tables.
-   */
    
 ```
 

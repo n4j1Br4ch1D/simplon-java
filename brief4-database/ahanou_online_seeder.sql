@@ -1,7 +1,3 @@
-
-
-
-
 /*Seed Table Users:*/
  INSERT INTO public.users 
    (email, password, first_name, last_name, approved)
@@ -11,7 +7,7 @@
    ('nawal@anmoon.ma','password', 'nawal', 'boulahsaire', false);
 
 /*Update Make Some Users Admins:*/
- UPDATE public.users SET role_type = 'admin', updated_at=now()   WHERE id = 1;
+ UPDATE public.users SET role_type = 'admin' WHERE id = 1;
 
 /*Seed Table Categories:*/
 INSERT INTO 

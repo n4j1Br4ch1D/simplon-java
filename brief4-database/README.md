@@ -311,8 +311,12 @@ UPDATE public.votes SET client_id = 2, vote_percent=50, updated_at=now() WHERE p
   /*List categories*/
   SELECT * FROM public.categories;
 
-/*List categories with products*/
-
+/*List a category products*/
+select * from public.products where category_id = 2;
+ 
+select * from public.products
+inner join public.categories ON public.categories.id = public.products.category_id
+where public.categories.name = 'spices';
 
 /*View category:*/ 
 SELECT * FROM public.categories WHERE id=1;

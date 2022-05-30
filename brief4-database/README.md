@@ -82,7 +82,8 @@ Model and implement the database of a web application to exhibit local products 
    created_at timestamp with time zone NOT NULL DEFAULT NOW(),
    updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
    CONSTRAINT "Users_pkey" PRIMARY KEY (id, email),
-   UNIQUE (id)
+   UNIQUE (id),
+   UNIQUE (email) 
  )
 
   /*Alter Table Users Add Role Column:*/
@@ -104,7 +105,8 @@ Model and implement the database of a web application to exhibit local products 
     created_at timestamp with time zone NOT NULL DEFAULT NOW(),
     updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
     CONSTRAINT "categories_pkey" PRIMARY KEY (id, name),
-    UNIQUE (id)
+    UNIQUE (id),
+    UNIQUE (name) 
   )
 
   /*Select Table Categories:*/
@@ -128,6 +130,7 @@ Model and implement the database of a web application to exhibit local products 
   updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
   CONSTRAINT "products_pkey" PRIMARY KEY (id, name),
      UNIQUE (id),
+     UNIQUE (name),
   CONSTRAINT "category_fkey"
     FOREIGN KEY(category_id) 
     REFERENCES public.categories(id) MATCH SIMPLE

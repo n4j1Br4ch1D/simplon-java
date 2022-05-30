@@ -294,8 +294,6 @@ AND to_date('2022-12-02','YYYY-MM-DD');
 LEFT JOIN public.votes ON public.votes.product_id = public.products.id
 WHERE client_id = 2;
 
-  /*View Product with votes:*/ 
-
   /*Add Product:*/ 
  INSERT INTO public.products 
 (name, img, description, price, unit, city, category_id)
@@ -338,7 +336,6 @@ SELECT * FROM public.categories WHERE id=1;
 DELETE FROM public.categories WHERE id= 4;
 
 /*Get most voted category:*/ 
-
 SELECT  public.categories.name,
 SUM(public.votes.vote_percent) AS votes_percent_total
 from categories

@@ -14,9 +14,29 @@ This console application allows you to create, modify, delete and list a “CRUD
   ```sql
 
 /*Create Table Candidates:*/
+CREATE TABLE IF NOT EXISTS public.candidates
+(
+id serial NOT NULL,
+email char(45) NOT NULL,
+first_name char(25) NOT NULL,
+last_name char(25) NOT NULL,
+address char(90) NOT NULL,
+city char(25) NOT NULL,
+country char(25) NOT NULL,
+created_at timestamp with time zone NOT NULL DEFAULT NOW(),
+updated_at timestamp with time zone NOT NULL DEFAULT NOW(),
+CONSTRAINT "Users_pkey" PRIMARY KEY (id, email),
+UNIQUE (id),
+UNIQUE (email) 
+);
 
 /*Seed Table Candidates:*/
- 
+INSERT INTO public.candidates 
+   (email, first_name, last_name, address, city, country)
+ VALUES
+   ('najib@anmoon.ma', 'najib', 'rachid', '123 Main Street, New York, NY 10030', 'Agadir', 'Morocco'),
+   ('mustapha@anmon.ma', 'mustapha', 'ihoum', '123 Main Street, New York, NY 10030', 'Tizinit', 'Morocco'),
+   ('nawal@anmoon.ma', 'nawal', 'boulahsaire', '123 Main Street, New York, NY 10030', 'Rabat', 'Morocco');
  
  ```
  
@@ -25,16 +45,20 @@ This console application allows you to create, modify, delete and list a “CRUD
   ```sql
    
   /*List*/
+  SELECT * FROM candidates;
   
   /*Create:*/
+  INSERT INTO candidates (email, first_name, last_name, address, city, country) VALUES ("latifadev@anmon.ma", "latifa", "amougauay", "123 Main Street, New York, NY 10030", "Tizinit", "Morocco");
   
   /*Read*/
+  SELECT * FROM candidates WHERE id=4;
   
   /*Update:*/
+  UPDATE candidates SET email="latifadev@anmon.ma", updated_at=NOW() WHERE id=4;
 
   /*Delete:*/
+  DELETE FROM candidates WHERE id=4;
   
-   
 ```
   
 ## Concepts Checklist

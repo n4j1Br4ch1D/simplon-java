@@ -17,8 +17,8 @@ public static void main( String args[] ) throws ClassNotFoundException {
     CandidateDao candidateDaoImpl =  new CandidateDaoImpl();
 	int candidateId = 0;
 
-//	System.out.println(candidateDaoImpl.getAllCandidates().size());
-//	System.out.println(candidateDaoImpl.getAllCandidates());
+	System.out.println(candidateDaoImpl.getAllCandidates().size());
+	System.out.println(candidateDaoImpl.getAllCandidates());
 
 	do {
 		System.out.println("\n\nChoose You Operation:");

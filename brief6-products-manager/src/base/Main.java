@@ -28,22 +28,25 @@ public class Main {
         
 //////////////////login  if admin  and approved;
         
+        
+      System.out.println(userDao.signIn("nawal@anmoon.ma", "password"));
+
         /************* USERS *************/
         
-//        System.out.println(userDao.getAll().size());
-//        System.out.println(userDao.getAll());
+        System.out.println(userDao.getAll().size());
+        System.out.println(userDao.getAll());
                 
 //	    User user = new User("latifa@anmoon.ma","qwerty123", "latifa", "amougauay", false);
 //
 //		if(userDao.insert(user)) {
 //			System.out.println("User Created SuccessFuly!");
 //		}
-		
-//	    User userUpdate = new User("latifa@anmoon.ma","qwerty123", "latifa", "amougauay", true);
-//	    System.out.println(userDao.update(4, userUpdate));    
-//	    System.out.println(userDao.getOne(4));
+//		
+	    User userUpdate = new User("latifa@anmoon.ma","qwerty123", "latifa", "amougauay", true);
+	    System.out.println(userDao.update(4, userUpdate));    
+	    System.out.println(userDao.getOne(4));
 //	    
-//	    System.out.println(userDao.delete(4));
+	    System.out.println(userDao.delete(4));
 	    
         /************* CATEGORIES *************/
         

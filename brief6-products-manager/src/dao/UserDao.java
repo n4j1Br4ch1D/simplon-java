@@ -41,7 +41,6 @@ public class UserDao implements Dao<User>{
 		
 		try {
 		    Statement stmt = connection.createStatement();
-		    System.out.print(id);
 		    ResultSet rs = stmt.executeQuery("SELECT * FROM " + User.getTableName() + " WHERE id=" + id);
 
 		    while ( rs.next() ) {
@@ -55,6 +54,25 @@ public class UserDao implements Dao<User>{
 
 		return null;
 	}
+	
+
+	public boolean signIn(String email, String password) {
+		
+		try {
+		    Statement stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT * FROM " + User.getTableName() + " WHERE email='" + email + "' AND password='" + password + "' AND role_type='admin' AND approved=true");
+		    while ( rs.next() ) {
+				   return true;
+	          }
+
+		} catch (SQLException ex) {
+		    ex.printStackTrace();
+		}
+
+		return false;
+	}
+
+	
 
 		   
 		 public boolean insert(User user)  {

@@ -1,4 +1,4 @@
-# :moneybag: ProductManager JAVA OOP
+# :moneybag: ProductManager JAVA OOP DAO.
 
 CLI Software For Products management.
 
@@ -12,9 +12,9 @@ CLI Software For Products management.
 
 ## Snapshots
 <div style="display:flex">
-<img src="/brief2-oop-salaryCalculator/assets/1.PNG" height="200" width="300"/>
-<img src="/brief2-oop-salaryCalculator/assets/2.PNG" height="200" width="300"/>
-<img src="/brief2-oop-salaryCalculator/assets/3.PNG" height="200" width="300"/>
+<img src="/brief6-products-manager/assets/1.PNG" height="200" width="300"/>
+<img src="/brief6-products-manager/assets/2.PNG" height="200" width="300"/>
+<img src="/brief6-products-manager/assets/3.PNG" height="200" width="300"/>
 </div>
 
 

@@ -1,4 +1,4 @@
-# :moneybag: ProductManager JAVA OOP DAO.
+# :moneybag: ProductsManager JAVA OOP DAO.
 
 CLI Software For Products management.
 

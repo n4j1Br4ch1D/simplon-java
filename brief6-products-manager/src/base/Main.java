@@ -32,7 +32,7 @@ public class Main {
         
 //        System.out.println(userDao.getAll().size());
 //        System.out.println(userDao.getAll());
-        
+                
 //	    User user = new User("latifa@anmoon.ma","qwerty123", "latifa", "amougauay", false);
 //
 //		if(userDao.insert(user)) {
@@ -66,6 +66,7 @@ public class Main {
         /************* PRODUCTS *************/
 //        System.out.println(productDao.getAll().size());
 //        System.out.println(productDao.getAll());
+//     System.out.println(productDao.getAllByCategory(2));
 //	    Product product = new Product("Orange1","orange.jpg", " a fruit of various citrus species in the family Rutaceae; it primarily refers to Citrus × sinensis, which is also called sweet orange,", 3, "kilogram", "Houara", 3);
 //
 //		if(productDao.insert(product)) {

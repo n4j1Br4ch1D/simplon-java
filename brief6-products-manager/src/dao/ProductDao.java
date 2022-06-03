@@ -35,7 +35,28 @@ public class ProductDao implements Dao<Product>{
 		    return null;
 	}
 	
+	public Set<Product> getAllByCategory(int catId) {
 
+		    try {
+		        Statement stmt = connection.createStatement();
+		        ResultSet rs = stmt.executeQuery("SELECT * FROM "+ Product.getTableName() + " WHERE category_id=" + catId);
+
+		        Set<Product> products = new HashSet<Product>();
+		        
+		   	 while ( rs.next() ) {
+		   		Product product = extractProductFromResultSet(rs);
+		            products.add(product);
+		        }
+
+		       return products;
+
+		    } catch (SQLException ex) {
+		        ex.printStackTrace();
+		    }
+
+		    return null;
+	}
+	
 
 	public Product getOne(int id) {
 		

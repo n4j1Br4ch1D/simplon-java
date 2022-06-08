@@ -1,4 +1,5 @@
-# :moneybag: ProductsManager JAVA OOP DAO.
+# :garlic: Ahanou Online
+
 
 CLI Software For Products management.
 

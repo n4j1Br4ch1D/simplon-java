@@ -1,6 +1,6 @@
-# :moneybag: AhanouOnline Register Form JavaFX.
+# :garlic: AhanouOnline Register Form JavaFX.
 
-The goal of this project is to create a Desktop application that implements the backend developed in the previous brief "Registration form" using JavaFX. The data is stored in a PostgreSQL database Use the database access API of JDBC data "Java DataBase Connectivity" Use the management and production automation tool for Java software projects Maven Apply the MVC Model to the DAO design pattern "data access object" Use a package for each grouping
+Desktop application  Registration form for AhanouOnline.
 
  - :date: Date Started: **08-06-2022.** 
  - :computer:	Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D).
@@ -16,8 +16,14 @@ The goal of this project is to create a Desktop application that implements the 
 
 ## Constraints Checklist:
 
+- [X] Each category contains one or more products.
+- [X] Each product belongs to a single category.
+- [X] PostgreSQL database.
+- [X] Use the JDBC.
+- [X] Use the Java Maven.
+- [X] Use the DAO.
+- [X] Use a package for each grouping of the DAO.
 - [X] JavaFX.
-
 
 ## Brief Objectives Checklist
 

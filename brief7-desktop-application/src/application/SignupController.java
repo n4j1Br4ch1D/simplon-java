@@ -139,14 +139,14 @@ public class SignupController  implements Initializable {
             dashboardController.transferMessage(fnameField.getText()+ " " + lnameField.getText());
  
             
-            Main m = new Main();
-            m.changeScene("Dashboard.fxml");
+//            Main m = new Main();
+//            m.changeScene("Dashboard.fxml");
 
-//            Stage stage = new Stage();
-//            stage.setScene(new Scene(root));
-//            stage.setTitle("Second Window");
-//            stage.show();
-//            
+         //   Stage stage = new Stage();
+            Main.stg.setScene(new Scene(root));
+            Main.stg.setTitle("AhanouOnline");
+            Main.stg.show();
+            
 
         } catch (IOException ex) {
             System.err.println(ex);

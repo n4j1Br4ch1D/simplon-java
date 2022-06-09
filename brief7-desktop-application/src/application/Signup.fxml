@@ -38,8 +38,8 @@
             </Text>
             <TextField fx:id="fnameField" layoutX="31.0" layoutY="72.0" prefHeight="39.0" prefWidth="251.0" promptText="First Name" />
             <TextField fx:id="lnameField" layoutX="31.0" layoutY="128.0" prefHeight="39.0" prefWidth="251.0" promptText="Last Name" />
-            <TextField fx:id="emailField" layoutX="34.0" layoutY="187.0" prefHeight="39.0" prefWidth="251.0" promptText="Email" />
-            <Button fx:id="submitButton" layoutX="31.0" layoutY="322.0" mnemonicParsing="false" onAction="#userSignUp" prefHeight="50.0" prefWidth="146.0" style="-fx-background-color: #1cfd6c;" text="Submit" />
+            <TextField fx:id="emailField" layoutX="32.0" layoutY="186.0" prefHeight="39.0" prefWidth="251.0" promptText="Email" />
+            <Button fx:id="submitButton" layoutX="28.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="146.0" style="-fx-background-color: #1cfd6c;" text="Submit" />
             <PasswordField fx:id="passwordField" layoutX="33.0" layoutY="242.0" prefHeight="40.0" prefWidth="250.0" promptText="Password" />
             <Label fx:id="errorLabel" layoutX="34.0" layoutY="294.0" textFill="#d11616" />
          </children>

@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
@@ -19,6 +20,7 @@ public class Main extends Application {
 	    stg = primaryStage;
 
 		try {
+	    	primaryStage.getIcons().add(new Image("resources/ahanou-icon.png"));
 	        primaryStage.setTitle("AhanouOnline Sign-up Form");
 	        primaryStage.setResizable(false);
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Signup.fxml"));

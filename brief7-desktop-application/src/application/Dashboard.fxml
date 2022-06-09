@@ -10,11 +10,15 @@
    <top>
       <AnchorPane prefHeight="161.0" prefWidth="600.0" style="-fx-background-color: #1cfd6c;" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="248.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+            <Text layoutX="153.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
                <font>
                   <Font size="25.0" />
                </font></Text>
             <Button fx:id="logout" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#userLogOut" style="-fx-background-color: gray;" text="Log out" textFill="WHITE" />
+            <Text fx:id="displayName" fill="#c1c1c1" layoutX="264.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.39996337890625">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font></Text>
          </children>
       </AnchorPane>
    </top>

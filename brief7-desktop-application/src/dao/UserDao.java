@@ -158,4 +158,21 @@ public class UserDao implements Dao<User>{
 
 
 
+	public boolean checkEmail(String email) {
+		try {
+		    Statement stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT * FROM " + User.getTableName() + " WHERE email='" + email + "'");
+		    while ( rs.next() ) {
+				   return true;
+	          }
+
+		} catch (SQLException ex) {
+		  //  ex.printStackTrace();
+		}
+
+		return false;
+	}
+
+
+
 }

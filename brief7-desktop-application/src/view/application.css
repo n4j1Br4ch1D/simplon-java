@@ -1,0 +1,17 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+gridPane{
+	
+-fx-background:lime;
+}
+
+.button {
+
+-fx-font: bold italic 10pt "Arial";
+
+}
+headerLabel{
+	-fx-text-fill: #1cfd6c;
+	
+}

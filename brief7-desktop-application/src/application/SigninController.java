@@ -19,46 +19,47 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import model.User;
 
-public class SignupController  implements Initializable {
+public class SigninController  implements Initializable {
 	
-    @FXML private Button signinButton;
+    @FXML private Button signupButton;
     @FXML private Label errorLabel;
     @FXML private Button submitButton;
     @FXML private TextField emailField;	   
-    @FXML private TextField fnameField;
-    @FXML private TextField lnameField;
     @FXML private PasswordField passwordField;
     
     private UserDao userDao =  new UserDao();
     
     private User user;
     
+  
+    
     //private  boolean uniqueEmail = false;
 
 	
-	   public SignupController() {
+	   public SigninController() {
 	    }
 	  
-	   
-	   
-	   public void switchSignin(ActionEvent event) throws IOException {
-	        Main m = new Main();
-	        m.changeScene("../view/Signin.fxml");
-      }
-	   
+
 //	   public void userSignUp(ActionEvent event) throws IOException {
 //		   signUp(event);
 //
 //	   }
 	   
+	   
+	   public void switchSignup(ActionEvent event) throws IOException {
+	        Main m = new Main();
+	        m.changeScene("../view/Signup.fxml");
+     }
+	   
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
-			
+	
 			submitButton.setOnAction( event -> {
 				try {
 					signUp(event);
@@ -77,15 +78,6 @@ public class SignupController  implements Initializable {
         Matcher matcher = pattern.matcher(emailField.getText());
         
 
-        if(fnameField.getText().isEmpty()) {
-            errorLabel.setText("Please enter a First Name!");
-            return;
-        }
-        if(lnameField.getText().isEmpty()) {
-            errorLabel.setText("Please enter a Last Name!");
-
-            return;
-        }
         if(emailField.getText().isEmpty()) {
             errorLabel.setText("Please enter a Email!");
             return;
@@ -100,10 +92,6 @@ public class SignupController  implements Initializable {
             errorLabel.setText("Please enter a Valid Email!");
             return;
         }
-        if(userDao.checkEmail(emailField.getText())) {
-            errorLabel.setText("Email Already Exist!");
-            return;
-        }
         
           
         if(passwordField.getText().isEmpty()) {
@@ -111,19 +99,16 @@ public class SignupController  implements Initializable {
             return;
         }
         
-       if(passwordField.getText().length() < 8 ) {
-          errorLabel.setText("Password can't be less then 8 chars.");
-          return;
-      }
-
         
-        user = new User(emailField.getText(), passwordField.getText(), fnameField.getText(), lnameField.getText(), false);
+//        user = new User(emailField.getText(), passwordField.getText(), , false);
 
-     	if(userDao.insert(user) != null) {
-            errorLabel.setText("Sign-up Successfull!");
+     	if(userDao.signIn(emailField.getText(), passwordField.getText())) {
+            errorLabel.setText("Sign-in Successfull!");
             errorLabel.setStyle("-fx-text-fill: #1cfd6c;");  
             loadSceneAndSendMessage();
 
+     	}else {
+            errorLabel.setText("Wrong Email or Password!");
      	}
 }
 
@@ -134,7 +119,7 @@ public class SignupController  implements Initializable {
             Parent root = loader.load();
 
             DashboardController dashboardController = loader.getController();
-            dashboardController.transferMessage(fnameField.getText()+ " " + lnameField.getText());
+            dashboardController.transferMessage("Back!");
  
             
 //            Main m = new Main();
@@ -142,7 +127,7 @@ public class SignupController  implements Initializable {
 
          //   Stage stage = new Stage();
             Main.stg.setScene(new Scene(root));
-            Main.stg.setTitle("AhanouOnline");
+            Main.stg.setTitle("AhanouOnline Dashboard");
             Main.stg.show();
             
 

@@ -7,8 +7,7 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import base.Dao;
-import entity.Category;
+import model.Category;
 
 
 public class CategoryDao implements Dao<Category>{
@@ -58,16 +57,16 @@ public class CategoryDao implements Dao<Category>{
 	}
 
 		   
-		 public boolean insert(Category category)  {
+		 public Category insert(Category category)  {
 
 		    try {
-		        PreparedStatement stmt = connection.prepareStatement("INSERT INTO " + Category.getTableName() + " (name, img) VALUES (?, ?)");
+		        PreparedStatement stmt = connection.prepareStatement("INSERT INTO " + Category.getTableName() + " (name, img) VALUES (?, ?) RETURNING *");
 		        stmt.setString(1, category.getName());
 		        stmt.setString(2, category.getImg());
 		        int i = stmt.executeUpdate();
 
 		      if(i == 1) {
-		        return true;
+		        return category;
 		      }
 			    stmt.close();
 			    connection.close();
@@ -76,7 +75,7 @@ public class CategoryDao implements Dao<Category>{
 		        ex.printStackTrace();
 		    }
 
-		    return false;
+		    return null;
 		}
 		    
 		 public boolean update(int id, Category category) {
@@ -123,7 +122,7 @@ public class CategoryDao implements Dao<Category>{
 		 
 	
 	private static Category extractCategoryFromResultSet(ResultSet rs) throws SQLException {
-		  entity.Category category = new entity.Category();
+		  model.Category category = new model.Category();
 		  category.setId( rs.getInt("id") );
 		  category.setName( rs.getString("name") );
 		  category.setImg( rs.getString("img") );

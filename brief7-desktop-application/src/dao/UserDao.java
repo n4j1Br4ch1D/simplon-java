@@ -7,8 +7,7 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import base.Dao;
-import entity.User;
+import model.User;
 
 public class UserDao implements Dao<User>{
 
@@ -19,8 +18,8 @@ public class UserDao implements Dao<User>{
 		        Statement stmt = connection.createStatement();
 		        ResultSet rs = stmt.executeQuery("SELECT * FROM "+ User.getTableName());
 
-		        Set<User> users = new HashSet<User>();
-		        
+		        Set<User> users = new HashSet<User>();    //Hashnodes  key value; //list ApiCollection;
+		      
 		   	 while ( rs.next() ) {
 		   		User user = extractUserFromResultSet(rs);
 		            users.add(user);
@@ -41,7 +40,7 @@ public class UserDao implements Dao<User>{
 		
 		try {
 		    Statement stmt = connection.createStatement();
-		    ResultSet rs = stmt.executeQuery("SELECT * FROM " + User.getTableName() + " WHERE id=" + id);
+		    ResultSet rs = stmt.executeQuery("SELECT * FROM " + User.getTableName() + " WHERE id=" + id); //SQl Injection HQL JPQL
 
 		    while ( rs.next() ) {
 				   User user = extractUserFromResultSet(rs);
@@ -71,32 +70,39 @@ public class UserDao implements Dao<User>{
 
 		return false;
 	}
-
-	
-
 		   
-		 public boolean insert(User user)  {
+		 public User insert(User user)  {
+		        System.out.println(user);
 
+			 PreparedStatement stmt;
 		    try {
-		        PreparedStatement stmt = connection.prepareStatement("INSERT INTO " + User.getTableName() + " (email, password, first_name, last_name, approved) VALUES (?, ?, ?, ?, ?)");
+		        stmt = connection.prepareStatement("INSERT INTO " + User.getTableName() + " (email, password, first_name, last_name, approved) VALUES (?, ?, ?, ?, ?) RETURNING *");
 		        stmt.setString(1, user.getEmail());
 		        stmt.setString(2, user.getPassword());
 		        stmt.setString(3, user.getFirst_name());
 		        stmt.setString(4, user.getLast_name());
 		        stmt.setBoolean(5, user.isApproved());
-		        int i = stmt.executeUpdate();
-
-		      if(i == 1) {
-		        return true;
-		      }
+		        ResultSet rs = stmt.executeQuery();
+		        
+		        while ( rs.next() ) {
+		        	  User user1 = extractUserFromResultSet(rs);
+					  return user1;
+		          }
+   
+	
 			    stmt.close();
 			    connection.close();
 
-		    } catch (SQLException ex) {
+		    } catch (SQLException ex) { // not in dao;
 		        ex.printStackTrace();
 		    }
+//		    finally {
+//			    stmt.close();
+//			    connection.close();
+//			}
 
-		    return false;
+		    return null;
+		    
 		}
 		    
 		 public boolean update(int id, User user) {
@@ -146,7 +152,7 @@ public class UserDao implements Dao<User>{
 		 
 	
 	private static User extractUserFromResultSet(ResultSet rs) throws SQLException {
-		  entity.User user = new entity.User();
+		  model.User user = new model.User();
 		  user.setId( rs.getInt("id") );
 		  user.setEmail( rs.getString("email") );
 		  user.setPassword( rs.getString("password") );
@@ -158,7 +164,7 @@ public class UserDao implements Dao<User>{
 
 
 
-	public boolean checkEmail(String email) {
+	public boolean checkEmail(String email) { // move to repository;
 		try {
 		    Statement stmt = connection.createStatement();
 		    ResultSet rs = stmt.executeQuery("SELECT * FROM " + User.getTableName() + " WHERE email='" + email + "'");

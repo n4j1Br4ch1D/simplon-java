@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import model.Product;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -17,15 +18,17 @@ public class Main extends Application {
 
     @Override
 	public void start(Stage primaryStage) {
+
+
 	    stg = primaryStage;
 
 		try {
 	    	primaryStage.getIcons().add(new Image("resources/ahanou-icon.png"));
-	        primaryStage.setTitle("AhanouOnline Sign-up Form");
+	        primaryStage.setTitle("AhanouOnline ProductsManager Sign-in");
 	        primaryStage.setResizable(false);
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Signup.fxml"));
+			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../view/Signin.fxml"));
 			Scene scene = new Scene(root,600,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

@@ -2,7 +2,6 @@ package application;
 
 
 import dao.UserDao;
-import entity.User;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,6 +17,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import model.User;
 
 public class MainOld extends Application {
 	

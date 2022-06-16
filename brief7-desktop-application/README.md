@@ -34,6 +34,6 @@ Desktop application  Registration form for AhanouOnline.
 - [ ] Team of 2 learners 
 - [X] Duration 3 days.
 - [X] The product code must follow the instructions explained in the context of the brief.
-- [ ] Oral presentation of the work.
+- [X] Oral presentation of the work.
 - [X] Github repository.
 

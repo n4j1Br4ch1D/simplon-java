@@ -12,7 +12,10 @@ Desktop application  Registration form for AhanouOnline.
 ## Snapshots
 <div style="display:flex">
 <img src="/brief7-desktop-application/1.PNG" height="200" width="300"/>
- <img src="/brief7-desktop-application/2.PNG" height="200" width="300"/>
+<img src="/brief7-desktop-application/2.PNG" height="200" width="300"/>
+<img src="/brief7-desktop-application/3.PNG" height="200" width="300"/>
+<img src="/brief7-desktop-application/4.PNG" height="200" width="300"/>
+<img src="/brief7-desktop-application/5.PNG" height="200" width="300"/>
 </div>
 
 ## Constraints Checklist:

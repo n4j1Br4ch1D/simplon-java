@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="983.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+   <top>
+      <AnchorPane prefHeight="161.0" prefWidth="800.0" style="-fx-background-color: #353535;;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="153.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+               <font>
+                  <Font size="25.0" />
+               </font></Text>
+            <Button fx:id="logout" layoutX="888.0" layoutY="14.0" mnemonicParsing="false" onAction="#userLogOut" style="-fx-background-color: gray;" text="Log out" textFill="WHITE" />
+            <Text fx:id="displayName" fill="#c1c1c1" layoutX="264.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.39996337890625">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font></Text>
+            <Button fx:id="addTaskBtn" layoutX="837.0" layoutY="123.0" mnemonicParsing="false" onAction="#addTask" text="➕" textFill="#867272" />
+            <Button fx:id="editTaskBtn" layoutX="878.0" layoutY="123.0" mnemonicParsing="false" onAction="#editTask" text="✎" textFill="#867272" />
+            <Button fx:id="deleteTaskBtn" layoutX="917.0" layoutY="123.0" mnemonicParsing="false" onAction="#deleteTask" text="✖" textFill="#867272" />
+            <Button fx:id="refreshTaskBtn" layoutX="794.0" layoutY="123.0" mnemonicParsing="false" onAction="#refreshTask" text="🗘">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="searchTaskField" layoutX="8.0" layoutY="123.0" onAction="#searchTask" prefHeight="26.0" prefWidth="178.0" promptText="Search..." />
+            <Button fx:id="searchTaskBtn" layoutX="164.0" layoutY="123.0" mnemonicParsing="false" onAction="#searchTask" text="🔍" />
+            <ChoiceBox fx:id="sCategory" layoutX="205.0" layoutY="123.0" prefHeight="26.0" prefWidth="90.0" />
+            <ChoiceBox fx:id="sStatus" layoutX="308.0" layoutY="123.0" prefHeight="26.0" prefWidth="90.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="37.0" prefWidth="842.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="nameField" layoutX="103.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" promptText="Name" text="test" />
+            <TextField fx:id="descField" layoutX="205.0" layoutY="6.0" prefHeight="26.0" prefWidth="135.0" promptText="Desc" text="Desc..." />
+            <TextField fx:id="createdAtField" layoutX="345.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" promptText="Created_at" />
+            <TextField fx:id="tobeFinishedAtField1" layoutX="454.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" promptText="To be Finished at" text="2022-06-16 10:48:45.681703+02" />
+            <TextField fx:id="finishedAtField" layoutX="564.0" layoutY="6.0" prefHeight="17.0" prefWidth="98.0" promptText="Finished At" text="2022-06-16 10:48:45.681703+02" />
+            <Button fx:id="addTaskBtn" layoutX="779.0" layoutY="6.0" mnemonicParsing="false" onAction="#addTask" prefHeight="26.0" prefWidth="74.0" text="Add" />
+            <Button fx:id="cancelTaskBtn" layoutX="868.0" layoutY="6.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="Cancel" />
+            <TextField fx:id="idField" layoutX="734.0" layoutY="6.0" prefHeight="26.0" prefWidth="41.0" promptText="ID" style="visibility: none;" visible="false" />
+            <ChoiceBox fx:id="statusField" layoutX="7.0" layoutY="6.0" prefHeight="26.0" prefWidth="90.0" />
+            <ChoiceBox fx:id="categoryField" layoutX="675.0" layoutY="6.0" prefHeight="26.0" prefWidth="90.0" />
+            <DatePicker fx:id="tobeFinishedAtField" layoutX="451.0" layoutY="6.0" prefHeight="26.0" prefWidth="104.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Table View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tasksTable" editable="true" layoutX="-1.0" layoutY="-1.0" prefHeight="324.0" prefWidth="954.0">
+                          <columns>
+                              <TableColumn fx:id="idC" prefWidth="50.39996337890625" text="id" />
+                            <TableColumn fx:id="statusC" prefWidth="55.199951171875" text="Status" />
+                            <TableColumn fx:id="nameC" prefWidth="88.79998779296875" text="Name" />
+                              <TableColumn fx:id="descriptionC" prefWidth="138.40003967285156" text="Desc" />
+                              <TableColumn fx:id="createdAtC" prefWidth="147.199951171875" text="Created At" />
+                              <TableColumn fx:id="tobeFinishedAtC" minWidth="4.0" prefWidth="144.79998779296875" text="To be Finished At" />
+                              <TableColumn fx:id="finishedAtC" minWidth="0.0" prefWidth="112.0" text="Finished At" />
+                              <TableColumn fx:id="categoryC" minWidth="0.0" prefWidth="138.40008544921875" text="Category" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Kanban Board">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="doneTable" layoutX="638.0" layoutY="9.0" prefHeight="304.0" prefWidth="298.0">
+                           <columns>
+                              <TableColumn fx:id="doneC" prefWidth="228.80010986328125" text="Done" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="inProgressTable" layoutX="327.0" layoutY="9.0" prefHeight="304.0" prefWidth="298.0">
+                           <columns>
+                              <TableColumn fx:id="inProgressC" prefWidth="221.60003662109375" text="In-Progress" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="notYetTable" layoutX="14.0" layoutY="10.0" prefHeight="303.0" prefWidth="298.0">
+                           <columns>
+                              <TableColumn fx:id="notYetC" prefWidth="224.79995441436768" text="Not-Yet" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

@@ -11,10 +11,10 @@ Desktop application For ToDo List  Both table view & kanban board style.
 
 ## Snapshots
 <div style="display:flex">
-<img src="/brief7-desktop-application/3.PNG" height="200" width="300"/>
- <img src="/brief7-desktop-application/4.PNG" height="200" width="300"/>
-<img src="/brief7-desktop-application/1.PNG" height="200" width="300"/>
- <img src="/brief7-desktop-application/2.PNG" height="200" width="300"/>
+<img src="/brief8-todo-list/3.PNG" height="200" width="300"/>
+ <img src="/brief8-todo-list/4.PNG" height="200" width="300"/>
+<img src="/brief8-todo-list/1.PNG" height="200" width="300"/>
+ <img src="/brief8-todo-list/2.PNG" height="200" width="300"/>
 </div>
 
 ## Constraints Checklist:

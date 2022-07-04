@@ -11,10 +11,11 @@ Dynamic Web Application For ToDo List  Both table view & kanban board style.
 
 ## Snapshots
 <div style="display:flex">
-<img src="/brief9-javaweb-todo/3.PNG" height="200" width="300"/>
- <img src="/brief9-javaweb-todo/4.PNG" height="200" width="300"/>
 <img src="/brief9-javaweb-todo/1.PNG" height="200" width="300"/>
- <img src="/brief9-javaweb-todo/2.PNG" height="200" width="300"/>
+<img src="/brief9-javaweb-todo/2.PNG" height="200" width="300"/>
+<img src="/brief9-javaweb-todo/3.PNG" height="200" width="300"/>
+<img src="/brief9-javaweb-todo/4.PNG" height="200" width="300"/>
+<img src="/brief9-javaweb-todo/5.PNG" height="200" width="300"/>
 </div>
 
 ## Constraints Checklist:

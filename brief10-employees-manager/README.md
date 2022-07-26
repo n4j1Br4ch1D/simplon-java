@@ -11,13 +11,27 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 ---
 
 ## Snapshots
+
 <div style="display:flex">
 <img src="/brief10-employees-manager/1.PNG" height="200" width="300"/>
 <img src="/brief10-employees-manager/2.PNG" height="200" width="300"/>
 <img src="/brief10-employees-manager/3.PNG" height="200" width="300"/>
 </div>
 
-## Constraints Checklist:
+## Planning
+
+1. Research on used technlogies.
+2. Make Demo Project.
+3. Environment Setup.
+4. Analyse Project Requirments.
+5. Conceptualization (Make UI/UX Sketch/ Routes neededd/ DB Schema/ ...).
+6. Define Work Strategy.
+7. Project Structure.
+8. Tasks Backlog (Priorities).
+9. Make it Right.
+10. Maintenance.
+11. Production. 
+## Constraints Checklist
 
 - [X] Sign in as administrator(httpSession).
 - [X] Sign out (httpSession).
@@ -28,10 +42,11 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 - [X] List employees.
 - [X] All employees report(Number of Employees & Number of Tasks).
 
+## Technologies Checklist
 
 - [X] A detailed program design/
 - [X] A clear schedule of tasks.
-- [] Use JIRA SOFTWARE to establish USER STORY MAP of the project.
+- [ ] Use JIRA SOFTWARE to establish USER STORY MAP of the project.
 - [X] PostgreSQL database.
 - [X] Use the JDBC.
 - [X] Use the Java Maven.
@@ -45,7 +60,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 ## Brief Objectives Checklist
 
 - [X] Improved program by adding other features.
-- [] Work in group.
+- [ ] Work in group.
 - [X] Deadline Respected.
 - [X] A complete initial source code according to the instructions and respects good practices.
 - [X] Code demo and review.

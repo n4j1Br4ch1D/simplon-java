@@ -24,7 +24,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 2. Make Demo Project.
 3. Environment Setup.
 4. Analyse Project Requirments.
-5. Conceptualization (Make UI/UX Sketch/ Routes neededd/ DB Schema/ ...).
+5. Conceptualization (Make UI/UX Sketch/ Routes needed/ DB Schema/ ...).
 6. Define Work Strategy.
 7. Project Structure.
 8. Tasks Backlog (Priorities).

@@ -1,7 +1,7 @@
 # :sunglasses: SoussTalent101 Employees Manager Web App
 
 Dynamic Web Application For Managing Employees, Built using Java,
-DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, aldo Thymleaf.
+DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, also Thymleaf.
 
  - :date: Date Started: **20-06-2022.** 
  - :computer:	Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D).

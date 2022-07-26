@@ -59,8 +59,8 @@ min-height: calc(100vh - 50px);
     <div class="col-md-6">
     <label for="approved" class="form-label">Approved</label>
     <select name="approved" id="approved" class="form-select" th:disabled="${type eq 'Read'}">
-      <option th:selected="${user!=null ? user.approved : true}">Yes Sure</option>
-      <option th:selected="${user!=null ? !user.approved : false}">Not Yet</option>
+      <option value="true" th:selected="${user!=null ? user.approved : true}">Yes Sure</option>
+      <option value="false" th:selected="${user!=null ? !user.approved : false}">Not Yet</option>
     </select>
   </div>
   <div class="col-md-6">

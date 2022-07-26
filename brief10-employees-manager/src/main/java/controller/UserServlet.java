@@ -89,17 +89,18 @@ public class UserServlet extends HttpServlet {
 		if ("Create".equals(action)) {
 			int TasksN = Integer.parseInt(request.getParameter("tasks_number"));
 			User newUser = new User(request.getParameter("firstname")+" "+request.getParameter("lastname"), request.getParameter("role"),
-					(request.getParameter("approved") == "true"), request.getParameter("email"),
+					request.getParameter("approved").equals("true"), request.getParameter("email"),
 					request.getParameter("password"), TasksN);
 			userService.persist(newUser);
 		    response.sendRedirect("/brief10-employees-manager/dashboard/users");
 		}
 
 		else if ("Update".equals(action)) {
+			System.out.println("====#>"+(request.getParameter("approved").equals("true")+"<#===="));
 			int UserId = Integer.parseInt(request.getParameter("user_id"));
 			int tasksN = Integer.parseInt(request.getParameter("tasks_number"));
 			User editUser = new User(UserId, request.getParameter("firstname")+" "+request.getParameter("lastname"), request.getParameter("role"),
-					(request.getParameter("approved") == "true"), request.getParameter("email"),
+					request.getParameter("approved").equals("true"), request.getParameter("email"),
 					request.getParameter("password"), tasksN);
 			userService.update(editUser);
 		    response.sendRedirect("/brief10-employees-manager/dashboard/users");

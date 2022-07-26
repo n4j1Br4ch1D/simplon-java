@@ -156,7 +156,7 @@ text-decoration:none;
                                                 <span th:text="${employee.role}" class="user-subhead"></span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="label label-default badge badge-pill" th:classappend="${employee.approved}? 'badge-success' : 'badge-danger'" th:text="${employee.approved}? 'Approved' : 'Pending'"></span>                                                
+                                                <span class="label label-default badge badge-pill badge rounded-pill text-bg-success" th:classappend="${employee.approved}? ' text-bg-success bg-success' : ' text-bg-danger bg-danger'" th:text="${employee.approved}? 'Approved' : 'Pending'"></span>                                                
                                             </td>
                                             <td>
                                                 <span th:text="${employee.email}"></a>

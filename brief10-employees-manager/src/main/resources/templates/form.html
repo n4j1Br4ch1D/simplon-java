@@ -26,10 +26,11 @@ min-height: calc(100vh - 50px);
     
     <main>
     
-	<div align="center" class="container bg-primary p-3 rounded-2">
-		<h1 th:text="${type+' User Form'}"></h1>
+	<div align="center" class="container bg-primary p-3 rounded-2" style="opacity:.9">
+		<h1 class="mb-5" th:text="${type+' User Form'}"></h1>
+		<hr>
 		
-		<form action="users" method="post" class="row g-3">
+		<form action="users" method="post" class="row g-3 text-start">
 		    <input th:value="${user!=null ? user.id : 0}" name="user_id" type="hidden" class="form-control" id="userId" th:disabled="${type eq 'Read'}">
 		
   <div class="col-md-6">
@@ -73,6 +74,7 @@ min-height: calc(100vh - 50px);
   </div>
   
 </form>
+		<hr>
 
     <div class="col-md-12 mt-5">
     

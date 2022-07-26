@@ -124,11 +124,11 @@ text-decoration:none;
         </div>   
     </div>
 
-    <div class="container bg-dark rounded-3 border border-white opacity-75 p-2 text-center">
+    <div class="container bg-dark rounded-3 border border-white opacity-75 p-2 text-center" style="opacity:.9">
         <h2 class="text-white" ><i class="fa-solid fa-users my-2"></i> Manage Employees</h2>
         <hr>
         <div class="container bootstrap snippets bootdey">
-        <div class="mb-2 text-start ms-3">
+        <div class="mb-2 text-start">
    <a th:href="${'?ACTION=add'}" class="btn btn-labeled btn-primary">
              <i class="fa-solid fa-user-plus me-2"></i> Add Employee
    </a>
@@ -151,7 +151,7 @@ text-decoration:none;
                                     <tbody>
                                         <tr   th:each="employee : ${employees}" >
                                             <td>
-                                                <img src="../img/avatar.jpg" alt="">
+                                                <img src="../img/avatar.jpg" alt="avatar" class="rounded-3 border border-secondary">
                                                 <a th:href="${'?ACTION=view&id='+employee.id}" th:text="${employee.fullName}" href="#" class="user-link"></a>
                                                 <span th:text="${employee.role}" class="user-subhead"></span>
                                             </td>

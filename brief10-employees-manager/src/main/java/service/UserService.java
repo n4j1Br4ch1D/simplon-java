@@ -23,17 +23,20 @@ public class UserService {
 	}
 
 	public User findById(int id) {
-		User User = userDao.findById(id);
-		return User;
+		User user = userDao.findById(id);
+		return user;
 	}
 
 	public void delete(int id) {
-		userDao.delete(id);
+		User user = userDao.findById(id);
+		if(!user.getRole().equals("admin")) {
+			userDao.delete(id);
+		}
 	}
 
 	public List<User> findAll() {
-		List<User> Users = userDao.findAll();
-		return Users;
+		List<User> users = userDao.findAll();
+		return users;
 	}
 
 	public Long tasksCount() {

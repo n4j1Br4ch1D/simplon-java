@@ -49,27 +49,26 @@ public class UserServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		HttpSession httpSession = request.getSession();
-        if (httpSession.getAttribute("signedinUser") != null) { 
-			String action = request.getParameter("ACTION");	
-			if(action != null) {
-			    if ("view".equals(action)) {
-						int userId = Integer.parseInt(request.getParameter("id"));
-						User user = userService.findById(userId);
-						out.println(formServe("Read", user));
+		if (httpSession.getAttribute("signedinUser") != null) {
+			String action = request.getParameter("ACTION");
+			if (action != null) {
+				if ("view".equals(action)) {
+					int userId = Integer.parseInt(request.getParameter("id"));
+					User user = userService.findById(userId);
+					out.println(formServe("Read", user));
 				} else if ("add".equals(action)) {
-						out.println(formServe("Create", null));
-					
+					out.println(formServe("Create", null));
+
 				} else if ("edit".equals(action)) {
-						int userId = Integer.parseInt(request.getParameter("id"));
-						User user = userService.findById(userId);
-						out.println(formServe("Update", user));
-			    }
-			}else {
+					int userId = Integer.parseInt(request.getParameter("id"));
+					User user = userService.findById(userId);
+					out.println(formServe("Update", user));
+				}
+			} else {
 				System.out.println(httpSession.getAttribute("signedinUser"));
-				out.println(dashboardServe((int) httpSession.getAttribute("signedinUser")));																						// to
+				out.println(dashboardServe((int) httpSession.getAttribute("signedinUser"))); // to
 			}
-		}
-        else {	
+		} else {
 			response.sendRedirect("/brief10-employees-manager/sign-in");
 		}
 	}
@@ -85,33 +84,37 @@ public class UserServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String action = request.getParameter("ACTION");
+		HttpSession httpSession = request.getSession();
+		if (httpSession.getAttribute("signedinUser") != null) {
+			if ("Create".equals(action)) {
+				int TasksN = Integer.parseInt(request.getParameter("tasks_number"));
+				User newUser = new User(request.getParameter("firstname") + " " + request.getParameter("lastname"),
+						request.getParameter("role"), request.getParameter("approved").equals("true"),
+						request.getParameter("email"), request.getParameter("password"), TasksN);
+				userService.persist(newUser);
+				response.sendRedirect("/brief10-employees-manager/dashboard/users");
+			}
 
-		if ("Create".equals(action)) {
-			int TasksN = Integer.parseInt(request.getParameter("tasks_number"));
-			User newUser = new User(request.getParameter("firstname")+" "+request.getParameter("lastname"), request.getParameter("role"),
-					request.getParameter("approved").equals("true"), request.getParameter("email"),
-					request.getParameter("password"), TasksN);
-			userService.persist(newUser);
-		    response.sendRedirect("/brief10-employees-manager/dashboard/users");
+			else if ("Update".equals(action)) {
+				System.out.println("====#>" + (request.getParameter("approved").equals("true") + "<#===="));
+				int UserId = Integer.parseInt(request.getParameter("user_id"));
+				int tasksN = Integer.parseInt(request.getParameter("tasks_number"));
+				User editUser = new User(UserId,
+						request.getParameter("firstname") + " " + request.getParameter("lastname"),
+						request.getParameter("role"), request.getParameter("approved").equals("true"),
+						request.getParameter("email"), request.getParameter("password"), tasksN);
+				userService.update(editUser);
+				response.sendRedirect("/brief10-employees-manager/dashboard/users");
+			}
+
+			else if ("Delete".equals(action)) {
+				int userId = Integer.parseInt(request.getParameter("user_id"));
+				userService.delete(userId);
+				response.sendRedirect("/brief10-employees-manager/dashboard/users");
+			}
+		} else {
+			response.sendRedirect("/brief10-employees-manager/sign-in");
 		}
-
-		else if ("Update".equals(action)) {
-			System.out.println("====#>"+(request.getParameter("approved").equals("true")+"<#===="));
-			int UserId = Integer.parseInt(request.getParameter("user_id"));
-			int tasksN = Integer.parseInt(request.getParameter("tasks_number"));
-			User editUser = new User(UserId, request.getParameter("firstname")+" "+request.getParameter("lastname"), request.getParameter("role"),
-					request.getParameter("approved").equals("true"), request.getParameter("email"),
-					request.getParameter("password"), tasksN);
-			userService.update(editUser);
-		    response.sendRedirect("/brief10-employees-manager/dashboard/users");
-		}
-
-		else if ("Delete".equals(action)) {
-			int userId = Integer.parseInt(request.getParameter("user_id"));
-			userService.delete(userId);
-		    response.sendRedirect("/brief10-employees-manager/dashboard/users");
-		}
-
 	}
 
 	public String dashboardServe(int signedinUser) {

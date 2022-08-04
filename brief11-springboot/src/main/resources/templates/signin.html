@@ -29,11 +29,11 @@
 <div data-alert class="alert-box alert round " th:if="${SigninError}" style="color:red;margin-bottom:6px;">
   Wrong Email or password!
 </div>
- <form action="" method="post">
+   <form th:action="@{/signin}" method="post">
  <input type="hidden" name="ACTION" value="Sign_in">
 <div class="grid-x grid-padding-x">
 <div class="large-12 medium-12 cell">
-<input th:value="${email}"  name="email" type="text" placeholder="Enter Email">
+<input th:value="${email}"  name="username" type="text" placeholder="Enter Email">
 </div>
 <div class="large-12 medium-12 cell">
 <input th:value="${password}"  name="password" type="password" placeholder="Enter Password">

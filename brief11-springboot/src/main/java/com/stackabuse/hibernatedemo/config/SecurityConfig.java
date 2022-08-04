@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeRequests().antMatchers("/signin").permitAll()  //, "resources/static/**"
-            .antMatchers("/dashboard/**").hasAnyRole("admin")
+            .antMatchers("/dashboard/**").hasAuthority("admin")
             .and().formLogin().loginPage("/signin").permitAll()
            .defaultSuccessUrl("/dashboard/users").and().logout().logoutSuccessUrl("/signout");
 }
@@ -28,7 +28,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    	System.out.println(111123);
         auth.jdbcAuthentication().dataSource(dataSource)
                 .usersByUsernameQuery("select email as principal, password as credentails, true from users where email=?")
                 .authoritiesByUsernameQuery("select email as principal, role as role from users where email=?");

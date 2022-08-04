@@ -1,24 +1,17 @@
-//package com.stackabuse.hibernatedemo.service;
-//
-//import dao.UserDao;
-//import entity.User;
-//
-//public class AuthService {
-//
-//	private static UserDao userDao;
-//
-//	public AuthService() {
-//		// TODO Auto-generated constructor stub
-//	    userDao = new UserDao();
-//	}
-//	
-//	public User signIn(User user) {
-//		User admin = userDao.signIn(user);
-//		return admin;
-//	}
-//	
-//	public void signOut(User user) {
-//		//
-//	}
-//
-//}
+package com.stackabuse.hibernatedemo.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.stackabuse.hibernatedemo.repository.UserRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class AuthService {
+
+	@Autowired
+	private UserRepository userRepository;
+
+}

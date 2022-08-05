@@ -23,15 +23,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/dashboard/**").hasAuthority("admin")
             .and().formLogin().loginPage("/signin").permitAll()
            .defaultSuccessUrl("/dashboard/users").failureUrl("/signin?error=true").and().logout().logoutUrl("/signout").logoutSuccessUrl("/signin");
-// https://www.baeldung.com/spring-security-manual-logout
 }
    
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery("select email as principal, password as credentails, true from users where email=? and role='admin'")
-                .authoritiesByUsernameQuery("select email as principal, role as role from users where email=?");
+                .usersByUsernameQuery("select email as principal, password as credentails, id as id,  true from users where email=? and role='admin'")
+                .authoritiesByUsernameQuery("select email as principal, role as role, id as id from users where email=?");
 //                .passwordEncoder(passwordEncoder());
     }
   

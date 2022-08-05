@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 	    @GetMapping("/signin")
 	    public String showLoginForm(Model model) throws Exception {
-//			model.addAttribute("user", userService.getUserById(userId));
-//			model.addAttribute("type", "Read");
-//			model.addAttribute("SigninError", error);
+//          List<Department> findOneByDepartmentName(String name);
+            // User admin = userService.getAdmin();
+			// model.addAttribute("email", admin.getEmail());
+			// model.addAttribute("password", admin.getPassword());
+
 			model.addAttribute("email", "leila@anmoon.ma");
 			model.addAttribute("password", "password");
 	        return "signin";

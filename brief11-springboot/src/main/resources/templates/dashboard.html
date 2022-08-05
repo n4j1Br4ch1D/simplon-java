@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,24 +114,15 @@ text-decoration:none;
         
         <div>            
           
-
-
-<!--             
-            <form class="d-inline" action="/brief10-employees-manager/sign-in" method="post">
-               <input type="hidden" name="ACTION" value="Sign_out">
-                  <button type="submit" class="btn btn-labeled btn-outline-danger">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                  </button>
-            </form> -->
-
-
-
-
+          
+          
+  <a sec:authorize="isAuthenticated()" th:href="@{users/view/}+${signedinUser}" 
+             class="btn btn-labeled btn-success">
+             <i class="fa-solid fa-circle-user mr-5"></i> My Profile
+            </a>
             <a sec:authorize="isAuthenticated()" class="btn btn-labeled btn-outline-danger" th:href="@{/signout}" role="button">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </a>
-            
-            
             
               </div>   
     </div>

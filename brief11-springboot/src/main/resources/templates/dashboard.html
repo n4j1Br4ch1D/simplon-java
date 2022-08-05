@@ -109,19 +109,30 @@ text-decoration:none;
                 <span th:text="|${tasksN}" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"></span>
               </button>
         </div>
-        <div>
-            <a th:href="@{users/view/}+${signedinUser}" class="btn btn-labeled btn-success">
-             <i class="fa-solid fa-circle-user mr-5"></i> My Profile
-            </a>
-            
+        
+        
+        <div>            
+          
+
+
+<!--             
             <form class="d-inline" action="/brief10-employees-manager/sign-in" method="post">
                <input type="hidden" name="ACTION" value="Sign_out">
                   <button type="submit" class="btn btn-labeled btn-outline-danger">
                         <i class="fa-solid fa-right-from-bracket"></i>
                   </button>
-            </form>
+            </form> -->
 
-        </div>   
+
+
+
+            <a sec:authorize="isAuthenticated()" class="btn btn-labeled btn-outline-danger" th:href="@{/signout}" role="button">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+            
+            
+            
+              </div>   
     </div>
 
     <div class="container bg-dark rounded-3 border border-white opacity-75 p-2 text-center" style="opacity:.9">

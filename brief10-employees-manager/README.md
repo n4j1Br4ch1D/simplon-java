@@ -1,8 +1,19 @@
-# :sunglasses: SoussTalent101 Employees Manager Web App
+# :coffee: SoussTalent101 Employees Manager Web App
 
 Dynamic Web Application For Managing Employees, Built using Java,
 DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, also Thymleaf.
 
+<strong>
+ I made Two Different Implementation Of the Exact Same Project: 
+ 
+</strong>
+
+<div>
+<a href="https://github.com/n4j1Br4ch1D/simplon-java/tree/main/brief10-employees-manager" target="_blank" class="button button-spring disabled" disabled>:coffee: JAVA MVC</a>
+<a href="https://github.com/n4j1Br4ch1D/simplon-java/tree/main/brief11-springboot" target="_blank" class="button button-java">:leaves: Spring Boot</a>
+</div>
+
+_
  - :date: Date Started: **20-06-2022.** 
  - :computer:	Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D).
  - :office: Developed At: TechnoPark Agadir, Simplon Talent4Startups, Group *SoussTalent101*.

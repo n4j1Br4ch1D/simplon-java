@@ -1,15 +1,19 @@
-# leaves: SoussTalent101 Employees Manager Web App
+# :leaves: SoussTalent101 Employees Manager Web App
 
 Dynamic MVC Web Application For Managing Employees, Built using Java Spring Boot, postgreSQL & Thymleaf.
 
 <strong>
- I made Two Different Implementation Of the Exact Same Project:    
+ I made Two Different Implementation Of the Exact Same Project: 
+ 
 </strong>
 
 <div>
 <a href="https://github.com/n4j1Br4ch1D/simplon-java/tree/main/brief10-employees-manager" target="_blank" class="button button-spring disabled" disabled>:coffee: JAVA MVC</a>
 <a href="https://github.com/n4j1Br4ch1D/simplon-java/tree/main/brief11-springboot" target="_blank" class="button button-java">:leaves: Spring Boot</a>
 </div>
+
+_
+
 
  - :date: Date Started: **03-08-2022.** 
  - :computer:	Developed By: [NajibRachid](https://github.com/n4j1Br4ch1D).

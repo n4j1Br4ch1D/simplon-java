@@ -19,10 +19,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("/signin").permitAll()  //, "resources/static/**"
+        http.authorizeRequests().antMatchers("/signin").permitAll()
             .antMatchers("/dashboard/**").hasAuthority("admin")
             .and().formLogin().loginPage("/signin").permitAll()
-           .defaultSuccessUrl("/dashboard/users").and().logout().logoutSuccessUrl("/signout");
+           .defaultSuccessUrl("/dashboard/users").failureUrl("/signin?error=true").and().logout().logoutUrl("/signout").logoutSuccessUrl("/signin");
+// https://www.baeldung.com/spring-security-manual-logout
 }
    
 

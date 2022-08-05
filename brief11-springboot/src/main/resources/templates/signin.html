@@ -25,11 +25,15 @@
 <img src="resources/static/img/SoussTalents101.png" class="padding-horizontal-2 margin-bottom-2" alt="" srcset="">
 <!-- <h1 class="round "> SIGN IN </h1> -->
 </div>
+
+
+
 <div class="large-12 columns cell">
-<div data-alert class="alert-box alert round " th:if="${SigninError}" style="color:red;margin-bottom:6px;">
+<div data-alert class="alert-box alert round " th:if="${param.error}" style="color:red;margin-bottom:6px;">
   Wrong Email or password!
 </div>
-   <form th:action="@{/signin}" method="post">
+
+<form th:action="@{/signin}" method="post">
  <input type="hidden" name="ACTION" value="Sign_in">
 <div class="grid-x grid-padding-x">
 <div class="large-12 medium-12 cell">

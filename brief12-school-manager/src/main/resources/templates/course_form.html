@@ -39,7 +39,7 @@ body {
 
 			<div align="center" class="container bg-primary p-3 rounded-2"
 				style="opacity: .9">
-				<h1 class="mb-5" th:text="${type+' User Form'}"></h1>
+				<h1 class="mb-5" th:text="${type+' Course Form'}"></h1>
 				<hr>
 
 				<form action="users" method="post" class="row g-3 text-start">
@@ -47,6 +47,9 @@ body {
 						type="hidden" class="form-control" id="courseId"
 						th:disabled="${type eq 'Read'}">
 
+                     <div class="col-md-12">
+                         <img th:src="${#strings.toLowerCase('../img/courses/'+course.name+'.png')}" alt="avatar" class="rounded-3 border border-secondary bg-white p-2" style="max-height: 50px;">
+					</div>
 					<div class="col-md-6">
 						<label for="name" class="form-label">Course Name</label> <input
 							th:value="${course!=null ? course.name : ''}"

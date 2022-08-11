@@ -99,9 +99,9 @@ body {
 					<div class="col-md-6">
 				    	<label for="talentcourses" class="form-label">Enrolled Courses</label> 
 						<select name="talentcourses" id="talentcourses" multiple>
-                             <option th:each="course : ${courses}"
-						       th:value="${trainer.id}" th:text="${trainer.fullName}"
-						       th:selected="${course.id eq course.trainer.id ? true : false}"
+                             <option th:each="course : ${talentcourses}"
+						       th:value="${course.id}" th:text="${course.fullName}"
+						       th:selected="${course.id eq user.course.id ? true : false}"
 							></option>                       
 						 </select>
 					</div>

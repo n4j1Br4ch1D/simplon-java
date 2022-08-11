@@ -1,4 +1,4 @@
-# :coffee: SoussTalent101 Trainers Manager Web App
+# :coffee: SoussTalent101 School Manager Web App
 
 Dynamic Web Application For Managing School, Built using Java,
 DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, also Thymleaf.
@@ -17,6 +17,8 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 <img src="/brief12-school-manager/2.PNG" height="200" width="300"/>
 <img src="/brief12-school-manager/3.PNG" height="200" width="300"/>
 <img src="/brief12-school-manager/4.PNG" height="200" width="300"/>
+<img src="/brief12-school-manager/5.PNG" height="200" width="300"/>
+<img src="/brief12-school-manager/6.PNG" height="200" width="300"/>
 </div>
 
 ## Diagrams

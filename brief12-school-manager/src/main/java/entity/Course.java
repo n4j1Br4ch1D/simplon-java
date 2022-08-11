@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -42,10 +43,14 @@ public class Course {
 	private User trainer;
     
 
-	@JoinColumn(name = "course_id", nullable = true, columnDefinition = "integer")
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Collection<User> talents;
+//	@JoinColumn(name = "course_id", nullable = true, columnDefinition = "integer")
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	private Collection<User> talents;
 
+    @ManyToMany(mappedBy = "talentCourses", fetch = FetchType.EAGER)
+	private Collection<User> talents;
+    
+	
 	public Course() {
 		super();
 	}

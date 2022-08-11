@@ -21,8 +21,13 @@
    ('MySQL', false, 3),
    ('VueJs', true, 3),
    ('ReactJs', true, 3);
-   
-/*Seed Courses for Users:*/   
-UPDATE public.users SET course_id = 1 WHERE id = 4 or id = 5;
-UPDATE public.users SET course_id = 2 WHERE id = 6;
-UPDATE public.users SET course_id = 4 WHERE id = 7;
+
+/*Seed Table Courses Users:*/  
+ INSERT INTO public.talents_courses (talent_id, course_id)
+VALUES
+  (4, 1),
+  (4, 2),
+  (5, 1),
+  (5, 4),
+  (6, 2),
+  (7, 4);

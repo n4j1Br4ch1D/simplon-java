@@ -13,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -44,9 +46,14 @@ public class User implements Serializable {
 	@Column(name = "password")
 	private String password;
 
-	@JoinColumn(name = "course_id", nullable = true, columnDefinition = "integer")
-	@ManyToOne(optional = true, cascade = CascadeType.ALL)
-	private Course course;
+//	@JoinColumn(name = "course_id", nullable = true, columnDefinition = "integer")
+//	@ManyToOne(optional = true, cascade = CascadeType.ALL)
+//	private Course course;
+
+	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	@JoinTable(name = "talents_courses", joinColumns = { @JoinColumn(name = "talent_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "course_id") })
+	private Collection<Course> talentCourses;
 
 	@JoinColumn(name = "trainer_id", nullable = true, columnDefinition = "integer")
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -125,14 +132,6 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
-	}
-
 	public Collection<Course> getCourses() {
 		return courses;
 	}
@@ -141,12 +140,21 @@ public class User implements Serializable {
 		this.courses = courses;
 	}
 
+	public Collection<Course> getTalentCourses() {
+		return talentCourses;
+	}
+
+	public void setTalentCourses(Collection<Course> talentCourses) {
+		this.talentCourses = talentCourses;
+	}
+
 //	@Override
 //	public String toString() {
 //		return "User [id=" + id + ", fullName=" + fullName + ", role=" + role + ", approved=" + approved + ", email="
-//				+ email + ", password=" + password + ", course=" + course + ", courses=" + getCourses() + "]";
+//				+ email + ", password=" + password + ", talentCourses=" + getTalentCourses() + ", courses=" + getCourses() + "]";
 //	}
-
+//
+//	
 
 
 }

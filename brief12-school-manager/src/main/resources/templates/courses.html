@@ -157,18 +157,16 @@ text-decoration:none;
                                             <td>
                                                 <img th:src="${#strings.toLowerCase('../img/courses/'+course.name+'.png')}" alt="avatar" class="rounded-3 border border-secondary" style="min-height: 50px;">
                                                 <a th:href="${'?ACTION=view&id='+course.id}" th:text="${course.name}" href="#" class="user-link"></a>
-                                                <span th:text="${course.trainer !=null ? course.trainer.fullName : '-' }" class="user-subhead"></span>
+                                                <a th:href="${'../dashboard/users?ACTION=view&id='+course.trainer.id}" th:text="${course.trainer !=null ? course.trainer.fullName : '-' }" class="user-subhead text-decoration-none"></a>
                                             </td>
                                             <td class="text-center">
                                                 <span class="label label-default badge badge-pill badge rounded-pill text-bg-success" th:classappend="${course.active}? ' text-bg-success bg-success' : ' text-bg-danger bg-danger'" th:text="${course.active}? 'Active' : 'Pending'"></span>                                                
                                             </td>
                                             <td>
-                                                <span th:text="${course.trainer !=null ? course.trainer.fullName : '-' }"></a>
+                                                <a th:text="${course.trainer !=null ? course.trainer.fullName : '-' }" th:href="${'../dashboard/users?ACTION=view&id='+course.trainer.id}" class="text-decoration-none"></a>
                                             </td> 
                                             <td>                  
-                                               <span th:each="talent : ${course.talents}" th:text="${talent.fullName}"  class="label label-default  badge badge-pill badge rounded-pill text-bg-info bg-info me-1">
-                                               
-                                               </span>
+                                               <a th:each="talent : ${course.talents}" th:href="${'../dashboard/users?ACTION=view&id='+talent.id}" th:text="${talent.fullName}"  class="label label-default  badge badge-pill badge rounded-pill text-bg-info bg-info me-1 text-decoration-none"></a>
                                             </td>
                                             <td style="width: 20%;">
                                                 <a th:href="${'?ACTION=view&id='+course.id}" class="table-link text-warning">

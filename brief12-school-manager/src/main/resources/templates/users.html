@@ -149,7 +149,7 @@ text-decoration:none;
                                         <th class="text-center"><span>Status</span></th>
                                         <th><span>Email</span></th>
                                         <th th:if="${role eq 'talent'}"><span>Enrolled Courses</span></th>
-                                        <th th:unless="${role eq 'talent'}"><span>Teaching Courses</span></th>
+                                        <th th:unless="${role eq 'talent'}"><span>Training Courses</span></th>
                                         <th>&nbsp;</th>
                                         </tr>
                                     </thead>
@@ -166,12 +166,13 @@ text-decoration:none;
                                             <td>
                                                 <span th:text="${user.email}"></a>
                                             </td>
-                                            <td th:if="${role eq 'talent'}">
-                                                <span th:text="${user.course !=null ? user.course.name : '-' }"></a>
-                                            </td> 
+                                           <td th:if="${role eq 'talent'}">                  
+                                               <a th:each="course : ${user.talentCourses}" th:href="${'../dashboard/courses?ACTION=view&id='+course.id}" th:text="${course.name}" class="label label-default  badge badge-pill badge rounded-pill text-bg-info bg-info me-1 text-decoration-none">
+                                               </a>
+                                            </td>
                                             <td th:unless="${role eq 'talent'}">                  
-                                               <span th:each="course : ${user.courses}" th:text="${course.name}"  class="label label-default  badge badge-pill badge rounded-pill text-bg-info bg-info me-1">
-                                               </span>
+                                               <a th:each="course : ${user.courses}" th:href="${'../dashboard/courses?ACTION=view&id='+course.id}" th:text="${course.name}"  class="label label-default  badge badge-pill badge rounded-pill text-bg-info bg-info me-1 text-decoration-none">
+                                               </a>
                                             </td>
                                             <td style="width: 20%;">
                                                 <a th:href="${'?ACTION=view&id='+user.id}" class="table-link text-warning">

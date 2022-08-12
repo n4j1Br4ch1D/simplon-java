@@ -23,7 +23,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 
 ## Diagrams
 <div style="display:flex">
-<img src="/brief12-school-manager/class_diagram.PNG" height="200" width="300"/>
+<img src="/brief12-school-manager/class_diagram.png" height="200" width="300"/>
 <img src="/brief12-school-manager/db_sketch.PNG" height="200" width="300"/>
 </div>
  

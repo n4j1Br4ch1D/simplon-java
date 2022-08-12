@@ -70,7 +70,7 @@ body {
 						</select>
 					</div>
 					<div class="col-md-6">
-						<label for=trainer class="form-label">Trainer</label><select
+						<label for="trainer" class="form-label">Trainer</label><select
 							name="trainer" id="trainer" class="form-select"
 							th:disabled="${type eq 'Read'}">
 						    <option th:each="trainer : ${trainers}"
@@ -81,6 +81,19 @@ body {
 						</select>
 
 					</div>
+					<div class="col-md-6">
+						<label for="talents" class="form-label">Talents</label><select
+							name="talents" id="talents" class="form-select"
+							th:disabled="${type eq 'Read'}" multiple>
+						    <option th:each="talent : ${talents}"
+						       th:value="${talent.id}" th:text="${talent.fullName}"
+						       th:selected="${#lists.contains((course!=null && course.talents!=null ? course.talents : null ), talent) ? true : false}"
+								></option>
+								<option value="0">Not Yet</option>>
+						</select>
+
+					</div>
+					
 					<div class="col-md-6">
 						<input type="submit" name="ACTION"
 							class="btn btn-secondary mt-4 w-100 btn-lg"

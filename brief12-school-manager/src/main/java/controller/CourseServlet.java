@@ -88,6 +88,8 @@ public class CourseServlet extends HttpServlet {
 	            else if ("Update".equals(action)) {
 	                int courseId = Integer.parseInt(request.getParameter("course_id"));
 	                int trainerId = Integer.parseInt(request.getParameter("trainer"));
+	                String[] talents = request.getParameterValues("talents");
+	                System.out.println(talents);
 	                User trainer = trainerId==0 ? null : userService.findById(trainerId);
 	                Course editCourse = new Course(courseId, request.getParameter("name"), request.getParameter("active").equals("true"), trainer);
 	                courseService.update(editCourse);
@@ -136,6 +138,7 @@ public String courseFormServe(String type, Course course) {
 	context.setVariable("course", course);
 	context.setVariable("type", type);
 	context.setVariable("trainers", userRepository.listTrainers());
+	context.setVariable("talents", userRepository.listTalents());
 	var result = templateEngine.process("course_form", context);
 	return result;
 }

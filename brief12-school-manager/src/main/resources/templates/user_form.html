@@ -153,5 +153,21 @@ body {
 			</script>
 		</p>
 	</footer>
+		<script>
+	const courses = document.getElementById('courses');
+	const talentCourses = document.getElementById('talent_courses');
+	document.getElementById('role').onchange = function() {
+	      if(this.value == 'talent'){
+	         courses.classList.add('d-none');
+	         talentCourses.classList.remove('d-none');
+	      }else if(this.value == 'trainer'){
+	         talentCourses.classList.add('d-none');
+	         courses.classList.remove('d-none');
+	      }else{
+	         courses.classList.add('d-none');
+	         talentCourses.classList.add('d-none');
+	      }
+	};
+  </script>
 </body>
 </html>

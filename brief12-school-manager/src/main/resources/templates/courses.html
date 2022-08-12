@@ -157,13 +157,13 @@ text-decoration:none;
                                             <td>
                                                 <img th:src="${#strings.toLowerCase('../img/courses/'+course.name+'.png')}" alt="avatar" class="rounded-3 border border-secondary" style="min-height: 50px;">
                                                 <a th:href="${'?ACTION=view&id='+course.id}" th:text="${course.name}" href="#" class="user-link"></a>
-                                                <a th:href="${'../dashboard/users?ACTION=view&id='+course.trainer.id}" th:text="${course.trainer !=null ? course.trainer.fullName : '-' }" class="user-subhead text-decoration-none"></a>
+                                                <a th:href="'../dashboard/users?ACTION=view&id=' + ${course.trainer !=null ? course.trainer.id : ''}" th:text="${course.trainer !=null ? course.trainer.fullName : '-' }" class="user-subhead text-decoration-none"></a>
                                             </td>
                                             <td class="text-center">
                                                 <span class="label label-default badge badge-pill badge rounded-pill text-bg-success" th:classappend="${course.active}? ' text-bg-success bg-success' : ' text-bg-danger bg-danger'" th:text="${course.active}? 'Active' : 'Pending'"></span>                                                
                                             </td>
                                             <td>
-                                                <a th:text="${course.trainer !=null ? course.trainer.fullName : '-' }" th:href="${'../dashboard/users?ACTION=view&id='+course.trainer.id}" class="text-decoration-none"></a>
+                                                <a th:text="${course.trainer !=null ? course.trainer.fullName : '-' }" th:href="'../dashboard/users?ACTION=view&id=' + ${course.trainer!=null ? course.trainer.id : ''}" class="text-decoration-none"></a>
                                             </td> 
                                             <td>                  
                                                <a th:each="talent : ${course.talents}" th:href="${'../dashboard/users?ACTION=view&id='+talent.id}" th:text="${talent.fullName}"  class="label label-default  badge badge-pill badge rounded-pill text-bg-info bg-info me-1 text-decoration-none"></a>
@@ -183,7 +183,7 @@ text-decoration:none;
                                                 </a>
                                                 <form method="post" action="" class="d-inline">
                                                 <input type="hidden" name="ACTION" value="Delete">
-                                                <input type="hidden" name="user_id" th:value="${course.id}">
+                                                <input type="hidden" name="course_id" th:value="${course.id}">
                                                     <button name="ACTION" value="Delete" type="submit" class="btn table-link text-danger fa-stack" style="top: -16px;">
                                                         <i class="fa fa-square fa-stack-2x"></i>
                                                          <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>

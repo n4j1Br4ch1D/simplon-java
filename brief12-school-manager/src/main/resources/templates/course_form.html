@@ -42,13 +42,13 @@ body {
 				<h1 class="mb-5" th:text="${type+' Course Form'}"></h1>
 				<hr>
 
-				<form action="users" method="post" class="row g-3 text-start">
-					<input th:value="${course!=null ? course.id : 0}" name="course_id"
+            <form action="courses" method="post" class="row g-3 text-start">
+ 					<input th:value="${course!=null ? course.id : 0}" name="course_id"
 						type="hidden" class="form-control" id="courseId"
 						th:disabled="${type eq 'Read'}">
 
                      <div class="col-md-12">
-                         <img th:src="${#strings.toLowerCase('../img/courses/'+course.name+'.png')}" alt="avatar" class="rounded-3 border border-secondary bg-white p-2" style="max-height: 50px;">
+                         <img id="img" th:src="'../img/courses/' + ${course!=null ? #strings.toLowerCase(course.name) : 'holder'} + '.png'" alt="avatar" class="rounded-3 border border-secondary bg-white p-2" style="max-height: 50px;">
 					</div>
 					<div class="col-md-6">
 						<label for="name" class="form-label">Course Name</label> <input
@@ -75,8 +75,9 @@ body {
 							th:disabled="${type eq 'Read'}">
 						    <option th:each="trainer : ${trainers}"
 						       th:value="${trainer.id}" th:text="${trainer.fullName}"
-						       th:selected="${trainer.id eq course.trainer.id ? true : false}"
+						       th:selected="${(course!=null && course.trainer!=null ? course.trainer.id : 0) eq trainer.id ? true : false}"
 								></option>
+								<option value="0">Not Yet</option>>
 						</select>
 
 					</div>
@@ -92,12 +93,12 @@ body {
 
 				<div class="col-md-12 mt-5">
 
-					<a href="/brief12-school-manager/dashboard/users?role=talent"
+					<a href="/brief12-school-manager/dashboard/courses"
 						class="text-warning"> <span class="fa-stack"> <i
 							class="fa fa-square fa-stack-2x"></i> <i
 							class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
 					</span>
-					</a> <a th:href="${'?ACTION=edit&id='+(user!=null ? user.id : '')}"
+					</a> <a th:href="${'?ACTION=edit&id='+(course!=null ? course.id : '')}"
 						class="table-link text-info"
 						th:classappend="${type eq 'Update' ? 'd-none' : ''}"> <span
 						class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i>
@@ -105,10 +106,10 @@ body {
 					</span>
 					</a>
 					<form method="post"
-						action="/brief12-school-manager/dashboard/users" class="d-inline">
+						action="/brief12-school-manager/dashboard/courses" class="d-inline">
 						<input type="hidden" name="ACTION" value="Delete"> <input
-							type="hidden" name="user_id"
-							th:value="${user!=null ? user.id : ''}">
+							type="hidden" name="course_id"
+							th:value="${course!=null ? course.id : ''}">
 						<button name="ACTION" value="Delete" type="submit"
 							class="btn table-link text-danger fa-stack" style="top: -16px;">
 							<i class="fa fa-square fa-stack-2x"></i> <i
@@ -128,5 +129,12 @@ body {
 			</script>
 		</p>
 	</footer>
+	<script>
+document.getElementById("name").onkeyup = function() {
+	document.getElementById("img").src = `../img/courses/${this.value.toLowerCase()}.png`;
+};
+
+
+</script>
 </body>
 </html>

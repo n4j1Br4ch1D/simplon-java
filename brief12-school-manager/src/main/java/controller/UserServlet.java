@@ -17,6 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import repository.UserRepository;
+import service.CourseService;
 import service.UserService;
 
 //import entity.User;
@@ -30,6 +31,7 @@ public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserService userService = new UserService();
 	private UserRepository userRepository = new UserRepository();
+	private CourseService courseService = new CourseService();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -137,7 +139,7 @@ public class UserServlet extends HttpServlet {
 		
 		context.setVariable("trainersN", userRepository.listTrainers().size());
 		context.setVariable("talentsN", userRepository.listTalents().size());
-		context.setVariable("coursesN", 30);
+		context.setVariable("coursesN", courseService.findAll().size());
 
 		var result = templateEngine.process("users", context);
 		return result;
@@ -154,6 +156,7 @@ public class UserServlet extends HttpServlet {
 		templateEngine.setTemplateResolver(resolver);
 		context.setVariable("user", user);
 		context.setVariable("type", type);
+		context.setVariable("courses", courseService.findAll());
 		var result = templateEngine.process("user_form", context);
 		return result;
 	}

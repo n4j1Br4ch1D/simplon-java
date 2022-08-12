@@ -26,6 +26,7 @@ import entity.User;
  */
 public class CourseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UserService userService = new UserService();
 	private UserRepository userRepository = new UserRepository();
 	private CourseService courseService = new CourseService();
        
@@ -76,32 +77,29 @@ public class CourseServlet extends HttpServlet {
 		String action = request.getParameter("ACTION");
 		HttpSession httpSession = request.getSession();
 		if (httpSession.getAttribute("signedinUser") != null) {
-			if ("Create".equals(action)) {
-				int TasksN = Integer.parseInt(request.getParameter("tasks_number"));
-//				User newUser = new Course(request.getParameter("firstname") + " " + request.getParameter("lastname"),
-//						request.getParameter("role"), request.getParameter("approved").equals("true"),
-//						request.getParameter("email"), request.getParameter("password"), TasksN);
-//				userService.persist(newUser);
-				response.sendRedirect("/brief12-school-manager/dashboard/users?role=talent");
-			}
+			 if ("Create".equals(action)) {
+	                int trainerId = Integer.parseInt(request.getParameter("trainer"));
+	                User trainer = trainerId==0 ? null : userService.findById(trainerId);
+	                Course newCourse = new Course(request.getParameter("name"), request.getParameter("active").equals("true"), trainer);
+	                courseService.persist(newCourse);
+	                response.sendRedirect("/brief12-school-manager/dashboard/courses");
+	            }
 
-			else if ("Update".equals(action)) {
-				System.out.println("====#>" + (request.getParameter("approved").equals("true") + "<#===="));
-				int UserId = Integer.parseInt(request.getParameter("user_id"));
-				int tasksN = Integer.parseInt(request.getParameter("tasks_number"));
-//				User editUser = new User(UserId,
-//						request.getParameter("firstname") + " " + request.getParameter("lastname"),
-//						request.getParameter("role"), request.getParameter("approved").equals("true"),
-//						request.getParameter("email"), request.getParameter("password"), tasksN);
-//				userService.update(editUser);
-//				response.sendRedirect("/brief12-school-manager/dashboard/users?role=talent");
-			}
+	            else if ("Update".equals(action)) {
+	                int courseId = Integer.parseInt(request.getParameter("course_id"));
+	                int trainerId = Integer.parseInt(request.getParameter("trainer"));
+	                User trainer = trainerId==0 ? null : userService.findById(trainerId);
+	                Course editCourse = new Course(courseId, request.getParameter("name"), request.getParameter("active").equals("true"), trainer);
+	                courseService.update(editCourse);
+	                response.sendRedirect("/brief12-school-manager/dashboard/courses");
+	            }
 
-			else if ("Delete".equals(action)) {
-				int userId = Integer.parseInt(request.getParameter("user_id"));
-//				userService.delete(userId);
-				response.sendRedirect("/brief12-school-manager/dashboard/users?role=talent");
-			}
+	            else if ("Delete".equals(action)) {
+	                int courseId = Integer.parseInt(request.getParameter("course_id"));
+	                System.out.println("===>"+courseId);
+	                courseService.delete(courseId);
+	                response.sendRedirect("/brief12-school-manager/dashboard/courses");
+	            }
 		} else {
 			response.sendRedirect("/brief12-school-manager/sign-in");
 		}
@@ -121,8 +119,7 @@ public String coursesServe(int signedinUser) {
 	context.setVariable("courses", courseService.findAll());
 	context.setVariable("trainersN", userRepository.listTrainers().size());
 	context.setVariable("talentsN", userRepository.listTalents().size());
-	context.setVariable("coursesN", 30);
-
+	context.setVariable("coursesN", courseService.findAll().size());
 	var result = templateEngine.process("courses", context);
 	return result;
 }

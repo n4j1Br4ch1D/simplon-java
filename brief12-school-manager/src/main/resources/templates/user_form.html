@@ -96,8 +96,17 @@ body {
 								Yet</option>
 						</select>
 					</div>
-					<div class="col-md-6">
+					<div id="talent_courses" class="col-md-6 d-none">
 				    	<label for="talentcourses" class="form-label">Enrolled Courses</label> 
+						<select name="talentcourses" id="talentcourses" multiple>
+                             <option th:each="course : ${talentcourses}"
+						       th:value="${course.id}" th:text="${course.fullName}"
+						       th:selected="${course.id eq user.course.id ? true : false}"
+							></option>                       
+						 </select>
+					</div>
+			    	<div id="courses" class="col-md-6">
+				    	<label for="talentcourses" class="form-label">Teaching Courses</label> 
 						<select name="talentcourses" id="talentcourses" multiple>
                              <option th:each="course : ${talentcourses}"
 						       th:value="${course.id}" th:text="${course.fullName}"

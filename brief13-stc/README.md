@@ -10,7 +10,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 
 ---
 
-## Snapshots
+<!---## Snapshots
 
 <div style="display:flex">
 <img src="/brief13-stc/1.PNG" height="200" width="300"/>
@@ -19,7 +19,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 <img src="/brief13-stc/4.PNG" height="200" width="300"/>
 <img src="/brief13-stc/5.PNG" height="200" width="300"/>
 <img src="/brief13-stc/6.PNG" height="200" width="300"/>
-</div>
+</div> -->
 
 ## Diagrams
 <div style="display:flex">

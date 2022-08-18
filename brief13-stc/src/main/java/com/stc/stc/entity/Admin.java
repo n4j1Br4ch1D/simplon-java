@@ -1,5 +1,6 @@
 package com.stc.stc.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,15 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
-public class Admin extends User {
+@Table(name = "admins")
+public class Admin {
 	@Id
+	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_admin;
+	private Integer id;
 	
-	
-	@Embedded
-	private Status status;
-
+    private String level;
 
 }

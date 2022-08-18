@@ -47,7 +47,7 @@ public class UserController {
 
 	@PostMapping("/users") // Insert
 	public String saveUser(HttpServletRequest request, @ModelAttribute("user") User user) {
-        user.setFullName(request.getParameter("firstname")+" "+request.getParameter("lastname"));
+//        user.setFullName(request.getParameter("firstname")+" "+request.getParameter("lastname"));
 		userService.saveUser(user);
 		return "redirect:/dashboard/users";
 	}
@@ -61,7 +61,7 @@ public class UserController {
 
 	@PutMapping("/users") // Update
 	public String updateUser(HttpServletRequest request, @ModelAttribute("user") User user) {
-        user.setFullName(request.getParameter("firstname")+" "+request.getParameter("lastname"));
+//        user.setFullName(request.getParameter("firstname")+" "+request.getParameter("lastname"));
 		userService.saveUser(user);
 		return "redirect:/dashboard/users";
 	}

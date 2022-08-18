@@ -3,6 +3,7 @@ package com.stc.stc.entity;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,13 +16,12 @@ public class Excercie {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_EXERCISES")
-	private Long id_Exercises;
-	@Column(name="STARTDATE")
+	private Long id;
 	private Date startDate;
-	@Column(name="ENDDATE")
 	private Date endDate;
-	@Column(name="STATUS")
-	private String status;
+	
+	
+	@Embedded
+	private Status status;
 
 }

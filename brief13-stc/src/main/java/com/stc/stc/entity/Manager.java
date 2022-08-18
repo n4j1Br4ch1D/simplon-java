@@ -1,6 +1,7 @@
 package com.stc.stc.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +13,12 @@ import javax.persistence.Table;
 public class Manager extends User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_MANAGER")
-	private Long id_manager;
-	@Column(name="DOMAIN")
+	private Long id;
 	private String domain;
-	@Column(name="TYPE")
 	private String type;
-	@Column(name="STATUS")
-	private String status;
 	
+	
+	@Embedded
+	private Status status;
 
 }

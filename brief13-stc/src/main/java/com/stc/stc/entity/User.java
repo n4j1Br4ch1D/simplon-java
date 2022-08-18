@@ -17,22 +17,13 @@ public class User {
     @Id  
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_users;
-    @Column(name="FIRSTNAME")
-    private String firstName;
-    @Column(name="LASTNAME")
-	private String lastName;
-    @Column(name="TEL")
+	private long id;
+    @Column(name="full_name")
+    private String fullName;
 	private int  tel;
-    @Column(name="EMAIL")
 	private String email;
-    @Column(name="ROLE")
 	private String role;
-	
-	
- 
-
-
-
+    
+    
 
 }

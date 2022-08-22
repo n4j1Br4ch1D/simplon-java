@@ -6,11 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "admins")
-public class Admin {
+//@PrimaryKeyJoinColumn(name = "userId")
+public class Admin extends User{
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

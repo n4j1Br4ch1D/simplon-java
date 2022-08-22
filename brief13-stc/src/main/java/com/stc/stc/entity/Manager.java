@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "managers")
-public class Manager {
+public class Manager extends User{
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

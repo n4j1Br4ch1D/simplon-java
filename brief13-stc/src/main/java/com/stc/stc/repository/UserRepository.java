@@ -13,7 +13,7 @@ import com.stc.stc.entity.User;
 public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByRole(String role);
     
-    @Query("SELECT SUM(e.tasks) FROM User e")
+//    @Query("SELECT SUM(e.tasks) FROM User e")
 //  @Query(value = "SELECT SUM(tasks_numbers) FROM users", nativeQuery = true)
-    Long sumTasks(); 
+//    Long sumTasks(); 
 }

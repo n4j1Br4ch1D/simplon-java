@@ -13,48 +13,46 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.stc.stc.entity.User;
-import com.stc.stc.repository.UserRepository;
+import com.stc.stc.entity.Activity;
+import com.stc.stc.repository.ActivityRepository;
 
 
 
 @Service
-public class UserService implements ServiceInterface <User>{
+public class ActivityService implements ServiceInterface <Activity>{
 
 	@Autowired
-	private UserRepository userRepository;
+	private ActivityRepository activityRepository;
 
 	@Override
-	public List<User> getAll() {
-		return userRepository.findAll();
+	public List<Activity> getAll() {
+		return activityRepository.findAll();
 	}
 	
 	@Override
-	public User getOne(long id) {
-		Optional<User> optional = userRepository.findById(id);
-		User user = null;
+	public Activity getOne(long id) {
+		Optional<Activity> optional = activityRepository.findById(id);
+		Activity activity = null;
 		if (optional.isPresent()) {
-			user = optional.get();
+			activity = optional.get();
 		} else {
-			throw new RuntimeException(" User not found for id :: " + id);
+			throw new RuntimeException(" Activity not found for id :: " + id);
 		}
-		return user;
+		return activity;
 	}
 	
 	
 	@Override
-	public void save(User user) {
-		this.userRepository.save(user);
+	public void save(Activity activity) {
+		this.activityRepository.save(activity);
 	}
 
 
 	@Override
 	public void delete(long id) {
-		this.userRepository.deleteById(id);
+		this.activityRepository.deleteById(id);
 	}
 	
 	
-	public List<User> getAllEmployees() {
-		return userRepository.findByRole("employee");
-	}
+
 }

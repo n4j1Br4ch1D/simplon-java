@@ -1,5 +1,7 @@
 package com.stc.stc.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +15,7 @@ import com.stc.stc.service.UserService;
 
 
 
-//@RestController
-@Controller
+@RestController
 @RequestMapping("/dashboard")
 public class UserController {
 
@@ -22,18 +23,13 @@ public class UserController {
 	private UserService userService;
 
 	@GetMapping("/users") // List Only Employees
-	public String getAllUsers(Model model) {
-		int signedinUser =1;
-		model.addAttribute("signedinUser", signedinUser);
-		model.addAttribute("employees", userService.getAllEmployees());
-		model.addAttribute("employeesN", userService.getAllEmployees().size());
-		model.addAttribute("tasksN", userService.tasksSum());
-		return "dashboard";
+	public List<User> getAllUsers(Model model) {
+		return userService.getAll();
 	}
 	
 	@GetMapping("/users/view/{id}") // Read
 	public String viewUserById(Model model, @PathVariable(value = "id") Long userId) throws Exception {
-		model.addAttribute("user", userService.getUserById(userId));
+		model.addAttribute("user", userService.getOne(userId));
 		model.addAttribute("type", "Read");
 		return "form";
 	}
@@ -48,13 +44,13 @@ public class UserController {
 	@PostMapping("/users") // Insert
 	public String saveUser(HttpServletRequest request, @ModelAttribute("user") User user) {
 //        user.setFullName(request.getParameter("firstname")+" "+request.getParameter("lastname"));
-		userService.saveUser(user);
+		userService.save(user);
 		return "redirect:/dashboard/users";
 	}
 
 	@GetMapping("/users/{id}") // Edit
 	public String getUserById(Model model, @PathVariable(value = "id") Long userId) throws Exception {
-		model.addAttribute("user", userService.getUserById(userId));
+//		model.addAttribute("user", userService.getUserById(userId));
 		model.addAttribute("type", "Update");
 		return "form";
 	}
@@ -62,13 +58,15 @@ public class UserController {
 	@PutMapping("/users") // Update
 	public String updateUser(HttpServletRequest request, @ModelAttribute("user") User user) {
 //        user.setFullName(request.getParameter("firstname")+" "+request.getParameter("lastname"));
-		userService.saveUser(user);
+		userService.save(user);
 		return "redirect:/dashboard/users";
 	}
 
 	@DeleteMapping("/users/{id}") // Delete
 	public String deleteUser(@PathVariable(value = "id") Long userId) throws Exception {
-		this.userService.deleteUserById(userId);
-		return "redirect:/dashboard/users";
+		this.userService.delete(userId);
+		return "";
+		
+		
 	}
 }

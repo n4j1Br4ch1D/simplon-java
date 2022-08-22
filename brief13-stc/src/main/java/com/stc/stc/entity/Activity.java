@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table
+@Table(name = "activities")
 public class Activity {
 
 	@Id

@@ -32,16 +32,22 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 
 ## Planning
 
-1. Analyse Requirments.
-2. Starts Jira boread with Tasks.
+1. Analyze Requirements.
+2. Starts Jira bored with Tasks.
 3. Make Use Case Diagram.
 4. Make Class Diagram.
 5. Make DB Schema sketch.
-6. Environment Setup.
-7. Make Migrations.
-8. Make Seeders.
-9. Make Entites.
-10. Prepare presentation.
+6. Design Rest API Endpoints & Parameters.
+7. Environment Setup.
+8. Make Migrations.
+9. Make Seeders.
+10. Make Entities.
+11. Develop API.
+   - issue1: Protect API endpoints JWT.
+   - issue2: Get Role attributes.
+   - issue3: Pagination Parameter Filtering.
+12. Maintenance.
+13. Prepare presentation.
 
 <div style="display:flex">
 <img src="/brief13-stc/p1.png" height="200" width="300"/>
@@ -53,7 +59,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 
 - [X] Sign in as administrator(httpSession).
 - [X] Sign out (httpSession).
-- [X] Adding a user (role:admin, trainer, talent).
+- [X] Adding a user (role:admin, manager, particpant).
 - [X] Modify users.
 - [X] Delete users.
 - [X] See user details.
@@ -65,6 +71,37 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 - [X] List courses.
 - [X] Users report(Number of Trainers,talents & Number of Courses).
 
+```
+=========
+/login
+/register
+/token
+=========/
+get user/filters role(), gender, activities, ...
+get user/id
+post user/
+put user/id
+delete user/id
+=========
+get activity/filters
+get activity/id
+post activity/  [import multi participants]
+put activity/id
+delete activity/id
+=========
+get exercise/filters
+get exercise/id
+post exercise/
+put exercise/id
+delete exercise/id
+=========
+
+user->admin->
+user->manager->activities(he created->excercises->particpants)
+user->particpant->activities(he particpated in->excercies)
+
+```
+
 ## Technologies Checklist
 
 - [X] Spring Boot.
@@ -75,6 +112,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 - [X] Use Repository.
 - [X] Use Hibernate ORM.
 - [X] Use Thymleaf.
+- [X] Use Spring Security.
 
 
 ## Brief Objectives Checklist
@@ -87,4 +125,4 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 - [X] Github repository.
 - [X] Restitution in public (Detailed presentation of the work carried out)
 - [X] The database must conform to the model produced; Ability to create database query requests that meet a specific need.
-- [X] Deliver: Diagrams of use case, classes A link to Jira/Trello showing all the different stages of the project.
+- [X] Deliver: Diagrams of use case, classes A link to Jira/Trello showing all the different stages of the project, Source Code Repo,Rest API Documentation.

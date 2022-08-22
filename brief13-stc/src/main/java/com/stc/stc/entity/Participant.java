@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "participants")
-public class Participant {
+public class Participant extends User{
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

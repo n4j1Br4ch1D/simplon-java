@@ -17,7 +17,7 @@ public class ParticipantActivity {
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 	private Status status;
 
@@ -29,11 +29,11 @@ public class ParticipantActivity {
 	@JoinColumn(name = "activity_id")
 	private Activity activity;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -45,14 +45,6 @@ public class ParticipantActivity {
 		this.status = status;
 	}
 
-	public Participant getParticipant() {
-		return participant;
-	}
-
-	public void setParticipant(Participant participant) {
-		this.participant = participant;
-	}
-
 	public Activity getActivity() {
 		return activity;
 	}
@@ -61,6 +53,5 @@ public class ParticipantActivity {
 		this.activity = activity;
 	}
 
-	
 
 }

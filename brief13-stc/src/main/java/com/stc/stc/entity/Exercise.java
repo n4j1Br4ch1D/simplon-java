@@ -1,5 +1,6 @@
 package com.stc.stc.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -20,27 +21,29 @@ public class Exercise {
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 	private String name;
-	@Column(name = "started_at")
-	private Date startedAt;
-	@Column(name = "ended_at")
-	private Date endedAt;
+	
+    @Column(name = "started_at", columnDefinition = "DATE")
+    private LocalDate startedAt;
+    
+    @Column(name = "ended_at", columnDefinition = "DATE")
+    private LocalDate endedAt;
 	
 	private boolean enabled;
 	
-//    @OneToOne(mappedBy = "exercise")
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	
+    @OneToOne(mappedBy = "exercise")
     @JoinColumn(name = "activity_id", referencedColumnName = "id")
     private Activity activity;
     
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -52,19 +55,21 @@ public class Exercise {
 		this.name = name;
 	}
 
-	public Date getStartedAt() {
+
+
+	public LocalDate getStartedAt() {
 		return startedAt;
 	}
 
-	public void setStartedAt(Date startedAt) {
+	public void setStartedAt(LocalDate startedAt) {
 		this.startedAt = startedAt;
 	}
 
-	public Date getEndedAt() {
+	public LocalDate getEndedAt() {
 		return endedAt;
 	}
 
-	public void setEndedAt(Date endedAt) {
+	public void setEndedAt(LocalDate endedAt) {
 		this.endedAt = endedAt;
 	}
 
@@ -76,13 +81,13 @@ public class Exercise {
 		this.enabled = enabled;
 	}
 
-	public Activity getActivity() {
-		return activity;
-	}
-
-	public void setActivity(Activity activity) {
-		this.activity = activity;
-	}
+//	public Activity getActivity() {
+//		return activity;
+//	}
+//
+//	public void setActivity(Activity activity) {
+//		this.activity = activity;
+//	}
 
     
 }

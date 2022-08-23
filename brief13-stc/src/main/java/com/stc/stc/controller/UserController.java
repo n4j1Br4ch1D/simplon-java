@@ -31,22 +31,23 @@ public class UserController {
 	}
 
     
-//	@GetMapping("/{id}")
-//	public ResponseEntity<User> getUserById(@PathVariable("id") Long id) throws RecordNotFoundException {
-//		User entity = userService.getOne(id);
-//		return new ResponseEntity<User>(entity, HttpStatus.OK);
-//	}
-//
-//	@PostMapping
-//	public ResponseEntity<User> createOrUpdateUser(User user) throws RecordNotFoundException {
-//		User updated = userService.save(user);
-//		return new ResponseEntity<User>(updated, HttpStatus.OK);
-//	}
-//
-//	@DeleteMapping("/{id}")
-//	public HttpStatus deleteUserById(@PathVariable("id") Long id) throws RecordNotFoundException {
-//		userService.delete(id);
-//		return HttpStatus.FORBIDDEN;
-//	}
+	@GetMapping("/{id}")
+	public ResponseEntity<User> getUserById(@PathVariable("id") Long id) throws RecordNotFoundException {
+		User entity = userService.getOne(id);
+		System.out.println(entity.getFullName());
+		return new ResponseEntity<User>(entity, HttpStatus.OK);
+	}
+
+	@PostMapping
+	public ResponseEntity<User> createOrUpdateUser(User user) throws RecordNotFoundException {
+		User updated = userService.save(user);
+		return new ResponseEntity<User>(updated, HttpStatus.OK);
+	}
+
+	@DeleteMapping("/{id}")
+	public HttpStatus deleteUserById(@PathVariable("id") Long id) throws RecordNotFoundException {
+		userService.delete(id);
+		return HttpStatus.FORBIDDEN;
+	}
 
 }

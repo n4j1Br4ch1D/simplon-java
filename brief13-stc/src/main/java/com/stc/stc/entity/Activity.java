@@ -29,7 +29,7 @@ public class Activity {
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
     private String name;
     private String description;
     private String type; //training, talking, event
@@ -62,12 +62,12 @@ public class Activity {
 
 
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -142,25 +142,6 @@ public class Activity {
 		this.exercise = exercise;
 	}
 
-
-	public Manager getManager() {
-		return manager;
-	}
-
-
-	public void setManager(Manager manager) {
-		this.manager = manager;
-	}
-
-
-	public Collection<ParticipantActivity> getParticipantActivities() {
-		return participantActivities;
-	}
-
-
-	public void setParticipantActivities(Collection<ParticipantActivity> participantActivities) {
-		this.participantActivities = participantActivities;
-	}
 
 
 

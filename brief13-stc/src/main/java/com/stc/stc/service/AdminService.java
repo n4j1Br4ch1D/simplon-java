@@ -11,59 +11,59 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.stc.stc.entity.User;
+import com.stc.stc.entity.Admin;
 import com.stc.stc.exception.RecordNotFoundException;
-import com.stc.stc.repository.UserRepository;
+import com.stc.stc.repository.AdminRepository;
 
  
 @Service
-public class UserService implements ServiceInterface<User> {
+public class AdminService implements ServiceInterface<Admin> {
      
     @Autowired
-    UserRepository userRepository;
+    AdminRepository adminRepository;
      
-    public List<User> getAll(Integer pageNo, Integer pageSize, String sortBy)
+    public List<Admin> getAll(Integer pageNo, Integer pageSize, String sortBy)
     {
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
  
-        Page<User> pagedResult = userRepository.findAll(paging);
+        Page<Admin> pagedResult = adminRepository.findAll(paging);
          
         if(pagedResult.hasContent()) {
             return pagedResult.getContent();
         } else {
-            return new ArrayList<User>();
+            return new ArrayList<Admin>();
         }
     }
     
 	@Override
-    public User getOne(Long id) throws RecordNotFoundException
+    public Admin getOne(Long id) throws RecordNotFoundException
     {
-        Optional<User> user = userRepository.findById(id);
+        Optional<Admin> admin = adminRepository.findById(id);
          
-        if(user.isPresent()) {
-            return user.get();
+        if(admin.isPresent()) {
+            return admin.get();
         } else {
-            throw new RecordNotFoundException("No user record exist for given id");
+            throw new RecordNotFoundException("No admin record exist for given id");
         }
          
         
     }
     
 	@Override 
-    public User save(User entity) throws RecordNotFoundException
+    public Admin save(Admin entity) throws RecordNotFoundException
     {
-        Optional<User> user = userRepository.findById(entity.getId());
+        Optional<Admin> admin = adminRepository.findById(entity.getId());
          
-        if(user.isPresent())
+        if(admin.isPresent())
         {
-            User newEntity = user.get();
+            Admin newEntity = admin.get();
             newEntity.setEmail(entity.getEmail());
             newEntity.setFullName(entity.getFullName()); 
-            newEntity = userRepository.save(newEntity);
+            newEntity = adminRepository.save(newEntity);
              
             return newEntity;
         } else {
-            entity = userRepository.save(entity);
+            entity = adminRepository.save(entity);
              
             return entity;
         }
@@ -73,13 +73,13 @@ public class UserService implements ServiceInterface<User> {
 	@Override
     public void delete(Long id) throws RecordNotFoundException
     {
-        Optional<User> user = userRepository.findById(id);
+        Optional<Admin> admin = adminRepository.findById(id);
          
-        if(user.isPresent())
+        if(admin.isPresent())
         {
-        	userRepository.deleteById(id);
+        	adminRepository.deleteById(id);
         } else {
-            throw new RecordNotFoundException("No user record exist for given id");
+            throw new RecordNotFoundException("No admin record exist for given id");
         }
     }
 

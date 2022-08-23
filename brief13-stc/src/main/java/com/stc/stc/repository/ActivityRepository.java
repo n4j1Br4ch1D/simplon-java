@@ -11,6 +11,7 @@ import com.stc.stc.entity.Activity;
 
 
 
+
 public interface ActivityRepository extends JpaRepository<Activity, Long> {
 	
 }

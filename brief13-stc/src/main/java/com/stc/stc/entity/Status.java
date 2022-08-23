@@ -4,6 +4,6 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Status {
-   private String active;   
-   private String enabled;
+   private String activity_status;   // Endeed, InProgress
+   private String excercice_status;   // Endeed, InProgress
 }

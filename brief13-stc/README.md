@@ -43,9 +43,6 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 9. Make Seeders.
 10. Make Entities.
 11. Develop API.
-   - issue1: Protect API endpoints JWT.
-   - issue2: Get Role attributes.
-   - issue3: Pagination Parameter Filtering.
 12. Maintenance.
 13. Prepare presentation.
 
@@ -54,6 +51,14 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 <img src="/brief13-stc/p2.png" height="200" width="300"/>
 <img src="/brief13-stc/p3.PNG" height="200" width="300"/>
 </div>
+
+## Issues:
+   -[X] issue1: Get Role attributes.
+   -[X] issue2: add attributes to pivot table.
+   -[X] issue3: Make Foreign key nullable.
+   -[] issue4: get Pagination info.
+   -[] issue5: Parameter Filtering.
+   -[] issue6: Protect API endpoints JWT.
  
 ## Constraints Checklist
 

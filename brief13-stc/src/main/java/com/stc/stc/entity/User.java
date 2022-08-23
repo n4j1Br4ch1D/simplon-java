@@ -13,25 +13,27 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Table(name = "users")
-//@EntityListeners(AuditingEntityListener.class)
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User {
   
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
     @Column(name="full_name")
     private String fullName;
+	@Column(name="is_male")
+	private boolean isMale;
 	private String email;
 	private String password;
 	private String tel;
 	private String role;
-	private Status status;
-	public Integer getId() {
+    private boolean enabled;
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFullName() {
@@ -39,6 +41,13 @@ public class User {
 	}
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+	public boolean isMale() {
+		return isMale;
+	}
+
+	public void setMale(boolean isMale) {
+		this.isMale = isMale;
 	}
 	public String getEmail() {
 		return email;
@@ -64,17 +73,10 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public Status getStatus() {
-		return status;
+	public boolean isEnabled() {
+		return enabled;
 	}
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
-	
-	//admin
-	//manager
-	//participant
-	
-
-
 }

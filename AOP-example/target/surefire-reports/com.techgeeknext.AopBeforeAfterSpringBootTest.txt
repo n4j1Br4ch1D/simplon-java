@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.techgeeknext.AopBeforeAfterSpringBootTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.techgeeknext.AopBeforeAfterSpringBootTest
+initializationError  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NoClassDefFoundError: MathService
+Caused by: java.lang.ClassNotFoundException: MathService
+

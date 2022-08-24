@@ -21,13 +21,6 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 <img src="/brief13-stc/6.PNG" height="200" width="300"/>
 </div> -->
 
-## Diagrams
-<div style="display:flex">
-<img src="/brief13-stc/useCase_diagram.png" height="200" width="300"/>
-<img src="/brief13-stc/class_diagram.png" height="200" width="300"/>
-<img src="/brief13-stc/db_sketch.PNG" height="200" width="300"/>
-<img src="/brief13-stc/tables_seeded.PNG" height="200" width="300"/>
-</div>
 
 
 ## Planning
@@ -46,21 +39,18 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 12. Maintenance.
 13. Prepare presentation.
 
+## Diagrams
 <div style="display:flex">
 <img src="/brief13-stc/p1.png" height="200" width="300"/>
 <img src="/brief13-stc/p2.png" height="200" width="300"/>
 <img src="/brief13-stc/p3.PNG" height="200" width="300"/>
+<img src="/brief13-stc/useCase_diagram.png" height="200" width="300"/>
+<img src="/brief13-stc/class_diagram.png" height="200" width="300"/>
+<img src="/brief13-stc/db_sketch.PNG" height="200" width="300"/>
+<img src="/brief13-stc/tables_seeded.PNG" height="200" width="300"/>
+<img src="/brief13-stc/rest_apis.PNG" height="200" width="300"/>
+<img src="/brief13-stc/source_code.PNG" height="200" width="300"/>
 </div>
-
-## Issues:
-   -[X] Issue1: Get Role attributes.
-   -[X] Issue2: Add attributes to pivot table.
-   -[X] Issue3: Make Foreign key nullable.
-   -[X] Issue4: Fix recursive in relations.
-   -[] Issue5: Get Pagination info.
-   -[] Issue6: Parameter Filtering.
-   -[] Issue7: Protect API endpoints JWT.
-   -[] Issue8: Saving multiple items.
 
 ## Constraints Checklist
 
@@ -77,6 +67,8 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 - [X] See course details.
 - [X] List courses.
 - [X] Users report(Number of Trainers,talents & Number of Courses).
+
+## Api Endpoints & PArams Design.
 
 ```
 =========
@@ -109,6 +101,16 @@ user->particpant->activities(he particpated in->excercies)
 
 ```
 
+## Issues:
+   - [X] Issue2: Add attributes to pivot table.
+   - [X] Issue3: Make Foreign key nullable.
+   - [X] Issue4: Fix recursive in relations.
+   - [ ] Issue5: Get Pagination info.
+   - [ ] Issue6: Parameter Filtering.
+   - [ ] Issue7: Protect API endpoints JWT.
+   - [ ] Issue8: Saving multiple items.
+
+
 ## Technologies Checklist
 
 - [X] Spring Boot.
@@ -120,6 +122,10 @@ user->particpant->activities(he particpated in->excercies)
 - [X] Use Hibernate ORM.
 - [X] Use Thymleaf.
 - [X] Use Spring Security.
+
+## Extras
+
+- [X] Rest Client .http to test apis.
 
 
 ## Brief Objectives Checklist

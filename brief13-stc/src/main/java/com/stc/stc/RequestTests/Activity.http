@@ -1,0 +1,39 @@
+@baseUrl=http://localhost:8081/api
+http://localhost:8081/api/signup
+http://localhost:8081/api/token
+http://localhost:8081/api/users
+http://localhost:8081/api/admins
+http://localhost:8081/api/managers
+http://localhost:8081/api/participants
+http://localhost:8081/api/activities
+http://localhost:8081/api/exercises
+@authorization=Bearer vsoOxaHPtG
+
+# Auth
+POST {{baseUrl}}/login
+Content-Type: application/x-www-form-urlencoded
+
+    email=nr@anmoonweb.com
+    &password=nr-password
+
+###
+
+GET {{baseUrl}}/info
+
+###
+
+GET {{baseUrl}}/user
+Authorization: {{authorization}}
+
+###
+
+
+GET {{baseUrl}}/users/11/
+
+
+### 
+
+GET https://swapi.dev/api/planets/1
+
+
+

@@ -53,13 +53,15 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 </div>
 
 ## Issues:
-   -[X] issue1: Get Role attributes.
-   -[X] issue2: add attributes to pivot table.
-   -[X] issue3: Make Foreign key nullable.
-   -[] issue4: get Pagination info.
-   -[] issue5: Parameter Filtering.
-   -[] issue6: Protect API endpoints JWT.
- 
+   -[X] Issue1: Get Role attributes.
+   -[X] Issue2: Add attributes to pivot table.
+   -[X] Issue3: Make Foreign key nullable.
+   -[X] Issue4: Fix recursive in relations.
+   -[] Issue5: Get Pagination info.
+   -[] Issue6: Parameter Filtering.
+   -[] Issue7: Protect API endpoints JWT.
+   -[] Issue8: Saving multiple items.
+
 ## Constraints Checklist
 
 - [X] Sign in as administrator(httpSession).

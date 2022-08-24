@@ -81,13 +81,13 @@ public class Exercise {
 		this.enabled = enabled;
 	}
 
-//	public Activity getActivity() {
-//		return activity;
-//	}
-//
-//	public void setActivity(Activity activity) {
-//		this.activity = activity;
-//	}
+	public Activity getActivity() {
+		return activity;
+	}
+
+	public void setActivity(Activity activity) {
+		this.activity = activity;
+	}
 
     
 }

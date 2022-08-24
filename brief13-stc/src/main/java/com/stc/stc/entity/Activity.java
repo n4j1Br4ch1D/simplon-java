@@ -21,9 +21,17 @@ import javax.persistence.Table;
 
 import org.springframework.lang.Nullable;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 
 @Entity
 @Table(name = "activities")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="id", scope = Manager.class)
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Activity {
 
 	@Id
@@ -41,13 +49,17 @@ public class Activity {
     @Column(name = "ended_at", columnDefinition = "DATE")
     private LocalDate endedAt;
 	
-    
     @OneToOne(optional = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "exercise_id", nullable = true, columnDefinition = "integer")
     private Exercise exercise;
 	
 	@ManyToOne(optional = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="manager_id", nullable = true, columnDefinition = "integer")
+//    @JsonBackReference
+//    @JsonIgnore
+//	@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="id", scope = Manager.class)
+//	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Activity.class)
+
     private Manager manager;
  
 
@@ -130,6 +142,18 @@ public class Activity {
 
 	public void setEndedAt(LocalDate endedAt) {
 		this.endedAt = endedAt;
+	}
+	
+	
+
+
+	public Manager getManager() {
+		return manager;
+	}
+
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
 	}
 
 

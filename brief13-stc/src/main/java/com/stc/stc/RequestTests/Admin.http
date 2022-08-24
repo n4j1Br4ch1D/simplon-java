@@ -1,0 +1,31 @@
+@baseUrl=http://127.0.0.1:8000/api
+@authorization=Bearer vsoOxaHPtG
+
+# Auth
+POST {{baseUrl}}/login
+Content-Type: application/x-www-form-urlencoded
+
+    email=nr@anmoonweb.com
+    &password=nr-password
+
+###
+
+GET {{baseUrl}}/info
+
+###
+
+GET {{baseUrl}}/user
+Authorization: {{authorization}}
+
+###
+
+
+GET {{baseUrl}}/users/11/
+
+
+### 
+
+GET https://swapi.dev/api/planets/1
+
+
+

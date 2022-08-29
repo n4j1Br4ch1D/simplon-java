@@ -2,7 +2,6 @@ package com.stc.stc.entity;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

@@ -1,12 +1,12 @@
 /*Seed TABLE Users:*/
-INSERT INTO public.users (full_name, is_male, email, password, tel, ROLE, enabled)
-VALUES ('Najib Rachid', TRUE, 'najib@anmoon.ma','password', '06000000','admin',TRUE),
-       ('Mohamed idlmhor', TRUE,'med@anmoon.ma','password', '06000040','manager',TRUE),
-       ('Ayoub Oudor ', TRUE, 'ayoub@anmoon.ma','password', '06000040','manager',TRUE),
-       ('Fatiha El habti', FALSE, 'anas@anmoon.ma','password', '06000090','participant',TRUE),
-       ('Latifa Amouguay', FALSE, 'latifa@anmoon.ma','password', '06000090','participant',TRUE),
-       ('Anass ELmkhloufi', TRUE, 'anas@anmoon.ma','password', '06000090','participant',TRUE),
-       ('Omar Dbaa', TRUE, 'omar@anmoon.ma','password', '06040090','participant', FALSE);
+INSERT INTO public.users (full_name, is_male, username, email, password, tel, ROLE, enabled)
+VALUES ('Najib Rachid', TRUE, 'najib', 'najib@anmoon.ma','$2a$10$OLqXyrDqoKyGkJu.3Tr/lesUfNs05hM.ZFRHzX6e8mnkBgh5.oo4G', '06000000','ROLE_ADMIN',TRUE),
+       ('Mohamed idlmhor', TRUE,'med','med@anmoon.ma','$2a$10$iZstRX1sXhxnJpGfCUI2quSxvld5XDPRbB5Scw7eq27mqntCWA59C', '06000040','ROLE_MANAGER',TRUE),
+       ('Ayoub Oudor ', TRUE, 'ayoub','ayoub@anmoon.ma','$2a$10$3Rk0JxAID7kSqWYijvtB6eu7DplUsXnIMvcwr04sOGzaK3pRwk726', '06000040','ROLE_MANAGER',TRUE),
+       ('Fatiha El habti', FALSE, 'fatiha','fatiha@anmoon.ma','$2a$10$uOqFjk3kQ482jDRIRaZmhe20slxLkM4c/b4YMRVfKCPOOU88HAC72', '06000090','ROLE_PARTICIPANT',TRUE),
+       ('Latifa Amouguay', FALSE, 'latifa','latifa@anmoon.ma','$2a$10$HvPODtiJ1K9jmDY10iUt9.fVMSzvuTVYP4cPoMqbEV41JrtORpfbm', '06000090','ROLE_PARTICIPANT',TRUE),
+       ('Anass ELmkhloufi', TRUE, 'anas', 'anas@anmoon.ma','$2a$10$U6FJN3PbkePwVUoRSG7waOt0iBRdme9r1og5jLIdfdU3VjnX0yZry', '06000090','ROLE_PARTICIPANT',TRUE),
+       ('Omar Dbaa', TRUE, 'omar', 'omar@anmoon.ma','$2a$10$zTkULoo0xe9w6KDdNt185e0HvPCaxr80X/RejhnhthbNKgy8oJhiq', '06040090','ROLE_PARTICIPANT', FALSE);
 
 /*Seed Table Admins:*/
 INSERT INTO public.admins (id, LEVEL)

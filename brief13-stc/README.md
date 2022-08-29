@@ -39,7 +39,7 @@ DAO Design Pattern, Repository Design Pattern, PostregSQL, and ORM: Hibernate, a
 12. Maintenance.
 13. Prepare presentation.
 
-## Diagrams
+## ScreenShots
 <div style="display:flex">
 <img src="/brief13-stc/jira1.png" height="200" width="300"/>
 <img src="/brief13-stc/jira2.png" height="200" width="300"/>
@@ -102,13 +102,15 @@ user->particpant->activities(he particpated in->excercies)
 ```
 
 ## Issues:
+   - [X] Issue1: Get Role Attribures.
    - [X] Issue2: Add attributes to pivot table.
    - [X] Issue3: Make Foreign key nullable.
    - [X] Issue4: Fix recursive in relations.
-   - [ ] Issue5: Get Pagination info.
-   - [ ] Issue6: Parameter Filtering.
-   - [ ] Issue7: Protect API endpoints JWT.
-   - [ ] Issue8: Saving multiple items.
+   - [X] Issue5: Get Pagination info.
+   - [X] Issue6: Parameter Filtering.
+   - [X] Issue7: Saving multiple items.
+   - [X] Issue8: Fix DTO Validation.
+   - [X] Issue9: Protect API endpoints JWT.
 
 
 ## Technologies Checklist

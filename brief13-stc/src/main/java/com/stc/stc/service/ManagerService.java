@@ -1,86 +1,83 @@
 package com.stc.stc.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.stc.stc.dto.ManagerDto;
 import com.stc.stc.entity.Manager;
-import com.stc.stc.exception.RecordNotFoundException;
+import com.stc.stc.exception.ResourceNotFoundException;
 import com.stc.stc.repository.ManagerRepository;
+import com.stc.stc.response.ManagerResponse;
 
- 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
-public class ManagerService implements ServiceInterface<Manager> {
-     
-    @Autowired
-    ManagerRepository managerRepository;
-     
-    public List<Manager> getAll(Integer pageNo, Integer pageSize, String sortBy)
-    {
-        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
- 
-        Page<Manager> pagedResult = managerRepository.findAll(paging);
-         
-        if(pagedResult.hasContent()) {
-            return pagedResult.getContent();
-        } else {
-            return new ArrayList<Manager>();
-        }
-    }
-    
-	@Override
-    public Manager getOne(Long id) throws RecordNotFoundException
-    {
-        Optional<Manager> manager = managerRepository.findById(id);
-         
-        if(manager.isPresent()) {
-            return manager.get();
-        } else {
-            throw new RecordNotFoundException("No manager record exist for given id");
-        }
-         
-        
-    }
-    
-	@Override 
-    public Manager save(Manager entity) throws RecordNotFoundException
-    {
-        Optional<Manager> manager = managerRepository.findById(entity.getId());
-         
-        if(manager.isPresent())
-        {
-            Manager newEntity = manager.get();
-            newEntity.setEmail(entity.getEmail());
-            newEntity.setFullName(entity.getFullName()); 
-            newEntity = managerRepository.save(newEntity);
-             
-            return newEntity;
-        } else {
-            entity = managerRepository.save(entity);
-             
-            return entity;
-        }
-    }
-     
-    
-	@Override
-    public void delete(Long id) throws RecordNotFoundException
-    {
-        Optional<Manager> manager = managerRepository.findById(id);
-         
-        if(manager.isPresent())
-        {
-        	managerRepository.deleteById(id);
-        } else {
-            throw new RecordNotFoundException("No manager record exist for given id");
-        }
-    }
+public class ManagerService {
+
+	private ManagerRepository managerRepository;
+
+	private ModelMapper mapper;
+
+	public ManagerService(ManagerRepository managerRepository, ModelMapper mapper) {
+		this.managerRepository = managerRepository;
+		this.mapper = mapper;
+	}
+
+	public ManagerResponse getAll(int pageNo, int pageSize, String sortBy, String sortDir) {
+		Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
+				: Sort.by(sortBy).descending();
+		Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+		Page<Manager> managers;
+		managers = managerRepository.findAll(pageable);
+		List<Manager> listOfManagers = managers.getContent();
+		List<ManagerDto> managerContent = listOfManagers.stream().map(manager -> mapToDTO(manager)).collect(Collectors.toList());
+		ManagerResponse managerResponse = new ManagerResponse();
+		managerResponse.setContent(managerContent);
+		managerResponse.setPageNo(managers.getNumber());
+		managerResponse.setPageSize(managers.getSize());
+		managerResponse.setTotalElements(managers.getTotalElements());
+		managerResponse.setTotalPages(managers.getTotalPages());
+		managerResponse.setLast(managers.isLast());
+		return managerResponse;
+	}
+
+	public ManagerDto getOne(long id) {
+		Manager manager = managerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Manager", "id", id));
+		return mapToDTO(manager);
+	}
+
+	public ManagerDto create(ManagerDto managerDto) {
+		Manager manager = mapToEntity(managerDto);
+		Manager newManager = managerRepository.save(manager);
+		ManagerDto managerResponse = mapToDTO(newManager);
+		return managerResponse;
+	}
+
+	public ManagerDto update(ManagerDto managerDto, long id) {
+		Manager manager = managerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Manager", "id", id));
+		manager.setDomain(managerDto.getDomain());
+		Manager updatedManager = managerRepository.save(manager);
+		return mapToDTO(updatedManager);
+	}
+
+	public void delete(long id) {
+		Manager manager = managerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Manager", "id", id));
+		managerRepository.delete(manager);
+	}
+
+	private ManagerDto mapToDTO(Manager manager) {
+		ManagerDto managerDto = mapper.map(manager, ManagerDto.class);
+		return managerDto;
+	}
+
+	private Manager mapToEntity(ManagerDto managerDto) {
+		Manager manager = mapper.map(managerDto, Manager.class);
+		return manager;
+	}
 
 }

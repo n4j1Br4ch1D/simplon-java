@@ -1,86 +1,83 @@
 package com.stc.stc.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.stc.stc.dto.ActivityDto;
 import com.stc.stc.entity.Activity;
-import com.stc.stc.exception.RecordNotFoundException;
+import com.stc.stc.exception.ResourceNotFoundException;
 import com.stc.stc.repository.ActivityRepository;
+import com.stc.stc.response.ActivityResponse;
 
- 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
-public class ActivityService implements ServiceInterface<Activity> {
-     
-    @Autowired
-    ActivityRepository activityRepository;
-     
-    public List<Activity> getAll(Integer pageNo, Integer pageSize, String sortBy)
-    {
-        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
- 
-        Page<Activity> pagedResult = activityRepository.findAll(paging);
-         
-        if(pagedResult.hasContent()) {
-            return pagedResult.getContent();
-        } else {
-            return new ArrayList<Activity>();
-        }
-    }
-    
-	@Override
-    public Activity getOne(Long id) throws RecordNotFoundException
-    {
-        Optional<Activity> activity = activityRepository.findById(id);
-         
-        if(activity.isPresent()) {
-            return activity.get();
-        } else {
-            throw new RecordNotFoundException("No activity record exist for given id");
-        }
-         
-        
-    }
-    
-	@Override 
-    public Activity save(Activity entity) throws RecordNotFoundException
-    {
-        Optional<Activity> activity = activityRepository.findById(entity.getId());
-         
-        if(activity.isPresent())
-        {
-            Activity newEntity = activity.get();
-//            newEntity.setEmail(entity.getEmail());
-//            newEntity.setFullName(entity.getFullName()); 
-            newEntity = activityRepository.save(newEntity);
-             
-            return newEntity;
-        } else {
-            entity = activityRepository.save(entity);
-             
-            return entity;
-        }
-    }
-     
-    
-	@Override
-    public void delete(Long id) throws RecordNotFoundException
-    {
-        Optional<Activity> activity = activityRepository.findById(id);
-         
-        if(activity.isPresent())
-        {
-        	activityRepository.deleteById(id);
-        } else {
-            throw new RecordNotFoundException("No activity record exist for given id");
-        }
-    }
+public class ActivityService {
+
+	private ActivityRepository activityRepository;
+
+	private ModelMapper mapper;
+
+	public ActivityService(ActivityRepository activityRepository, ModelMapper mapper) {
+		this.activityRepository = activityRepository;
+		this.mapper = mapper;
+	}
+
+	public ActivityResponse getAll(int pageNo, int pageSize, String sortBy, String sortDir) {
+		Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
+				: Sort.by(sortBy).descending();
+		Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+		Page<Activity> activitys;
+		activitys = activityRepository.findAll(pageable);
+		List<Activity> listOfActivitys = activitys.getContent();
+		List<ActivityDto> activityContent = listOfActivitys.stream().map(activity -> mapToDTO(activity)).collect(Collectors.toList());
+		ActivityResponse activityResponse = new ActivityResponse();
+		activityResponse.setContent(activityContent);
+		activityResponse.setPageNo(activitys.getNumber());
+		activityResponse.setPageSize(activitys.getSize());
+		activityResponse.setTotalElements(activitys.getTotalElements());
+		activityResponse.setTotalPages(activitys.getTotalPages());
+		activityResponse.setLast(activitys.isLast());
+		return activityResponse;
+	}
+
+	public ActivityDto getOne(long id) {
+		Activity activity = activityRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Activity", "id", id));
+		return mapToDTO(activity);
+	}
+
+	public ActivityDto create(ActivityDto activityDto) {
+		Activity activity = mapToEntity(activityDto);
+		Activity newActivity = activityRepository.save(activity);
+		ActivityDto activityResponse = mapToDTO(newActivity);
+		return activityResponse;
+	}
+
+	public ActivityDto update(ActivityDto activityDto, long id) {
+		Activity activity = activityRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Activity", "id", id));
+		activity.setName(activityDto.getName());
+		Activity updatedActivity = activityRepository.save(activity);
+		return mapToDTO(updatedActivity);
+	}
+
+	public void delete(long id) {
+		Activity activity = activityRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Activity", "id", id));
+		activityRepository.delete(activity);
+	}
+
+	private ActivityDto mapToDTO(Activity activity) {
+		ActivityDto activityDto = mapper.map(activity, ActivityDto.class);
+		return activityDto;
+	}
+
+	private Activity mapToEntity(ActivityDto activityDto) {
+		Activity activity = mapper.map(activityDto, Activity.class);
+		return activity;
+	}
 
 }

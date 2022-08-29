@@ -1,39 +1,33 @@
 @baseUrl=http://localhost:8081/api
-http://localhost:8081/api/signup
-http://localhost:8081/api/token
-http://localhost:8081/api/users
-http://localhost:8081/api/admins
-http://localhost:8081/api/managers
-http://localhost:8081/api/participants
-http://localhost:8081/api/activities
-http://localhost:8081/api/exercises
-@authorization=Bearer vsoOxaHPtG
+@resource=activities
+@authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWppYiIsImlhdCI6MTY2MTcyNzg1OCwiZXhwIjoxNjYxNzQ1ODU4fQ._djdwEhacyw2FiEsbpDqWLNFiJ722Zkx1tAjI4z0m9k
 
-# Auth
-POST {{baseUrl}}/login
-Content-Type: application/x-www-form-urlencoded
-
-    email=nr@anmoonweb.com
-    &password=nr-password
+GET {{baseUrl}}/{{resource}}
+Authorization: {{authorization}}
 
 ###
 
-GET {{baseUrl}}/info
-
-###
-
-GET {{baseUrl}}/user
+GET {{baseUrl}}/{{resource}}/1
 Authorization: {{authorization}}
 
 ###
 
 
-GET {{baseUrl}}/users/11/
+GET {{baseUrl}}/{{resource}}/1111
+Authorization: {{authorization}}
 
 
 ### 
 
-GET https://swapi.dev/api/planets/1
+# @name createActivity
+POST {{baseUrl}}/{{resource}}  HTTP/1.1
+Authorization: {{authorization}}
+Content-Type: application/json
 
+{
+"name": "New Activity",
+"description": "New Activity ..."
+}
 
+##
 

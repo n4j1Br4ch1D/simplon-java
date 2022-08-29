@@ -1,6 +1,17 @@
 @baseUrl=http://127.0.0.1:8000/api
 @authorization=Bearer vsoOxaHPtG
 
+
+
+http://localhost:8081/api/signup
+http://localhost:8081/api/token
+http://localhost:8081/api/users
+http://localhost:8081/api/admins
+http://localhost:8081/api/managers
+http://localhost:8081/api/participants
+http://localhost:8081/api/activities
+http://localhost:8081/api/exercises
+
 # Auth
 POST {{baseUrl}}/login
 Content-Type: application/x-www-form-urlencoded

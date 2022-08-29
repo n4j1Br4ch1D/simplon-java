@@ -11,6 +11,9 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -20,11 +23,14 @@ public class User {
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+    @Column(name="username")
+    private String userName;
     @Column(name="full_name")
     private String fullName;
 	@Column(name="is_male")
 	private boolean isMale;
 	private String email;
+    @JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
 	private String tel;
 	private String role;
@@ -48,6 +54,12 @@ public class User {
 
 	public void setMale(boolean isMale) {
 		this.isMale = isMale;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getEmail() {
 		return email;

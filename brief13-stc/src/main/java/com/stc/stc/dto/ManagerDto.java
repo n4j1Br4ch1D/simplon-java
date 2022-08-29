@@ -1,8 +1,13 @@
 package com.stc.stc.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class ManagerDto extends UserDto{
+	@NotNull
 	private Long id;
+	@NotNull
 	private String domain;
+	@NotNull
 	private String type; // trainer, speaker
 	public ManagerDto() {
 		super();

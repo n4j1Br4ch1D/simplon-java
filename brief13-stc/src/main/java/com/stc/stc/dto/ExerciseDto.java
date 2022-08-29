@@ -2,20 +2,22 @@ package com.stc.stc.dto;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotNull;
+
 import com.stc.stc.entity.Activity;
 
 public class ExerciseDto  {
-
+	@NotNull
 	private Long id;
-
+	@NotNull
 	private String name;
-	
+	@NotNull
     private LocalDate startedAt;
-    
+	@NotNull
     private LocalDate endedAt;
-	
+	@NotNull
 	private boolean enabled;
-	
+	@NotNull
     private Activity activity;
 
 	public ExerciseDto() {

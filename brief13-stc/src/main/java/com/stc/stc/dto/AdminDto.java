@@ -1,10 +1,12 @@
 package com.stc.stc.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class AdminDto extends UserDto{
 	
-	
-private Long id;
-	
+	@NotNull
+    private Long id;
+	@NotNull
     private String level;
 
 	public AdminDto() {

@@ -23,7 +23,7 @@ public class User {
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-    @Column(name="username")
+    @Column(name="username", unique=true)//
     private String userName;
     @Column(name="full_name")
     private String fullName;
@@ -31,6 +31,7 @@ public class User {
 	private boolean isMale;
 	private String email;
     @JsonProperty(access = Access.WRITE_ONLY)
+    @Column(unique=true)//
 	private String password;
 	private String tel;
 	private String role;

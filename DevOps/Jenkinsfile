@@ -1,68 +1,87 @@
 pipeline {
     agent any
     tools{
-        maven 'maven_3_8_6'
+        maven "maven_3_8_6"
     }
+    environment { 
+        NAME = "devops"
+        GITREPO = "https://github.com/n4j1Br4ch1D/simplon-java.git"
+        DIR = "DevOps"
+        GITBRANCH = "main"
+        DOCKERUSER = "najibrachid"
+        IMAGE = "${NAME}:${VERSION}"
+        VERSION = "${env.BUILD_ID}-${env.GIT_COMMIT}"
+    } 
     stages{
-        stage('Cloning Git Repo') { 
+        stage("Cloning Git Repo") { 
             steps { 
-                git branch: 'main', url: 'https://github.com/n4j1Br4ch1D/simplon-java.git'
+                git branch: "${GITBRANCH}", url: "${GITREPO}"
             }
         } 
-        stage('Build Project Maven'){
+        stage("Checking") {
+            steps {
+                echo "Running ${VERSION} on ${env.JENKINS_URL}"
+                echo "for brnach ${env.BRANCH_NAME}"
+            }
+        }
+        stage("Build Project Maven"){
             steps{
-                dir("DevOps") {
-                   bat 'mvn clean install -DskipTests'
+                dir("${DIR}") {
+                   bat "mvn clean install -DskipTests"
                 }
             }
         }
-        stage('Run Tests') {
+        stage("Run Tests") {
             steps {
-                dir("DevOps") {
-                    bat 'mvn clean test'
+                dir("${DIR}") {
+                    bat "mvn clean test"
                 }
             }
         }
-        stage('Switch to Production Env') {
+        stage("Switch to Production Env") {
             steps {
-                dir("DevOps/src/main/resources") {
+                dir("${DIR}/src/main/resources") {
                     powershell '''
                     $lines = get-content application.properties 
                     $lines | foreach-object {$_ -replace "dev", "prod"} | set-content application.properties
                     '''
                 // remove unnecessary data
                 }
-                dir("DevOps") {
-                    bat 'mvn clean install -DskipTests'
-                    // bat 'mvn clean package -DskipTests'
-                    // bat 'mvn package'
-                    // bat 'java -jar target/stc-0.0.1-SNAPSHOT.jar'
+                dir("${DIR}") {
+                    bat "mvn clean install -DskipTests"
                 }
             }
         }
-        stage('Build Docker Image'){
+        stage("Build Docker Image"){
             steps{
-                dir("DevOps") {
+                dir("${DIR}") {
                     script{
-                        bat 'docker build -t najibrachid/devops .'
+                        bat "docker build -t ${DOCKERUSER}/${NAME} ."
                     }
                 }
             }
         }
-        stage('Push Image to Hub'){
+        stage("Push Image to Hub"){
             steps{
-                script{
-                   withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
-                    sh 'docker login -u NajibRachid -p ${dockerhubpwd}'
-                   }
-                   sh 'docker push najibrachid/dockerone'
+                withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+                    script { 
+                       //bat "docker tag ${DOCKERUSER}/${NAME}:latest ${DOCKERUSER}/${NAME}:${VERSION}"       
+                       bat "docker push ${DOCKERUSER}/${NAME}"   
+                    }
                 }
             }
         }
-        stage('Run Docker Image') {
+        stage("Compose Docker Container") {
             steps {
-                dir("DevOps") {
-                    bat 'docker compose up'
+                dir("${DIR}") {
+                    bat "docker compose up"
+                }
+            }
+        }
+        stage("Stop Docker Container") {
+            steps {
+                dir("${DIR}") {
+                    bat "docker stop ${NAME}"
                 }
             }
         }

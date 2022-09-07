@@ -1,0 +1,59 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+version: '3'
+
+#Define services
+services:
+
+  #PostgreSQL Database for the application
+  devops-postgres:
+    image: "postgres:14"
+    container_name: devops-postgres
+    #Volume mounted for database for the storage
+    volumes:
+      - devops-data:/var/lib/postgresql/data
+    networks:
+      - devops-network
+    ports:
+      - 5432:5432 # Forward the exposed port 5432 on the container to port 5432 on the host machine
+
+    #Environment variable for DB name, user and password
+    environment:
+      - POSTGRES_DB=DevOps
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+
+  #Back-end Spring Boot Application
+  devops-app:
+    #The docker file in devops-app build the jar and provides the docker image with the following name.
+    # build: ./devops-app
+    image: "najibrachid/devops"
+    container_name: devops
+
+    #Environment variables for Spring Boot Application.
+    environment:
+      - DB_SERVER=devops-postgres
+      - POSTGRES_DB=DevOps
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+    networks:
+      - devops-network
+    ports:
+      - 8082:8080 # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    links:
+      - devops-postgres
+
+  # #Fron-end Angular Application
+  # devops-ui:
+  #   build: ./devops-ui
+  #   container_name: devops-ui
+  #   ports:
+  #     - 4200:80
+  #   links:
+  #     - devops-app
+
+#Volumes for DB data
+volumes:
+  devops-data:
+
+networks:
+  devops-network:

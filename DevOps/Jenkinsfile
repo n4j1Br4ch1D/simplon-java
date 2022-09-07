@@ -1,0 +1,70 @@
+pipeline {
+    agent any
+    tools{
+        maven 'maven_3_8_6'
+    }
+    stages{
+        stage('Cloning Git Repo') { 
+            steps { 
+                git branch: 'main', url: 'https://github.com/n4j1Br4ch1D/simplon-java.git'
+            }
+        } 
+        stage('Build Project Maven'){
+            steps{
+                dir("DevOps") {
+                   bat 'mvn clean install -DskipTests'
+                }
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                dir("DevOps") {
+                    bat 'mvn clean test'
+                }
+            }
+        }
+        stage('Switch to Production Env') {
+            steps {
+                dir("DevOps/src/main/resources") {
+                    powershell '''
+                    $lines = get-content application.properties 
+                    $lines | foreach-object {$_ -replace "dev", "prod"} | set-content application.properties
+                    '''
+                // remove unnecessary data
+                }
+                dir("DevOps") {
+                    bat 'mvn clean install -DskipTests'
+                    // bat 'mvn clean package -DskipTests'
+                    // bat 'mvn package'
+                    // bat 'java -jar target/stc-0.0.1-SNAPSHOT.jar'
+                }
+            }
+        }
+        stage('Build Docker Image'){
+            steps{
+                dir("DevOps") {
+                    script{
+                        bat 'docker build -t najibrachid/devops .'
+                    }
+                }
+            }
+        }
+        stage('Push Image to Hub'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u NajibRachid -p ${dockerhubpwd}'
+                   }
+                   sh 'docker push najibrachid/dockerone'
+                }
+            }
+        }
+        stage('Run Docker Image') {
+            steps {
+                dir("DevOps") {
+                    bat 'docker compose up'
+                }
+            }
+        }
+    }
+}

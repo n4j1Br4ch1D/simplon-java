@@ -3,12 +3,15 @@ package com.stc.stc.dto;
 import java.util.Collection;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import com.stc.stc.entity.ParticipantActivity;
 
 @Valid
 public class ParticipantDto extends UserDto{
+	@NotNull
 	private Long id;
+	@NotNull
 	private String domain;
 	private Collection<ParticipantActivity> participantActivities;
 	//Status

@@ -1,7 +1,14 @@
 package com.stc.stc.dto;
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotEmpty;
+
 public class LoginDto {
+	@NotEmpty
+	@Column(unique=true)
     private String usernameOrEmail;
+	@NotEmpty
+	@Column(unique=true)
     private String password;
 	public LoginDto(String usernameOrEmail, String password) {
 		super();

@@ -1,14 +1,33 @@
 package com.stc.stc.dto;
 
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 public class UserDto {
-		private Long id;
+	    @NotNull
+	 	private Long id;
+		@NotEmpty
+		@Column(unique=true)
 	    private String userName;
+		@NotNull
 	    private String fullName;
+		@NotNull
 		private boolean isMale;
+		@NotEmpty
 		private String email;
+		@NotEmpty
+		@Column(unique=true)
 		private String password;
+		@NotEmpty
 		private String tel;
+		@Enumerated(EnumType.STRING)
 		private String role;
+		@NotNull
 	    private boolean enabled;
 	    
 	    
@@ -50,7 +69,9 @@ public class UserDto {
 			return password;
 		}
 		public void setPassword(String password) {
-			this.password = password;
+			this.password = new BCryptPasswordEncoder().encode(password);
+	        //user.setPassword(new BCryptPasswordEncoder().encode(password));
+
 		}
 		public String getTel() {
 			return tel;

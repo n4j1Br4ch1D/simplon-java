@@ -3,25 +3,32 @@ package com.stc.stc.dto;
 import java.time.LocalDate;
 import java.util.Collection;
 
+import javax.validation.constraints.NotNull;
+
 import com.stc.stc.entity.Exercise;
 import com.stc.stc.entity.Manager;
 import com.stc.stc.entity.ParticipantActivity;
 
 public class ActivityDto {
+	@NotNull
 	private Long id;
+	@NotNull
     private String name;
+	@NotNull
     private String description;
+	@NotNull
     private String type; //training, talking, event
+	@NotNull
     private boolean enabled;
-
+	@NotNull
     private LocalDate startedAt;
-    
+	@NotNull
     private LocalDate endedAt;
-
+	@NotNull
     private Exercise exercise;
-
+	@NotNull
     private Manager manager;
-
+	
 	private Collection<ParticipantActivity> participantActivities;
 
 	public ActivityDto() {

@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title> Signin </title>
+<link rel="icon" type="image/png" href="resources/static/img/SoussTalents101-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="resources/static/css/custom.css">
+<link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
+<!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation-float.min.css" crossorigin="anonymous">
+<!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+</head>
+<body id="background">
+<div class="grid-container">
+<div class="grid-x grid-padding-x">
+<div class="large-4 medium-6 small-12 cell callout form-section radius">
+<div class="grid-x grid-padding-x">
+<div class="large-12 medium-12 small-12 text-center header">
+<img src="resources/static/img/SoussTalents101.png" class="padding-horizontal-2 margin-bottom-2" alt="" srcset="">
+<!-- <h1 class="round "> SIGN IN </h1> -->
+</div>
+
+
+
+<div class="large-12 columns cell">
+<div data-alert class="alert-box alert round " th:if="${param.error}" style="color:red;margin-bottom:6px;">
+  Wrong Email or password!
+</div>
+
+<form th:action="@{/signin}" method="post">
+ <input type="hidden" name="ACTION" value="Sign_in">
+<div class="grid-x grid-padding-x">
+<div class="large-12 medium-12 cell">
+<input th:value="${email}"  name="username" type="text" placeholder="Enter Email">
+</div>
+<div class="large-12 medium-12 cell">
+<input th:value="${password}"  name="password" type="password" placeholder="Enter Password">
+</div>
+<div class="large-12 medium-12 cell">
+<button type="submit" class="button primary login-btn" href="#">Sign-In</button>
+</div>
+<!-- <div class="grid-x grid-padding-x cell columns forget-section">
+<div class="large-6 medium-6 small-12 cell text-center">
+<input id="checkbox12" type="checkbox"><label for="checkbox12">Remeber Me</label>
+</div>
+<div class="large-6 medium-6 text-center small-12 text-right">
+<a href="#">Forget your password?</a>
+</div>
+</div> -->
+</div>
+</form>
+</div>
+</div>
+<!-- <div class="grid-x grid-padding-x sign-section">
+<div class="large-12 small-12 text-center last-text">
+<span>Don't have an account ? <a href="#" class="large-12">Signup</a></span>
+</div>
+</div> -->
+</div>
+</div>
+<div class="push"></div>
+
+</div>
+
+<footer class="footer text-center" >
+    <p class="footer-copyright">© LongLeaders
+        <script type="text/javascript">
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+</footer>
+<div id="particles-js"></div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src="resources/static/js/custom.js"></script>
+</body>
+</html>

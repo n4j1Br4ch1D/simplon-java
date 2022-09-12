@@ -1,0 +1,33 @@
+@baseUrl=http://localhost:8081/api
+@resource=activities
+@authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWppYiIsImlhdCI6MTY2MTcyNzg1OCwiZXhwIjoxNjYxNzQ1ODU4fQ._djdwEhacyw2FiEsbpDqWLNFiJ722Zkx1tAjI4z0m9k
+
+GET {{baseUrl}}/{{resource}}
+Authorization: {{authorization}}
+
+###
+
+GET {{baseUrl}}/{{resource}}/1
+Authorization: {{authorization}}
+
+###
+
+
+GET {{baseUrl}}/{{resource}}/1111
+Authorization: {{authorization}}
+
+
+### 
+
+# @name createActivity
+POST {{baseUrl}}/{{resource}}  HTTP/1.1
+Authorization: {{authorization}}
+Content-Type: application/json
+
+{
+"name": "New Activity",
+"description": "New Activity ..."
+}
+
+##
+

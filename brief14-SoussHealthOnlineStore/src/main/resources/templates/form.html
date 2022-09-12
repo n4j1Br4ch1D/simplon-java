@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${type+' User'}"></title>
+<link rel="icon" type="image/png"
+	href="/brief10-employees-manager/img/SoussTalents101-icon.png" />
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+	integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<style>
+body {
+	background-image: url('../../resources/static/img/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+.parent {
+	min-height: calc(100vh - 50px);
+}
+</style>
+</head>
+<body class=" bg-dark">
+	<div class="parent text-white py-5">
+
+		<main>
+
+			<div align="center" class="container bg-primary p-3 rounded-2"
+				style="opacity: .9">
+				<h1 class="mb-5" th:text="${type+' User Form'}"></h1>
+				<hr>
+
+		<form th:action="@{/dashboard/users}" th:object="${user}" th:method="${type eq 'Update' ? 'put' : 'post'}" class="row g-3 text-start">
+
+					<input th:value="${user!=null ? user.id : 0}" name="id"
+						type="hidden" class="form-control" id="userId"
+						th:disabled="${type eq 'Read'}">
+
+					<div class="col-md-6">
+						<label for=firstname class="form-label">First Name</label> <input
+							th:value="${user!=null ? #strings.arraySplit(user.fullName,' ')[0] : ''}"
+							name="firstname" type="text" class="form-control" id="firstname"
+							th:disabled="${type eq 'Read'}">
+					</div>
+					<div class="col-md-6">
+						<label for="lastname" class="form-label">Last Name</label> <input
+							th:value="${user!=null ? #strings.arraySplit(user.fullName,' ')[1] : ''}"
+							name="lastname" type="text" class="form-control" id="lastname"
+							th:disabled="${type eq 'Read'}">
+					</div>
+					<div class="col-md-6">
+						<label for="email" class="form-label">Email</label> <input
+							th:value="${user!=null ? user.email : ''}" name="email"
+							type="email" class="form-control" id="email"
+							th:disabled="${type eq 'Read'}">
+					</div>
+					<div class="col-md-6">
+						<label for="password" class="form-label">Password</label> <input
+							th:value="${user!=null ? user.password : ''}" name="password"
+							type="password" class="form-control" id="password"
+							th:disabled="${type eq 'Read'}">
+					</div>
+
+					<div class="col-md-6">
+						<label for="role" class="form-label">Role</label> <select
+							name="role" id="role" class="form-select"
+							th:disabled="${type eq 'Read'}">
+							<option value="admin"
+								th:selected="${user!=null ? user.role eq 'admin' : false}">Admin</option>
+							<option value="employee"
+								th:selected="${user!=null ? user.role eq 'employee' : true}">Employee</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label for="approved" class="form-label">Approved</label> <select
+							name="approved" id="approved" class="form-select"
+							th:disabled="${type eq 'Read'}">
+							<option value="true"
+								th:selected="${user!=null ? user.approved : true}">Yes
+								Sure</option>
+							<option value="false"
+								th:selected="${user!=null ? !user.approved : false}">Not
+								Yet</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label for=tasksN class="form-label">Tasks Number</label> <input
+							th:value="${user!=null ? user.tasks : 0}" name="tasks"
+							type="text" class="form-control" id="tasksN"
+							th:disabled="${type eq 'Read'}">
+
+					</div>
+					<div class="col-md-6">
+						<input type="submit" name="ACTION"
+							class="btn btn-secondary mt-4 w-100 btn-lg"
+							th:classappend="${type eq 'Read' ? 'd-none' : ''}"
+							th:value="${type}">
+					</div>
+
+				</form>
+				<hr>
+
+				<div class="col-md-12 mt-5">
+
+					<a th:href="@{/dashboard/users}"
+						class="text-warning"> <span class="fa-stack"> <i
+							class="fa fa-square fa-stack-2x"></i> <i
+							class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
+					</span>
+					</a>									
+						 <a
+						th:href="${'../'+(user!=null ? user.id : '')}"
+						class="table-link text-info"
+						th:classappend="${type eq 'Update' ? 'd-none' : ''}"> <span
+							class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i>
+								<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+						<form class="d-inline" th:object="${user}"
+							th:action="@{../users/}+${user!=null ? user.id : ''}" th:method="delete">
+
+							<input type="hidden" name="user_id"
+								th:value="${user!=null ? user.id : ''}">
+							<button name="ACTION" value="Delete" type="submit"
+								class="btn table-link text-danger fa-stack" style="top: -16px;">
+								<i class="fa fa-square fa-stack-2x"></i> <i
+									class="fa-solid fa-trash-can fa-stack-1x fa-inverse"></i>
+							</button>
+						</form>
+				</div>
+		</main>
+	</div>
+
+	<footer class="footer text-center">
+		<p class="footer-copyright text-white">
+			© LongLeaders
+			<script type="text/javascript">
+				document.write(new Date().getFullYear());
+			</script>
+		</p>
+	</footer>
+</body>
+</html>

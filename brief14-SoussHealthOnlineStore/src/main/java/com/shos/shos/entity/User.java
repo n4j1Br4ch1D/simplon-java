@@ -1,13 +1,20 @@
 package com.shos.shos.entity;
 
+import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -16,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class User {
   
 	@Id
@@ -36,6 +43,12 @@ public class User {
 	private String tel;
 	private String role;
     private boolean enabled;
+    
+	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	@JoinTable(name = "user_permissions", joinColumns = { @JoinColumn(name = "user_id") }, 
+	inverseJoinColumns = { @JoinColumn(name = "permission_id") })
+    private Collection<Permission> permissions;
+	
 
 	public Long getId() {
 		return id;
@@ -82,6 +95,12 @@ public class User {
 	}
 	public String getRole() {
 		return role;
+	}
+	public Collection<Permission> getPermissions() {
+		return permissions;
+	}
+	public void setPermissions(Collection<Permission> permissions) {
+		this.permissions = permissions;
 	}
 	public void setRole(String role) {
 		this.role = role;

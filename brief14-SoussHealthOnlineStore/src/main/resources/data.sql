@@ -1,73 +1,30 @@
 /*Seed TABLE Users:*/
 INSERT INTO public.users (full_name, is_male, username, email, password, tel, ROLE, enabled)
 VALUES ('Najib Rachid', TRUE, 'najib', 'najib@anmoon.ma','$2a$10$OLqXyrDqoKyGkJu.3Tr/lesUfNs05hM.ZFRHzX6e8mnkBgh5.oo4G', '06000000','ROLE_ADMIN',TRUE),
-       ('Mohamed idlmhor', TRUE,'med','med@anmoon.ma','$2a$10$iZstRX1sXhxnJpGfCUI2quSxvld5XDPRbB5Scw7eq27mqntCWA59C', '06000040','ROLE_MANAGER',TRUE),
-       ('Ayoub Oudor ', TRUE, 'ayoub','ayoub@anmoon.ma','$2a$10$3Rk0JxAID7kSqWYijvtB6eu7DplUsXnIMvcwr04sOGzaK3pRwk726', '06000040','ROLE_MANAGER',TRUE),
-       ('Fatiha El habti', FALSE, 'fatiha','fatiha@anmoon.ma','$2a$10$uOqFjk3kQ482jDRIRaZmhe20slxLkM4c/b4YMRVfKCPOOU88HAC72', '06000090','ROLE_PARTICIPANT',TRUE),
-       ('Latifa Amouguay', FALSE, 'latifa','latifa@anmoon.ma','$2a$10$HvPODtiJ1K9jmDY10iUt9.fVMSzvuTVYP4cPoMqbEV41JrtORpfbm', '06000090','ROLE_PARTICIPANT',TRUE),
-       ('Anass ELmkhloufi', TRUE, 'anas', 'anas@anmoon.ma','$2a$10$U6FJN3PbkePwVUoRSG7waOt0iBRdme9r1og5jLIdfdU3VjnX0yZry', '06000090','ROLE_PARTICIPANT',TRUE),
-       ('Omar Dbaa', TRUE, 'omar', 'omar@anmoon.ma','$2a$10$zTkULoo0xe9w6KDdNt185e0HvPCaxr80X/RejhnhthbNKgy8oJhiq', '06040090','ROLE_PARTICIPANT', FALSE);
+       ('Khadija idlmhor', FALSE,'med','khadija@anmoon.ma','$2a$10$iZstRX1sXhxnJpGfCUI2quSxvld5XDPRbB5Scw7eq27mqntCWA59C', '06000040','ROLE_ADMIN',TRUE),
+       ('Abderahim Oudor ', TRUE, 'ayoub','ayoub@anmoon.ma','$2a$10$3Rk0JxAID7kSqWYijvtB6eu7DplUsXnIMvcwr04sOGzaK3pRwk726', '06000040','ROLE_CLIENT',TRUE),
+       ('Fatiha El habti', FALSE, 'fatiha','fatiha@anmoon.ma','$2a$10$uOqFjk3kQ482jDRIRaZmhe20slxLkM4c/b4YMRVfKCPOOU88HAC72', '06000090','ROLE_CLIENT',TRUE),
+       ('Latifa Amouguay', FALSE, 'latifa','latifa@anmoon.ma','$2a$10$HvPODtiJ1K9jmDY10iUt9.fVMSzvuTVYP4cPoMqbEV41JrtORpfbm', '06000090','ROLE_CLIENT',TRUE),
+       ('Anass ELmkhloufi', TRUE, 'anas', 'anas@anmoon.ma','$2a$10$U6FJN3PbkePwVUoRSG7waOt0iBRdme9r1og5jLIdfdU3VjnX0yZry', '06000090','ROLE_CLIENT',TRUE),
+       ('Omar Dbaa', TRUE, 'omar', 'omar@anmoon.ma','$2a$10$zTkULoo0xe9w6KDdNt185e0HvPCaxr80X/RejhnhthbNKgy8oJhiq', '06040090','ROLE_CLIENT', FALSE);
 
-/*Seed Table Admins:*/
-INSERT INTO public.admins (id, LEVEL)
-VALUES (1, 'senior');
+/*Seed TABLE Permissions:*/   
+INSERT INTO public.permissions (id, name)
+VALUES (1, 'ADMIN_FULL'),
+       (2, 'USER_LIST'), (3, 'USER_VIEW'), (4, 'USER_ADD'), (5, 'USER_EDIT'), (6, 'USER_REMOVE'),
+       (7, 'PRODUCT_LIST'), (8, 'PRODUCT_VIEW'), (9, 'PRODUCT_ADD'), (10, 'PRODUCT_EDIT'), (11, 'PRODUCT_REMOVE'),
+       (12, 'CATEGORY_LIST'), (13, 'CATEGORY_VIEW'), (14, 'CATEGORY_ADD'), (15, 'CATEGORY_EDIT'), (16, 'CATEGORY_REMOVE'),
+       (17, 'ORDER_LIST'), (18, 'ORDER_VIEW'), (19, 'ORDER_ADD'), (20, 'ORDER_EDIT'), (21, 'ORDER_REMOVE');
 
-/*Seed Table Managers:*/
-INSERT INTO public.managers (id, DOMAIN, TYPE)
-VALUES (2, 'Backend','trainer'),
-       (3, 'Frontend','speaker');
-
-/*Seed Table Participants:*/
-INSERT INTO public.participants (id, DOMAIN)
-VALUES (4, 'Backend'),
-       (5, 'Frontend'),
-       (6, 'Backend');
-
-/*Seed Table Activities:*/
-INSERT INTO public.activities (id, name, description, TYPE, enabled, started_at, ended_at, manager_id)
-VALUES (1, 'Java', 'Java is ...', 'training', TRUE, '2022-08-22', '2022-08-22', 2),
-       (2, 'Angular', 'Angular is ...', 'talking', TRUE, '2022-08-22', '2022-08-26', 2),
-       (3, 'PostgreSQL', 'PostgreSQL is ...', 'event', TRUE, '2022-08-22', '2022-10-22', 2),
-       (4, 'Bootstrap', 'Bootstrap is ...', 'training', TRUE, '2022-08-22', '2022-09-22', 3),
-       (5, 'Thymleaf', 'Thymleaf is ...', 'training', FALSE, '2022-08-22', '2022-08-22', 3);
-
-/*Seed Table Exercises:*/
-INSERT INTO public.exercises (id, name, enabled, started_at, ended_at)
-VALUES (1, 'Java Exercise', TRUE, '2022-08-22', '2022-09-22'),
-       (2, 'Angular Exercise', TRUE, '2022-08-22', '2022-08-26'),
-       (3, 'PostgreSQL Exercise', TRUE, '2022-08-22', '2022-10-22'),
-       (4, 'Bootstrap Exercise', TRUE, '2022-08-22', '2022-09-22'),
-       (5, 'Thymleaf Exercise', TRUE, '2022-08-22', '2022-08-22');
-
-/*Seed an Update exercise_id Table Activities:*/
-UPDATE public.activities
-SET exercise_id = 1
-WHERE id = 1;
+/*Seed TABLE User_Permissions:*/        
+INSERT INTO public.user_permissions (user_id, permission_id)
+VALUES (1, 1),
+       (2, 1),
+       (3, 7), (3, 8), (3, 12), (3, 13), (3, 14),
+       (4, 7), (4, 8), (4, 12), (4, 13),
+       (5, 7), (5, 8), (5, 12), (5, 13),
+       (6, 7), (6, 8), (6, 12), (6, 13),
+       (7, 7), (7, 8), (7, 12), (7, 13);
 
 
-UPDATE public.activities
-SET exercise_id = 2
-WHERE id = 2;
-
-
-UPDATE public.activities
-SET exercise_id = 3
-WHERE id = 3;
-
-
-UPDATE public.activities
-SET exercise_id = 4
-WHERE id = 4;
-
-
-UPDATE public.activities
-SET exercise_id = 5
-WHERE id = 5;
-
-/*Seed Table Activities Participants:*/
-INSERT INTO public.participant_activities (activity_id, participant_id, activity_status, excercice_status)
-VALUES (1, 4, 'ended', 'ended'),
-       (1, 5, 'ended', 'in-progress'),
-       (1, 6, 'in-progress', 'ended'),
-       (2, 4, 'in-progress', 'in-progress'),
-       (3, 5, 'in-progress', 'in-progress');
+       

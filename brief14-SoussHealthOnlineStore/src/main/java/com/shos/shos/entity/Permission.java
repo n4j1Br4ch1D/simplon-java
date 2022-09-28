@@ -15,11 +15,17 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "permissions")
+@Getter
+@Setter
 public class Permission {
 
 	@Id
@@ -29,22 +35,7 @@ public class Permission {
 	@Column(name = "name", unique = true)
 	private String name;
 	
+    @JsonBackReference
     @ManyToMany(mappedBy = "permissions", fetch = FetchType.EAGER)
 	private Collection<User> users;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 }

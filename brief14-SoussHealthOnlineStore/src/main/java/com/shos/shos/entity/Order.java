@@ -1,5 +1,6 @@
 package com.shos.shos.entity;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -17,6 +18,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -33,42 +35,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "orders")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Getter
 @Setter
 @NoArgsConstructor
 //@Builder
-public class User {
-  
+public class Order {
 	@Id
 	@Column(name = "id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-    @Column(name="username", unique=true)
-    private String userName;
-    @Column(name="full_name")
-    private String fullName;
-	@Column(name="is_male")
-	private boolean isMale;
-	private String email;
-    @JsonProperty(access = Access.WRITE_ONLY)
-    @Column(unique=true)
-    @JsonIgnore
-    @Schema(format = "password")
-	private String password;
-    @Column(unique=true)
-	private String tel;
-    @Schema(description="Role of User")
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    private boolean enabled;
-    
-    @JsonManagedReference
-	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	@JoinTable(name = "user_permissions", joinColumns = { @JoinColumn(name = "user_id") }, 
-	inverseJoinColumns = { @JoinColumn(name = "permission_id") })
-    private Collection<Permission> permissions;
-	
+    @Column(name="order_id")
+	private Long orderId;
+    @Column(name="status")
+    private String status;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id")
+	private User user;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "product_id")
+	private Product product;
+    @Column(name="total_price")
+    private BigDecimal total_price;
 }

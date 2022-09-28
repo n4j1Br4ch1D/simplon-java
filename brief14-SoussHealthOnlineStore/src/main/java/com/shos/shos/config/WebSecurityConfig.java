@@ -2,7 +2,7 @@ package com.shos.shos.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shos.shos.utils.JwtRequestFilter;
-
+import org.springframework.http.HttpMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -48,10 +48,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+        .cors().and()
         .csrf()
         .disable()
         .authorizeRequests()
-        .antMatchers("/auth/*")
+        .antMatchers(
+      		    "/swagger-ui.html",
+        		"/v3/api-docs/**",
+        	    "/api/v1/auth/**",
+        	    "/api/v1/**", //only from app
+      		    "/swagger-ui/**", 
+      		    "/swagger-resources/**",
+      		    "/swagger-ui.html",
+      		    "/webjars/**")
         .permitAll()
         .anyRequest()
         .authenticated()

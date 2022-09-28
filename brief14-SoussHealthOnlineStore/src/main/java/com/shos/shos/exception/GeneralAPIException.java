@@ -2,6 +2,11 @@ package com.shos.shos.exception;
 
 import org.springframework.http.HttpStatus;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class GeneralAPIException extends RuntimeException {
 
     private HttpStatus status;
@@ -16,14 +21,5 @@ public class GeneralAPIException extends RuntimeException {
         super(message);
         this.status = status;
         this.message = message1;
-    }
-
-    public HttpStatus getStatus() {
-        return status;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
     }
 }

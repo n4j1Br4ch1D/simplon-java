@@ -3,6 +3,11 @@ package com.shos.shos.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException{
     private String resourceName;
@@ -19,16 +24,4 @@ public class ResourceNotFoundException extends RuntimeException{
     public ResourceNotFoundException(String string) {
 		// TODO Auto-generated constructor stub
 	}
-
-	public String getResourceName() {
-        return resourceName;
-    }
-
-    public String getFieldName() {
-        return fieldName;
-    }
-
-    public long getFieldValue() {
-        return fieldValue;
-    }
 }

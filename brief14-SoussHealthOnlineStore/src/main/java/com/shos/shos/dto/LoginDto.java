@@ -3,12 +3,20 @@ package com.shos.shos.dto;
 import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class LoginDto {
-	@NotEmpty
+//	@NotEmpty
 	@Column(unique=true)
     private String usernameOrEmail;
-	@NotEmpty
+//	@NotEmpty
 	@Column(unique=true)
+//    @Schema(format = "password")
     private String password;
 	public LoginDto(String usernameOrEmail, String password) {
 		super();

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.shos.shos.dto.UserDto;
 import com.shos.shos.entity.User;
+import com.shos.shos.enums.FilterCond;
+import com.shos.shos.enums.Role;
 import com.shos.shos.exception.ResourceNotFoundException;
 import com.shos.shos.repository.UserRepository;
 import com.shos.shos.response.UserResponse;
@@ -27,20 +29,19 @@ public class UserService {
 		this.mapper = mapper;
 	}
 
-	public UserResponse getAll(int pageNo, int pageSize, String sortBy, String sortDir, String filterCond, String role,
+	public UserResponse getAll(int pageNo, int pageSize, String sortBy, String sortDir, FilterCond filterCond, String role,
 			Boolean isMale, Boolean enabled) {
 		Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
 				: Sort.by(sortBy).descending();
 		Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 		Page<User> users;
-//		activity_status, excercice_status
-		if (role == null && isMale == null && enabled == null) {
+//		if (role == null && isMale == null && enabled == null) {
 			users = userRepository.findAll(pageable);
-		} else if (filterCond != null && filterCond.equals("and")) {
-			users = userRepository.findByRoleContainingIgnoreCaseAndIsMaleAndEnabled(role, isMale, enabled, pageable);
-		} else {
-			users = userRepository.findByRoleContainingIgnoreCaseOrIsMaleOrEnabled(role, isMale, enabled, pageable);
-		}
+//		} else if (filterCond != null && filterCond.equals("and")) {
+//			users = userRepository.findByRoleContainingIgnoreCaseAndIsMaleAndEnabled(role, isMale, enabled, pageable);
+//		} else {
+//			users = userRepository.findByRoleContainingIgnoreCaseOrIsMaleOrEnabled(role, isMale, enabled, pageable);
+//		}
 		List<User> listOfUsers = users.getContent();
 		List<UserDto> userContent = listOfUsers.stream().map(user -> mapToDTO(user)).collect(Collectors.toList());
 		UserResponse userResponse = new UserResponse();

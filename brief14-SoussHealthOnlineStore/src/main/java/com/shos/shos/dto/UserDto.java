@@ -1,17 +1,35 @@
 package com.shos.shos.dto;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.shos.shos.entity.Permission;
+import com.shos.shos.enums.Role;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class UserDto {
 	    @NotNull
 	 	private Long id;
 		@NotEmpty
+	    @Schema(description="FirstName should not be blank",required = true,example = "Suresh")
 		@Column(unique=true)
 	    private String userName;
 		@NotNull
@@ -19,79 +37,25 @@ public class UserDto {
 		@NotNull
 		private boolean isMale;
 		@NotEmpty
+		@Column(unique=true)
 		private String email;
 		@NotEmpty
-		@Column(unique=true)
+//		@JsonIgnore
 		private String password;
 		@NotEmpty
 		private String tel;
 		@Enumerated(EnumType.STRING)
-		private String role;
+		private Role role;
 		@NotNull
 	    private boolean enabled;
+	    private Collection<Permission> permissions;
 	    
-	    
-	    
-		public UserDto() {
-			super();
-		}
-		public Long getId() {
-			return id;
-		}
-		public void setId(Long id) {
-			this.id = id;
-		}
-		public String getUserName() {
-			return userName;
-		}
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-		public String getFullName() {
-			return fullName;
-		}
-		public void setFullName(String fullName) {
-			this.fullName = fullName;
-		}
-		public boolean isMale() {
-			return isMale;
-		}
-		public void setMale(boolean isMale) {
-			this.isMale = isMale;
-		}
-		public String getEmail() {
-			return email;
-		}
-		public void setEmail(String email) {
-			this.email = email;
-		}
-		public String getPassword() {
-			return password;
-		}
 		public void setPassword(String password) {
 			this.password = new BCryptPasswordEncoder().encode(password);
 	        //user.setPassword(new BCryptPasswordEncoder().encode(password));
 
 		}
-		public String getTel() {
-			return tel;
-		}
-		public void setTel(String tel) {
-			this.tel = tel;
-		}
-		public String getRole() {
-			return role;
-		}
-		public void setRole(String role) {
-			this.role = role;
-		}
-		public boolean isEnabled() {
-			return enabled;
-		}
-		public void setEnabled(boolean enabled) {
-			this.enabled = enabled;
-		}
-	    
+
 	    
 //
 //	    // title should not be null  or empty
